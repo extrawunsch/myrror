@@ -1,6 +1,7 @@
 class Form < ApplicationRecord
   belongs_to :user
-  belongs_to :question, dependent: :destroy
+  has_many :questions, through: :form_questions
+  has_many :form_questions
 
   validates :name, presence: true
   validates :name, length: { maximum: 50 }
