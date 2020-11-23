@@ -1,0 +1,63 @@
+.btn-above-page {
+  text-decoration: none;
+  color: white;
+  background: $myrror;
+  border: 1px solid $myrror;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: 0.4s ease;
+}
+
+.btn-above-page:hover {
+  text-decoration: none;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+  text-decoration: none;    
+  color: $myrror;
+  border: 1px solid $myrror;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: 0.4s ease;
+}
+
+.btn-outline:hover {
+  text-decoration: none;
+  background: $myrror;
+}
+
+.btn-click {  
+  background: $myrror;
+  text-decoration: none;
+  color: white;
+  border: 1px solid $myrror;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: 0.4s ease;
+}
+
+.btn-click:hover { 
+  text-decoration: none;
+  -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.35);
+  box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.35);
+}
+
+.btn-standard {  
+  background: $myrror;
+  text-decoration: none;
+  color: white;
+  border: 1px solid $myrror;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: 0.5s ease;
+}
+
+.btn-standard:hover{
+  background: #26aa92;
+}

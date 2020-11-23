@@ -1,0 +1,22 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1{
+ color: white;
+}
+
+.banner-title {
+  position: relative;
+}
+
+.color-backdrop{
+  position: absolute;
+  top: 24px;
+  left: 16px;
+  background-color: rgba(52, 203, 176, 0.4);
+  width: 140px;
+  height: 36px;
+}
