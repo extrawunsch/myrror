@@ -33,12 +33,12 @@ puts 'User done, Questions seed started'
     question_type: ["Open Question", "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"].sample
     )
 
-  Form.create(name: "Talk about how to improve your public speaking skills", presented_on: "15.12.2020", presentation_key: "L3WAGON", question_id: 7, user_id: 9)
-  Form.create(name: "Online Class MSc Global Business: Family Business Lecture 4", presented_on: "17.12.2020", presentation_key: "L4WAGON", question_id: 8, user_id: 10)
-  Form.create(name: "Yoga Class: Morning Salitation", presented_on: "21.12.2020", presentation_key: "CB0NE", question_id: 9, user_id: 11)
+  Form.create(name: "Talk about how to improve your public speaking skills", presented_on: "15.12.2020", presentation_key: "L3WAGON", question_id: 1, user_id: 1)
+  Form.create(name: "Online Class MSc Global Business: Family Business Lecture 4", presented_on: "17.12.2020", presentation_key: "L4WAGON", question_id: 2, user_id: 3)
+  Form.create(name: "Yoga Class: Morning Salitation", presented_on: "21.12.2020", presentation_key: "CB0NE", question_id: 3, user_id: 2)
 
-  Answer.create(question_id: 7, answer_content: "Inspirational talk, but you tend to speak too fast")
-  Answer.create(question_id: 8, answer_content: "I really dislike that you do not include the whole audience into your lectures")
-  Answer.create(question_id: 9, answer_content: "You look cute, add me on insta - cbone96")
-  
+  Answer.create(question_id: 1, answer_content: "Inspirational talk, but you tend to speak too fast")
+  Answer.create(question_id: 2, answer_content: "I really dislike that you do not include the whole audience into your lectures")
+  Answer.create(question_id: 3, answer_content: "You look cute, add me on insta - cbone96")
+
 puts "#{User.count} Users created; #{Question.count} Questions created; #{Form.count} Forms created; #{Answer.count} Answers created."
