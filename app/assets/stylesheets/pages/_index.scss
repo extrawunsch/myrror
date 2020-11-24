@@ -3,15 +3,22 @@
 
 .main-container {
   display: flex;
-  justify-content: space-between;
+  height: 80vh;
 }
 
-.dashboard {
+.sidebar {
   width: 200px;
   height: 100%;
+  margin-right: 32px;
+  background-color: royalblue;
 }
 
-.viewport {
+.form-display {
   width: 100%;
-  height: 90%;
+  height: 100%;
+  box-shadow: inset 2px 4px 4px 0px rgba(0,0,0,0.45);
+  padding: 24px;
+  background: $lightmyrror;
+  border-radius: 24px 0 0 24px;
+  margin: 12px 0px 12px 12px;
 }
