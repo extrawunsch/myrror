@@ -13,8 +13,16 @@
       <h4 class="mb-3">Create your questions</h4>
         <%= simple_fields_for(@question) do |g| %>
           <%= g.input :question_content, label: 'Add your first question' %>
-          <%= g.input :question_type, label: 'Add the question type', collection: ["Open Question", "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"] %>
-          <%= g.input :question_topic, label: 'Add a topic', collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"] %>
+          <%= g.input :question_type, as: :radio_buttons, label: 'Add the question type', 
+            collection: ["Open Question", "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'} %>
+          <%= g.input :question_topic, as: :check_boxes, label: 'Add a topic',
+            collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
+            input_html: { class: "tag-selector" },
+            item_wrapper_class: 'tag-item' %>
         <% end %>
       </div>
 
