@@ -1,0 +1,7 @@
+<div class="container m-5">
+  <div class="card-grid">
+    <% @forms.each do |form| %>
+      <%=link_to "", form_path(form), class:"card-index"%>  
+    <% end %>
+  </div>
+</div> 
