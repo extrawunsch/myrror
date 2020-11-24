@@ -1,6 +1,9 @@
 class QuestionsController < ApplicationController
-
   before_action :find_form, only: [:new, :create]
+
+  def index
+    @questions = policy_scope(Question)
+  end
 
   def new
     @question = Question.new
