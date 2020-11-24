@@ -2,6 +2,23 @@
   <div class="main-container">
     <div class="sidebar">dashboard</div>
     <div class="form-display">
+    <div class="tab-bar">
+      <h1>Recent</h1>
+      <%=link_to "Create", new_form_path, class:"btn-above-page"%>
+    </div>
+    <hr>
+      <div class="card-grid">
+        <% @forms.each do |form| %>
+          <div class="card-index">
+            <div class="card-content">
+              <%=link_to "#{form.name}",  form_path(form), class:"card-link"%>
+              <p><%=form.presented_on%></p>
+              <hr>
+            </div>
+          </div>  
+        <% end %>
+      </div>
+      <hr>
       <div class="card-grid">
         <% @forms.each do |form| %>
           <div class="card-index">
