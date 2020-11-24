@@ -3,8 +3,14 @@
     <div class="sidebar">dashboard</div>
     <div class="form-display">
     <div class="tab-bar">
-      <h1>Recent</h1>
-      <%=link_to "Create", new_form_path, class:"btn-above-page"%>
+      <ul id="menu">
+        <li style="color: black;">My forms</li>
+        <li>Presets</li>
+        <li>Deleted</li>
+      </ul>
+      <div class="interactive my-3"> 
+        <%=link_to "Create", new_form_path, class:"btn-above-page mr-5"%>
+      </div> 
     </div>
     <hr>
       <div class="card-grid">
