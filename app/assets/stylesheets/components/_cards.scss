@@ -30,6 +30,12 @@
   font-size: 18px;
   font-weight: 600;
   color: black;
+  transition: 0.2s ease-out;
+}
+
+.card-link:hover {
+  font-weight: 700;
+  color: $myrror;
 }
 
 .card-grid {

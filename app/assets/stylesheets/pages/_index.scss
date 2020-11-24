@@ -43,3 +43,12 @@
     font-size: 28px;
   }
 }
+
+#divider { 
+  display: block; 
+  height: 1px;
+  border: 0; 
+  border-top: 1px solid rgba(0, 0, 0, 0.9);
+  margin: 1em 0 1em 16px ; 
+  padding: 0; 
+}

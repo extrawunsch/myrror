@@ -4,7 +4,7 @@
     <div class="form-display">
     <div class="tab-bar">
       <ul id="menu">
-        <li style="color: black;">My forms</li>
+        <li style="color: black; font-weight: 500">My forms</li>
         <li>Presets</li>
         <li>Deleted</li>
       </ul>
@@ -12,7 +12,7 @@
         <%=link_to "Create", new_form_path, class:"btn-above-page mr-5"%>
       </div> 
     </div>
-    <hr>
+    <hr id="divider">
       <div class="card-grid">
         <% @forms.each do |form| %>
           <div class="card-index">
@@ -24,7 +24,7 @@
           </div>  
         <% end %>
       </div>
-      <hr>
+      <hr id="divider">
       <div class="card-grid">
         <% @forms.each do |form| %>
           <div class="card-index">
