@@ -1,1 +1,56 @@
 // Specific CSS for your home-page
+.tripple-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.tripple-card {
+  width: 30%;
+  background-color: white;
+  margin: 50px;
+}
+.fas {
+  size: large;
+}
+.why-how {
+  text-align: center;
+  color: $myrror;
+}
+
+.title-card {
+  font-size: 22px; 
+  color: #000000;
+}
+
+.quote-container {
+  background-color: rgba(152, 228, 214, 0.2);
+}
+
+.quote {
+  color: black;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+}
+
+.bill-gates {
+    color: black;
+    font-family: "Work Sans";
+    font-style: normal;
+    text-align: right;
+  }
+
+
+.footer {
+  background: black;
+  opacity: 0.73;
+  height: 100px;
+  color:$myrror;
+}
+
+.container-how {
+  background-color: $gray;
+  margin: 50px;
+}
