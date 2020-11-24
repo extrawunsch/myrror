@@ -1,5 +1,12 @@
-<h1>@form.name</h1>
-<% @form.questions.each do |question| %>
-<p><%= question.content %></p>
-<p><%= question.answer %></p>
-<%= end %>
+<div class="container">
+<h1> <%= @form.name %></h1>
+  <ul style="list-style-type:none;">
+  <% @questions.each do |question|  %>
+    <li>
+    <%= question.question_content %>
+    <%= link_to "See all #{question.answers.count} Answers", "" %>
+    </li>
+  <% end %>
+  </ul>
+</div>
+
