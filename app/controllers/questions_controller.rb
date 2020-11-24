@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
 
+  before_action :find_form, only: [:new, :create]
+
   def new
     @question = Question.new
     authorize @question
@@ -16,6 +18,10 @@ class QuestionsController < ApplicationController
   end
 
   private
+
+  def find_form
+    @form = Form.find(params[:form_id])
+  end
 
   def question_params
     params.require(:question).permit(:question_content, :question_topic, :question_type)
