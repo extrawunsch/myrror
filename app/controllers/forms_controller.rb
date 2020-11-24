@@ -11,7 +11,7 @@ class FormsController < ApplicationController
     @form.presentation_key = 'ftest1'
     authorize @form
     if @form.save
-      redirect_to :root
+      redirect_to root_path
     else
       render :new
     end
