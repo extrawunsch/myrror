@@ -4,7 +4,13 @@
     <div class="form-display">
       <div class="card-grid">
         <% @forms.each do |form| %>
-          <%=link_to "", form_path(form), class:"card-index"%>  
+          <div class="card-index">
+            <div class="card-content">
+              <%=link_to "#{form.name}", form_path(form), class:"card-link"%>
+              <p><%=form.presented_on%></p>
+              <hr>
+            </div>
+          </div>  
         <% end %>
       </div>
     </div>
