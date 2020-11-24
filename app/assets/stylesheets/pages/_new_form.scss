@@ -2,6 +2,18 @@
     background-color: $lightmyrror;
   }
 
+textarea {
+  resize: none;
+  overflow: hidden;
+  border: none;
+  width: 300px;
+}
+
+textarea:focus, input:focus {
+  outline: 0;
+}
+
+
 .card-form {
   color: $darkgray;
   background-color: white;
