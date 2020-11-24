@@ -1,0 +1,20 @@
+<div class="container w-100 background">
+
+  <div class="mx-5 w-50">
+    <h3 class="text-center pt-5 pb-3">Information</h3>
+    <%= simple_form_for(@form) do |f| %>
+      <%= f.input :presented_on, label: "Date" %> 
+      <%= f.input :name, label: "Title" %>
+    <% end %>
+  </div>
+
+  <div class="mx-5 mt-3 w-50">
+    <h3 class="text-center pt-5 pb-3">Create your questions</h3>
+    <%= simple_form_for(@form) do |f| %>
+      <%= f.input :name, label: 'Add your first question' %>
+      <%= f.input :question_typ, label: 'Add your first question' %>
+      <%= f.submit 'Create Form', class: 'btn btn-click' %>
+    <% end %>
+  </div>
+
+</div>
