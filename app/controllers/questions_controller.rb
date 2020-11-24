@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     authorize @question
     if @question.save
-      redirect_to root_path
+      redirect_to form_path(@form)
     else
       render :new
     end
