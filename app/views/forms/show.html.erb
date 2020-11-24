@@ -4,7 +4,7 @@
   <% @questions.each do |question|  %>
     <li>
     <%= question.question_content %>
-    <%= link_to "See all #{question.answers.count} Answers", "" %>
+    <%= link_to "See all #{question.answers.count} Answers", answers_form_question_path(@form) %>
     </li>
   <% end %>
   </ul>

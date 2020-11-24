@@ -7,5 +7,9 @@ class FormPolicy < ApplicationPolicy
     def show?
       true
     end
+
+    def answers?
+      true
+    end
   end
 end

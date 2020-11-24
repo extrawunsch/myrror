@@ -1,0 +1,12 @@
+<div class="container">
+<h1> <%= @form.name %></h1>
+  <ul style="list-style-type:none;">
+  <% @form.question_content  %>
+    <li>
+    <%= @question.answers.each do |answer| %>
+    <%=  answer.answer_content %>
+    </li>
+  <% end %>
+  </ul>
+</div>
+

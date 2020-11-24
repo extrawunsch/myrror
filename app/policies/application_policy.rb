@@ -14,6 +14,10 @@ class ApplicationPolicy
     true
   end
 
+  def answers?
+    true
+  end
+
   def create?
     false
   end

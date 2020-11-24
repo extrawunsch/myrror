@@ -8,4 +8,11 @@ class FormsController < ApplicationController
     #@answers = Answer.where(params[:question_id])
     authorize @form
   end
+
+  def answers
+    @form = Form.find(params[:id])
+    @questions = Question.where(params[:form_id])
+    #@answers = Answer.where(params[:question_id])
+    authorize @form
+  end
 end
