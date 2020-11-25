@@ -8,17 +8,27 @@
   padding: 28px 32px;
   box-shadow: 2px 2px 2px 2px rgba(40, 40, 40, 0.1);
 }
+
 .center {
   display: inline-block;
 }
 
+.inner-card {
+  display: inline-block;
+  text-align: center;
+  background-color: $lightmyrror;
+  color: $darkgray;
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin: 28px;
+  box-shadow: 2px 2px 2px 2px rgba(40, 40, 40, 0.1);
+}
+
 .card-codes {
-  width: 200px;
   background-color: $middlemyrror;
   color: $darkgray;
   border-radius: 20px;
-  padding: 8px 12px;
-  box-shadow: 2px 2px 2px 2px rgba(40, 40, 40, 0.1);
+  padding: 8px 36px;
 }
 
 table {

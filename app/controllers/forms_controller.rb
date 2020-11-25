@@ -41,7 +41,7 @@ class FormsController < ApplicationController
   def success
     @form = Form.find(params[:id])
     authorize @form
-    @qr = RQRCode::QRCode.new( 'http://myrror.org', :size => 4, :level => :h )
+    @qr = RQRCode::QRCode.new( 'http://myrror.org/feedback', :size => 4, :level => :h )
   end
 
   private
