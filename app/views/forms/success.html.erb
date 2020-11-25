@@ -1,15 +1,23 @@
+
+
 <div class="background">
   <div class="main-container">
     <div class="sidebar">dashboard</div>
-      <div class="form-display">
-        <h2>Congrats! Your form has been created</h2>
+      <div class="form-display"> 
         <div class="card m-5">
-          <h4>Share this code in your presentation</h4>
-          <p>Give this link to your audience</p>
-          <%= link_to 'myrror.org/feedback', root_path, class: 'btn btn-above-page' %>
-          <div class="card-codes">
-            <p>Presentation Key</p>
-            <h4><%= @form.presentation_key %></h4>
+          <h2 class="my-3" style="opacity: 0.6;" >Congrats! Your form has been created</h2>
+          <h5 class="mt-5 mb-4">Share QR code in your presentation</h5>
+          <div class="center">
+          <%= raw @qr.as_html %>
+          </div>
+          <h5 class="mt-4 mb-3">Or share Presentation Key</h5>
+          
+          <div class="center">
+            <div class="card-codes center">
+              <h4><%= @form.presentation_key %></h4>
+            </div>
+            <h6 class="my-3">Your audience can input the key via</h6>
+            <%= link_to 'myrror.org/feedback', root_path, class: 'mb-4 btn btn-outline' %>
           </div>
         </div>
       </div>

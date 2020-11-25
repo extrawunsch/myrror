@@ -1,4 +1,5 @@
 require 'securerandom'
+require 'rqrcode'
 
 class FormsController < ApplicationController
 
@@ -40,6 +41,7 @@ class FormsController < ApplicationController
   def success
     @form = Form.find(params[:id])
     authorize @form
+    @qr = RQRCode::QRCode.new( 'https://github.com/whomwah/rqrcode', :size => 4, :level => :h )
   end
 
   private
