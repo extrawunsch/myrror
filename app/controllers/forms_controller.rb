@@ -23,7 +23,7 @@ class FormsController < ApplicationController
     # placeholder for proper presentation key
     @form.presentation_key = rand()
     authorize @form
-    if @form.save!
+    if @form.save
       # need to connect question with form_question if needed
       @question = Question.new(question_params)
       if @question.save
