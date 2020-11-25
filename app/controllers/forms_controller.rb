@@ -27,7 +27,7 @@ class FormsController < ApplicationController
       # need to connect question with form_question if needed
       @question = Question.new(question_params)
       if @question.save
-        redirect_to new_form_question_path(@form)
+        redirect_to edit_form_path(@form)
       else
         render :new
       end
@@ -43,7 +43,7 @@ class FormsController < ApplicationController
   end
 
   def update
-    @questions = Question.all
+    @questions = Question.where(predefined: true)
     @form = Form.find(params[:id])
     authorize @form
     if @form.update(form_params)
@@ -52,7 +52,7 @@ class FormsController < ApplicationController
       question_topic = params[:question_topic]
       @question = Question.new(question_content: question_content, question_type: question_type, question_topic: question_topic)
       if @question.save
-        redirect_to new_form_question_path(@form)
+        redirect_to forms_path
       else
         render :new
       end
