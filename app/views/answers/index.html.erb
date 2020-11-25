@@ -8,10 +8,11 @@
       </div>
     </div>
     <div>
+    <hr id="divider">
     <div class="headline"><h1>Discover everyone's viewpoint:</h1></div>
         <!-- <div class="show-content"><h1><span><%= @form.name %></span></h1></div> -->
         <div class="show-content"><h2><span>Question: <%= @question.question_content  %></span></h2></div>
-        <ul style="list-style-type:none;">
+        <ul style="list-style-type:none; border-left:1px solid #000;height:50vh;">
         <li>
           <% @answers.each do |answer| %>
           <div class="show-content"><span><%= answer.answer_content %><span></div>

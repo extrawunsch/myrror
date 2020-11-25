@@ -11,7 +11,7 @@
       <hr id="divider">
         <div class="headline"><h1>Here's your form:</h1></div>
         <div class=show-content><h1><span> <%= @form.name %> | <%= @form.presented_on %> </span></h1></div>
-        <ul style="list-style-type:none;">
+        <ul style="list-style-type:none; border-left:1px solid #000;height:50vh">
          <% @questions.each do |question|  %>
           <li>
             <div class="show-content"><span><%= question.question_content %> | <%= link_to "See all #{question.answers.count} Answers", form_question_answers_path(@form, question) %><span></div>
