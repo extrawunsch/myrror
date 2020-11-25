@@ -5,6 +5,11 @@ class PagesController < ApplicationController
   end
 
   def feedback
-    @form = Form.new
+    @presentation_key = params[:presentation_key]
+    @form = Form.where(presentation_key: @presentation_key).first
+    puts @form
+    unless @form.nil? 
+      redirect_to form_feedback_path(@form.id)
+    end
   end
 end
