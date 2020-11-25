@@ -12,11 +12,13 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    @questions = Question.all
     @question = Question.new
     authorize @question
   end
 
   def create
+    @questions = Question.all
     @question = Question.new(question_params)
     authorize @question
     if @question.save

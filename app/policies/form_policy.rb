@@ -21,4 +21,8 @@ class FormPolicy < ApplicationPolicy
     return true
   end
 
+  def update?
+    record.user == user
+  end
+
 end
