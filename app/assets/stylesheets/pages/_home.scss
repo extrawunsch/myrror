@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
+
+
 .tripple-wrapper {
   display: flex;
   width: 100%;
@@ -10,15 +12,20 @@
   background-color: white;
   margin: 50px;
   padding: 20px;
+  // filter: blur(4px);
+  border-radius: 8px;
 }
+
 .fas {
   font-size: 26px;
   color: $myrror;
-  filter: drop-shadow(0px 4px 4px #34CBB0);
+  margin-bottom: 20px;
 }
+
 .why-how {
   text-align: center;
   color: $myrror;
+  margin-top: 30px;
 }
 
 .title-card {
@@ -28,6 +35,8 @@
 
 .quote-container {
   background-color: rgba(152, 228, 214, 0.2);
+  padding-top: 20px;
+  height: 90px;
 }
 
 .quote {
@@ -39,11 +48,12 @@
 }
 
 .bill-gates {
-    color: black;
-    font-family: "Work Sans";
-    font-style: normal;
-    text-align: right;
-  }
+  color: black;
+  font-family: "Work Sans";
+  font-style: normal;
+  float: right;
+  padding-right: 17%;
+}
 
 
 .footer {
