@@ -36,6 +36,29 @@ class FormsController < ApplicationController
     end
   end
 
+  def edit
+    @questions = Question.all
+    @form = Form.find(params[:id])
+    authorize @form
+  end
+
+  def update
+    @questions = Question.all
+    @form = Form.find(params[:id])
+    authorize @form
+    if @form.update(form_params)
+      question_content = params[:question_content]
+      question_type = params[:question_type]
+      question_topic = params[:question_topic]
+      @question = Question.new(question_content, question_type, question_topic)
+      if @question.save
+        redirect_to new_form_question_path(@form)
+      else
+        render :new
+      end
+    end
+  end
+
   private
 
   def form_params
