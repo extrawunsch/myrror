@@ -1,13 +1,30 @@
-<div class="container">
-<h1> <%= @form.name %></h1>
- <h2><%= @question.question_content  %></h2>
-  <ul style="list-style-type:none;">
-    <li>
-    <% @answers.each do |answer| %>
-    <%= answer.answer_content %>
-    <% end %>
-    </li>
-  </ul>
+<div class="background">
+  <div class="main-container">
+    <div class="sidebar">dashboard</div>
+    <div class="form-display">
+    <div class="tab-bar">
+      <ul id="menu">
+        <li style="color: black; font-weight: 500">My forms</li>
+        <li>Presets</li>
+        <li>Deleted</li>
+      </ul>
+      <div class="interactive my-3">
+        <%=link_to 'Back to my form', form_path(@form), class:"btn-above-page mr-5"%>
+      </div>
+    </div>
+    <div>
+        <div class="show-content"><h1><span><%= @form.name %></span></h1></div>
+        <div class="show-content"><h2><span><%= @question.question_content  %></span></h2></div>
+        <ul style="list-style-type:none;">
+        <li>
+          <% @answers.each do |answer| %>
+          <div class="show-content"><span><%= answer.answer_content %><span></div>
+        </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to 'Back to my form', form_path(@form) %>

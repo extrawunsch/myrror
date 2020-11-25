@@ -1,13 +1,30 @@
-<div class="container">
-<h1> <%= @form.name %></h1>
-  <ul style="list-style-type:none;">
-  <% @questions.each do |question|  %>
-    <li>
-    <%= question.question_content %>
-    <%= link_to "See all #{question.answers.count} Answers", form_question_answers_path(@form, question) %>
-    </li>
-  <% end %>
-  </ul>
+<div class="background">
+  <div class="main-container">
+    <div class="sidebar">dashboard</div>
+    <div class="form-display">
+    <div class="tab-bar">
+      <ul id="menu">
+        <li style="color: black; font-weight: 500">My forms</li>
+        <li>Presets</li>
+        <li>Deleted</li>
+      </ul>
+      <div class="interactive my-3">
+        <%=link_to "Create", new_form_path, class:"btn-above-page mr-5"%>
+      </div>
+    </div>
+    <div>
+      <hr id="divider">
+        <div class=show-content><h1><span> <%= @form.name %> </span></h1></div>
+        <ul style="list-style-type:none;">
+         <% @questions.each do |question|  %>
+          <li>
+            <div class="show-content"><span><%= question.question_content %>  <%= link_to "See all #{question.answers.count} Answers", form_question_answers_path(@form, question) %><span></div>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to '+', new_form_question_path(@form) %>
