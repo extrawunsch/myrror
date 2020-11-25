@@ -50,7 +50,7 @@ class FormsController < ApplicationController
       question_content = params[:question_content]
       question_type = params[:question_type]
       question_topic = params[:question_topic]
-      @question = Question.new(question_content, question_type, question_topic)
+      @question = Question.new(question_content: question_content, question_type: question_type, question_topic: question_topic)
       if @question.save
         redirect_to new_form_question_path(@form)
       else
