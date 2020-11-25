@@ -12,4 +12,13 @@ class FormPolicy < ApplicationPolicy
       true
     end
   end
+
+  def show?
+    true
+  end
+
+  def create?
+    return true
+  end
+
 end

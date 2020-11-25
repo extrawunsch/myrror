@@ -4,6 +4,7 @@ class Form < ApplicationRecord
   has_many :questions, through: :form_questions
 
   validates :name, presence: true
+  validates :speaker, presence: true
   validates :name, length: { maximum: 120 }
   validates :presentation_key, uniqueness: true
 end
