@@ -29,7 +29,7 @@ h1 {
 }
 
 .card-homepage {
-  height: 400px;
+  height: 300px;
   width: 800px;
   background-color: rgba(196, 196, 196, 0.12);
   margin: 0 auto;
@@ -43,7 +43,7 @@ h1 {
 }
 
 .fas {
-  font-size: 26px;
+  font-size: 28px;
   color: $myrror;
   margin-bottom: 20px;
 }
@@ -102,16 +102,18 @@ h1 {
 
 .key-points{
   display: flex;
-  font-size: 22px;
+  font-size: 20px;
   align-items: center;
+  color: black;
 
   p {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
 .iphone{
   display: flex;
+  margin: 50px;
 }
 .container-wrapper{
   display: flex;
@@ -131,8 +133,38 @@ h1 {
 }
 
 .footer {
-  background: black;
-  opacity: 0.73;
-  height: 100px;
-  color:$myrror;
+  color: white;
+  padding: 50px;
+  height: 350px;
+  background-color: rgba(0, 0, 0, 0.73);
+}
+
+.footer-up {
+  display: flex;
+  justify-content: center;
+}
+
+.your-place-to-talk-block{
+  display: flex;
+  width: 25%;
+  font-style: bold;
+}
+.footer-small-block {
+  display: flex;
+  width: 20%;
+}
+
+.title-footer-small-block {
+  color: $myrror;
+}
+
+.hr-tag {
+  width: 80%;
+  margin: 0 auto;
+  height: 10px;
+  border-bottom: 1px solid white;
+}
+
+.CTA-buttom-page {
+  font-size: 20px;
 }
