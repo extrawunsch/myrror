@@ -1,5 +1,17 @@
 <h1>TEST</h1>
 
 <%@form.questions.each do |question| %>
-  <h1><%=question.question_content%></h1>
+<div class="question-container">
+  <div class="row">
+    <div class="col-12 col-md-10 col-lg-10 m-5">
+      <h1><%=question.question_content%></h1>
+      <div class="answer-form">
+        <%= simple_form_for [@form, @answer] do |f| %>
+          <%= f.input :answer_content, label: "Answer" %>
+          <%= f.submit "Submit review", class: "btn btn-primary"%>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
 <%end%>
