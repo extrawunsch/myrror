@@ -1,0 +1,6 @@
+<div class="container mb-5 w-50 background">
+  <h4 class="py-5">Select your Question</h4>
+  <% @questions.each do |question| %>
+    <%= question.question_content %> <br><br>
+  <% end %>
+</div>
