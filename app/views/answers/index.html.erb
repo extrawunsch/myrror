@@ -1,13 +1,13 @@
 <div class="container">
 <h1> <%= @form.name %></h1>
+ <h2><%= @question.question_content  %></h2>
   <ul style="list-style-type:none;">
-  <% @question.each do |question|  %>
     <li>
-    <%= question.question_content %>
-    <%= link_to "See all #{question.answers.count} Answers", answers_form_question_path(@form) %>
+    <% @answers.each do |answer| %>
+    <%= answer.answer_content %>
+    <% end %>
     </li>
-  <% end %>
   </ul>
 </div>
 
-<%= link_to '+', new_form_question_path(@form) %>
+<%= link_to 'Back to my form', form_path(@form) %>
