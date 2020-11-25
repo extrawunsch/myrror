@@ -1,0 +1,11 @@
+<div class="container w-100 background pb-5">
+  <div class="mx-5 w-50">
+    <h3 class="text-center pt-5 pb-3">Create your questions</h3>
+    <%= simple_form_for([@form, @question]) do |f| %>
+      <%= f.input :question_content, label: 'Add your first question' %>
+      <%= f.input :question_type, label: 'Add the question type', collection: ["Open Question", "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"] %>
+      <%= f.input :question_topic, label: 'Add a topic', collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"] %>
+      <%= f.submit 'Create Question', class: 'btn btn-click mt-3' %>
+    <% end %>
+  </div>
+</div>

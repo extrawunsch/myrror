@@ -1,0 +1,41 @@
+<div class="background">
+  <div class="main-container">
+    <div class="sidebar">dashboard</div>
+    <div class="form-display">
+    <div class="tab-bar">
+      <ul id="menu">
+        <li style="color: black; font-weight: 500">My forms</li>
+        <li>Presets</li>
+        <li>Deleted</li>
+      </ul>
+      <div class="interactive my-3"> 
+        <%=link_to "Create", new_form_path, class:"btn-above-page mr-5"%>
+      </div> 
+    </div>
+    <hr id="divider">
+      <div class="card-grid">
+        <% @forms.each do |form| %>
+          <div class="card-index">
+            <div class="card-content">
+              <%=link_to "#{form.name}",  form_path(form), class:"card-link"%>
+              <p><%=form.presented_on%></p>
+              <hr>
+            </div>
+          </div>  
+        <% end %>
+      </div>
+      <hr id="divider">
+      <div class="card-grid">
+        <% @forms.each do |form| %>
+          <div class="card-index">
+            <div class="card-content">
+              <%=link_to "#{form.name}", form_path(form), class:"card-link"%>
+              <p><%=form.presented_on%></p>
+              <hr>
+            </div>
+          </div>  
+        <% end %>
+      </div>
+    </div>
+  </div> 
+</div>

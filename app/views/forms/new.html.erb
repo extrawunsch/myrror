@@ -1,0 +1,45 @@
+<div class="background pb-5">
+  <h1 class="text-center pt-5 pb-3">Create your form</h1>
+  <div class="grid-container">
+    <div class="item-a">
+      <div class="card-form">
+        <h4 class="mb-3">Information</h4>
+          <%= simple_form_for(@form) do |f| %>
+          <%= f.input :presented_on, label: "Date" %> 
+          <%= f.input :name, label: "Title" %>
+      </div>
+      <div class="mb-5">
+        <div class="card-form">
+          <h4 class="mb-3">Create your first question</h4>
+          <%= simple_fields_for(@question) do |g| %>
+            <%= g.input :question_content, label: 'Add your first question' %>
+            <%= g.input :question_type, as: :radio_buttons, label: 'Add the question type', 
+              collection: ["Open Question", "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
+              collection_wrapper_tag: 'div',
+              collection_wrapper_class: 'category-wrapper',
+              item_wrapper_class: 'category-item',
+              input_html: {class: 'category-selector'} %>
+            <%= g.input :question_topic, as: :radio_buttons, label: 'Add a topic',
+              collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
+              input_html: { class: "tag-selector" },
+              item_wrapper_class: 'tag-item' %>
+          <% end %>
+        </div>
+        <%= f.submit 'Create Form', class: 'btn btn-click' %>
+        <% end %>
+      </div>
+    </div>
+    <div class="item-b">
+      <div class="card-questions">
+        <h5 class="mb-5">Don't know where to start? Copy a question</h5>
+        <% @questions.each do |question| %>
+          <div data-controller="clipboard" class="question-card">
+            <textarea  data-target="clipboard.source" readonly><%= question.question_content %></textarea>
+            <button class='btn btn-outline' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
+          </div>
+          <br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
