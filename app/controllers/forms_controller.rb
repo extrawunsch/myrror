@@ -1,13 +1,6 @@
 class FormsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
-  def answers
-    @form = Form.find(params[:id])
-    @questions = Question.where(params[:form_id])
-    #@answers = Answer.where(params[:question_id])
-    authorize @form
-  end
-
   def index
     @forms = policy_scope(Form).order(created_at: :desc)
   end

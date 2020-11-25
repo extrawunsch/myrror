@@ -1,10 +1,10 @@
 <div class="container">
 <h1> <%= @form.name %></h1>
   <ul style="list-style-type:none;">
-  <% @questions.each do |question|  %>
+  <% @question.each do |question|  %>
     <li>
     <%= question.question_content %>
-    <%= link_to "See all #{question.answers.count} Answers", form_question_answers_path(@form, question) %>
+    <%= link_to "See all #{question.answers.count} Answers", answers_form_question_path(@form) %>
     </li>
   <% end %>
   </ul>
