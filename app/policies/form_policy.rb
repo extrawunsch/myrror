@@ -4,4 +4,8 @@ class FormPolicy < ApplicationPolicy
       scope.all
     end
   end
+  
+  def success?
+    true
+  end
 end
