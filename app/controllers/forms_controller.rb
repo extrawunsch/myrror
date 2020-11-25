@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class FormsController < ApplicationController
 
   def index
@@ -20,8 +22,7 @@ class FormsController < ApplicationController
     @questions = Question.all
     @form = Form.new(form_params)
     @form.user = current_user
-    # placeholder for proper presentation key
-    @form.presentation_key = rand()
+    @form.presentation_key = SecureRandom.alphanumeric(5)
     authorize @form
     if @form.save
       # need to connect question with form_question if needed
