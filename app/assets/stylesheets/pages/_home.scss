@@ -64,6 +64,7 @@ h1 {
   color: $myrror;
   text-align: center;
   padding-top: 20px;
+  font-size: 1.7em;
 }
 
 .why {
@@ -120,6 +121,13 @@ h1 {
 .ready-to-start-journey {
   text-align: center;
   margin-bottom: 5%;
+}
+
+.ready-to-start-journey-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  margin-top: 50px;
 }
 
 .footer {
