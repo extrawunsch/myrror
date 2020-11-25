@@ -5,7 +5,7 @@
       <div class="card-form">
         <h4 class="mb-3">Information</h4>
           <%= simple_form_for(@form) do |f| %>
-          <%= f.input :presented_on, label: "Date" %> 
+          <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Choose the dates" %>
           <%= f.input :name, label: "Title" %>
           <%= f.input :speaker, label: "Speaker Name" %>
       </div>

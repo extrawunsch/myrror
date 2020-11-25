@@ -12,7 +12,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    raise
     @questions = Question.all
     @question = Question.new(question_params)
     authorize @question

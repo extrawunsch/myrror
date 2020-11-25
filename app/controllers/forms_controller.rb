@@ -13,11 +13,11 @@ class FormsController < ApplicationController
     @form = Form.new
     authorize @form
     @question = Question.new
-    @questions = Question.all
+    @questions = Question.where(predefined: true)
   end
 
   def create
-    @questions = Question.all
+    @questions = Question.where(predefined: true)
     @form = Form.new(form_params)
     @form.user = current_user
     # placeholder for proper presentation key
@@ -26,6 +26,7 @@ class FormsController < ApplicationController
     if @form.save
       # need to connect question with form_question if needed
       @question = Question.new(question_params)
+      @question.predefined = false
       if @question.save
         redirect_to edit_form_path(@form)
       else
@@ -37,7 +38,7 @@ class FormsController < ApplicationController
   end
 
   def edit
-    @questions = Question.all
+    @questions = Question.where(predefined: true)
     @form = Form.find(params[:id])
     authorize @form
   end
@@ -50,7 +51,7 @@ class FormsController < ApplicationController
       question_content = params[:question_content]
       question_type = params[:question_type]
       question_topic = params[:question_topic]
-      @question = Question.new(question_content: question_content, question_type: question_type, question_topic: question_topic)
+      @question = Question.new(question_content: question_content, question_type: question_type, question_topic: question_topic, predefined: false)
       if @question.save
         redirect_to forms_path
       else
