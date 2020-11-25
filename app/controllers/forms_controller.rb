@@ -6,4 +6,9 @@ class FormsController < ApplicationController
     @form = Form.find(params[:id])
   end
 
+  def success
+    @form = Form.find(params[:id])
+    authorize @form
+  end
+
 end
