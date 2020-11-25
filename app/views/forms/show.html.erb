@@ -9,11 +9,12 @@
         <li>Deleted</li>
       </ul>
       <div class="interactive my-3">
-        <%=link_to "Create", new_form_path, class:"btn-above-page mr-5"%>
+        <%=link_to "Create New Form", new_form_path, class:"btn-above-page mr-5"%>
       </div>
     </div>
     <div>
       <hr id="divider">
+        <div class="headline"><h1>Here's the form your created:</h1></div>
         <div class=show-content><h1><span> <%= @form.name %> </span></h1></div>
         <ul style="list-style-type:none;">
          <% @questions.each do |question|  %>
