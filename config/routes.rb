@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get '/error', to: 'pages#error'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :forms do
-    resources :questions, only: [:index, :new, :create]
-    get '/feedback', to: 'answers#new'
-    post '/feedback', to: 'answers#create'
+    resources :answers, only: [:new, :create]
+    resources :questions, only: [:index, :new, :create] do 
+      resources :answers, only: [:index]
+    end
   end
 end
+# forms/:id/:question_id/answers

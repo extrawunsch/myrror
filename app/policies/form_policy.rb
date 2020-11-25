@@ -3,6 +3,14 @@ class FormPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+
+    def show?
+      true
+    end
+
+    def answers?
+      true
+    end
   end
 
   def show?
@@ -11,6 +19,10 @@ class FormPolicy < ApplicationPolicy
 
   def create?
     return true
+  end
+
+  def update?
+    record.user == user
   end
 
 end

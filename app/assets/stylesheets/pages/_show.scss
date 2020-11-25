@@ -1,7 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "new_form";
-@import "edit_form";
 
 .main-container {
   display: flex;
@@ -15,15 +14,15 @@
   background-color: royalblue;
 }
 
+.headline {
+  color: $myrror;
+}
+
 .show-content {
   color: black;
   border-radius: 24px;
   margin: 12px;
   padding: 12px;
-}
-
-.headline {
-  color: $myrror;
 }
 
 .show-content span {
