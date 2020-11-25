@@ -1,5 +1,11 @@
 class QuestionsController < ApplicationController
-  before_action :find_form, only: [:new, :create]
+  before_action :find_form, only: [:new, :create, :answers]
+
+  # def answers
+  #   @question = Question.find(params[:form_id])
+  #   @answers = Answer.where(params[:question_id])
+  #   authorize @question
+  # end
 
   def index
     @questions = policy_scope(Question)
