@@ -23,11 +23,11 @@ class FormsController < ApplicationController
     # placeholder for proper presentation key
     @form.presentation_key = rand()
     authorize @form
-    if @form.save
+    if @form.save!
       # need to connect question with form_question if needed
       @question = Question.new(question_params)
       if @question.save
-        redirect_to form_path(@form)
+        redirect_to new_form_question_path(@form)
       else
         render :new
       end
@@ -39,7 +39,7 @@ class FormsController < ApplicationController
   private
 
   def form_params
-    params.require(:form).permit(:name, :presented_on)
+    params.require(:form).permit(:name, :presented_on, :speaker)
   end
 
   def question_params
