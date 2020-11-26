@@ -113,13 +113,18 @@ h1 {
   }
 }
 
-.iphone{
+.iphone {
   display: flex;
-  margin: 50px;
+  margin: 20px;
+  
+  img {
+    height: 220px;
+  }
 }
-.container-wrapper{
+.container-wrapper {
   display: flex;
   align-items: center;
+  height: 200px;
 }
 
 .ready-to-start-journey {
@@ -206,16 +211,17 @@ h1 {
 }
 
 .footer-down-logo {
-  height: 30px;
+  height: 50px;
   display: flex;
   img {
-    width: 30px;
+    width: 50px;
+    margin-right: 10px;
   }
 }
 
 .myrror-wrapper{
   border-bottom: 1px solid white;
-  height: 40px;
+  height: 28px;
 //   p {
 //     margin: 10px;
 //   }
