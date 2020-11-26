@@ -6799,6 +6799,13 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
+stimulus-rails-nested-form@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/stimulus-rails-nested-form/-/stimulus-rails-nested-form-1.1.0.tgz#27624237ccb5a1b9a4101ebffa0607547f7458cb"
+  integrity sha512-GokMsRHCXzGhgLY5W5EleMizWyxhvMqLnp0oVqCoxrm/vj7Hy6Vl2+iKy0WbGby57CP6ieR9v7h2w5rS3L+ckw==
+  dependencies:
+    stimulus "^1.1.1"
+
 stimulus@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stimulus/-/stimulus-1.1.1.tgz#53c2fded6849e7b85eed3ed8dd76e33abd74bec5"
