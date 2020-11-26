@@ -8,4 +8,3 @@ class Form < ApplicationRecord
   validates :name, length: { maximum: 120 }
   validates :presentation_key, uniqueness: true
 end
-

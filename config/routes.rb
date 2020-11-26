@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   get '/error', to: 'pages#error'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :forms do
+    member do # member when you want id in link
+      get :success
+    end
     resources :answers, only: [:new, :create]
-    resources :questions, only: [:index, :new, :create] do 
+    resources :questions, only: [:index, :new, :create, :show] do 
       resources :answers, only: [:index]
     end
   end
