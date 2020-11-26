@@ -7,6 +7,11 @@ Rails.application.routes.draw do
     member do # member when you want id in link
       get :success
     end
-    resources :questions, only: [:index, :new, :create]
+
+    resources :questions, only: [:index, :new, :create, :show] do
+      resources :answers, only: [:index, :new, :create]
+    end
+
   end
 end
+# forms/:id/:question_id/answers

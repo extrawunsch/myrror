@@ -11,7 +11,11 @@ class ApplicationPolicy
   end
 
   def show?
-    false
+    true
+  end
+
+  def answers?
+    true
   end
 
   def create?
