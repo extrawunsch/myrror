@@ -2,19 +2,19 @@
 
 .navbar-wrapper{
   background-color: rgba(51, 44, 44, 0.5);
-  color: white;
+  // color: white;
   // opacity: 80%;
     position: absolute;
     top: 30px;
     height: 40px;
-    width: 80%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
     border-radius: 50px;
     // box-shadow: 13px 13px 0px 0px  #FFFFFF;
     backdrop-filter: blur(4px);
+
     a {
       font-size: 20px;
       // padding-bottom: 0;
@@ -23,6 +23,19 @@
 
 .home-black {
   color: black;
+  margin-left: 70px;
+}
+
+.home-black:hover {
+  color: white;
+}
+
+.titles-navbar-white {
+  color: white;
+}
+
+.titles-navbar-white:hover {
+  color: white;
 }
 
 h1 {
@@ -59,7 +72,7 @@ h1 {
 }
 
 .card-homepage {
-  height: 400px;
+  height: 500px;
   width: 1000px;
   background-color: rgba(196, 196, 196, 0.12);
   margin: 0 auto;
@@ -70,8 +83,6 @@ h1 {
 
 .container-with-3-points{
   width: 80%;
-  padding-top: 100px;
-  padding-left: 100px;
 }
 
 .fas {
@@ -81,13 +92,16 @@ h1 {
 }
 
 .bottom-icons {
-  font-size: 1.3em;
   color: $myrror;
   margin: 20px;
   color: rgba(0, 0, 0, 0.73);
-  font-size: 50px;
+  font-size: 65px;
   margin: 30px;
-  // filter: drop-shadow(0px 2px 2px $myrror);
+  margin-left: 64px;
+}
+
+.fa-qrcode {
+  height: 65px;
 }
 
 .why-block{
@@ -141,12 +155,12 @@ h1 {
 
 .key-points{
   display: flex;
-  font-size: 20px;
   align-items: center;
   color: black;
 
   p {
-    font-size: 20px;
+    font-size: 24px;
+    margin: 0;
   }
 }
 
@@ -156,13 +170,11 @@ h1 {
   
   img {
     height: 350px;
-    padding-top: 50px;
   }
 }
 .container-wrapper {
   display: flex;
   align-items: center;
-  height: 200px;
 }
 
 .ready-to-start-journey {
