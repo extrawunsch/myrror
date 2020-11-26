@@ -4,32 +4,41 @@
     <div class="item-a">
       <div class="card-form">
         <h4 class="mb-3">Information</h4>
-          <%= simple_form_for(@form) do |f| %>
-          <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Choose the dates" %>
-          <%= f.input :name, label: "Title" %>
-          <%= f.input :speaker, label: "Speaker Name" %>
+          <%= form_with model: @form, data: { controller: 'nested-form', nested_form_wrapper_selector: '.nested-form-wrapper' } do |f| %>
+            <%#= f.label :presented_on %>
+            <%#= f.text_field :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Choose the dates" %>
+            <%#= f.label :name %>
+            <%#= f.text_field :name, label: "Title" %>
+            <%#= f.label :speaker %>
+            <%#= f.text_field :speaker, label: "Speaker Name" %>
       </div>
-      <div class="mb-5">
-        <div class="card-form">
-          <h4 class="mb-3">Add a question</h4>
-          <%= simple_fields_for(@question) do |g| %>
-            <%= g.input :question_content, label: "What do you want to know from the audience?" %>
-            <%= g.input :question_type, as: :radio_buttons, label: 'Add the question type', 
-              collection: ["Open Question", "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
-              collection_wrapper_tag: 'div',
-              collection_wrapper_class: 'category-wrapper',
-              item_wrapper_class: 'category-item',
-              input_html: {class: 'category-selector'} %>
-            <%= g.input :question_topic, as: :radio_buttons, label: 'Add the topic',
-              collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
-              input_html: { class: "tag-selector" },
-              item_wrapper_class: 'tag-item' %>
+        <div class="mb-5">
+          <div class="card-form">
+            <h4 class="mb-3">Add a question</h4>
+            <template data-target="nested-form.template">
+              <%= f.fields_for :questions, Question.new, child_index: 'NEW_RECORD' do |question_fields| %>
+                <%= render "question_form", f: question_fields %>
+              <% end %>
+            </template>
+
+            <%= f.fields_for :todos do |question_fields| %>
+              <%= render "question_form", f: question_fields %>
+            <% end %>
+
+            <!-- Inserted elements will be injected before that target. -->
+            <div data-target="nested-form.target"></div>
+
+            <button type="button" data-action="nested-form#add">
+              Add question
+            </button>
+
+            <%= f.submit 'Save question' %>
           <% end %>
         </div>
-        <%= f.submit 'Create Form', class: 'btn btn-click' %>
-        <% end %>
       </div>
-    </div>
+        
+      </div>
+    
     <div class="item-b">
       <div class="card-questions">
         <h5 class="mb-5">Don't know where to start? Copy a question</h5>

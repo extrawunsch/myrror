@@ -44,22 +44,17 @@ class FormsController < ApplicationController
     @questions = Question.where(predefined: true)
     @form = Form.find(params[:id])
     authorize @form
+    @form.questions.build
   end
 
   def update
     @questions = Question.where(predefined: true)
     @form = Form.find(params[:id])
     authorize @form
-    if @form.update(form_params)
-      question_content = params[:question_content]
-      question_type = params[:question_type]
-      question_topic = params[:question_topic]
-      @question = Question.new(question_content: question_content, question_type: question_type, question_topic: question_topic, predefined: false)
-      if @question.save
-        redirect_to forms_path
-      else
-        render :new
-      end
+    if @form.update(both_params)
+      redirect_to forms_path
+    else
+      render :edit
     end
   end
 
@@ -72,5 +67,8 @@ class FormsController < ApplicationController
   def question_params
     params.require(:question).permit(:question_content, :question_topic, :question_type)
   end
-
+  
+  def both_params
+    params.require(:form).permit(:name, :presented_on, :speaker, questions_attributes: [:question_content, :question_topic, :question_type])
+  end
 end
