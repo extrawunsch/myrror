@@ -21,17 +21,17 @@ puts 'User done, Questions seed started'
   body_language_question = Question.create(
     question_content: "How was my body language during the presentation?",
     question_topic: ["Body Language", "Speaking Style", "Content", "General", "Organization"].sample,
-    question_type: ["Open Question", "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"].sample
+    question_type: ["Open Question","Open Question"].sample
     )
   presentation_style_question = Question.create(
     question_content: "What annoyed you the most regarding the presentation style?",
     question_topic: ["Body Language", "Speaking Style", "Content", "General", "Organization"].sample,
-    question_type: ["Open Question", "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"].sample
+    question_type: ["Single-Choice","Single-Choice"].sample
     )
   content_question = Question.create(
     question_content: "Did the transmitted content met your expections?",
     question_topic: ["Body Language", "Speaking Style", "Content", "General", "Organization"].sample,
-    question_type: ["Open Question", "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"].sample
+    question_type: ["Multiple-Choice", "Multiple-Choice"].sample
     )
 
   form_agnes = Form.create(name: "Talk about how to improve your public speaking skills", presented_on: "15.12.2020", presentation_key: "L3WAGON", user_id: agnes.id, speaker: "Til Schweiger")
@@ -51,5 +51,7 @@ puts 'User done, Questions seed started'
   Answer.create(question_id: content_question.id, answer_content: "Inspirational talk, but you tend to speak too fast")
   Answer.create(question_id: presentation_style_question.id, answer_content: "I really dislike that you do not include the whole audience into your lectures")
   Answer.create(question_id: body_language_question.id, answer_content: "You look cute, add me on insta - cbone96")
+  Answer.create(question_id: presentation_style_question.id, answer_content: "You look cute, add me on insta - cbone96")
+  Answer.create(question_id: content_question.id, answer_content: "You look cute, add me on insta - enkay27")
 
 puts "#{User.count} Users created; #{Question.count} Questions created; #{Form.count} Forms created; #{FormQuestion.count} FormsQuestions created; #{Answer.count} Answers created."

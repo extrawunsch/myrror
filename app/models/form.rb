@@ -9,4 +9,3 @@ class Form < ApplicationRecord
   validates :presentation_key, uniqueness: true
 end
 
-Form.first.questions.map { |question| question.answers }

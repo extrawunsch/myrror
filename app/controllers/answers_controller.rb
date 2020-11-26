@@ -3,8 +3,13 @@ class AnswersController < ApplicationController
   def new
     @answer = Answer.new
     @form = Form.find(params[:form_id])
-    # @questions = @form.questions
+    @questions = @form.questions
     # puts @questions
+  end
+
+  def create
+    raise
+    @answer = Answer.find(params[answer_id])
   end
 
   def feedback
