@@ -19,11 +19,11 @@ class FormsController < ApplicationController
     @form = Form.new
     authorize @form
     @question = Question.new
-    @questions = Question.where(predefined: true)
+    @questions = Question.where(["predefined = ? and question_topic = ?", true, "General"])
   end
 
   def create
-    @questions = Question.where(predefined: true)
+    @questions = Question.where(["predefined = ? and question_topic = ?", true, "General"])
     @form = Form.new(form_params)
     @form.user = current_user
     @form.presentation_key = SecureRandom.alphanumeric(5)
@@ -32,6 +32,8 @@ class FormsController < ApplicationController
       # need to connect question with form_question if needed
       @question = Question.new(question_params)
       @question.predefined = false
+      @question.question_topic = 'General'
+      @question.question_type = 'Open Question'
       if @question.save
         redirect_to edit_form_path(@form)
       else
@@ -43,13 +45,13 @@ class FormsController < ApplicationController
   end
 
   def edit
-    @questions = Question.where(predefined: true)
+    @questions = Question.where(["predefined = ? and question_topic = ?", true, "Content"])
     @form = Form.find(params[:id])
     authorize @form
   end
 
   def update
-    @questions = Question.where(predefined: true)
+    @questions = Question.where(["predefined = ? and question_topic = ?", true, "Content"])
     @form = Form.find(params[:id])
     authorize @form
     if @form.update(form_params)
@@ -58,9 +60,9 @@ class FormsController < ApplicationController
       question_topic = params[:question_topic]
       @question = Question.new(question_content: question_content, question_type: question_type, question_topic: question_topic, predefined: false)
       if @question.save
-        redirect_to forms_path
+        redirect_to new_form_question_path(@form)
       else
-        render :new
+        render :edit
       end
     end
   end

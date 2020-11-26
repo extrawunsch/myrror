@@ -9,6 +9,14 @@
   justify-content: center;
 }
 
+.landing-page-footer{
+  justify-content: center;
+  font-size: 16px;
+  color: black;
+  font-style: lighter;
+  margin-top: 65px;
+  text-shadow: 1px black solid;
+}
 
 .landing-page-feedback-giver {
     height: 100%;
@@ -16,6 +24,7 @@
     justify-content: center;
     margin: 0 auto;
     font-size: 32px;
+    text-align: center;
 }
 
 .feedback-label {
