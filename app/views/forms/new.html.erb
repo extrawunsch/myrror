@@ -3,7 +3,7 @@
   <div class="grid-container">
     <div class="item-a">
       <div class="card-form">
-        <h4 class="mb-3">Information</h4>
+        <h5 class="mb-3">Information</h5>
           <%= simple_form_for(@form) do |f| %>
           <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Choose the dates" %>
           <%= f.input :name, label: "Title" %>
@@ -11,19 +11,10 @@
       </div>
       <div class="mb-5">
         <div class="card-form">
-          <h4 class="mb-3">Create your first question</h4>
+          <h5 class="mb-4">Add your own question or copy one from the right</h5>
           <%= simple_fields_for(@question) do |g| %>
-            <%= g.input :question_content, label: 'Add your first question' %>
-            <%= g.input :question_type, as: :radio_buttons, label: 'Add the question type', 
-              collection: ["Open Question", "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
-              collection_wrapper_tag: 'div',
-              collection_wrapper_class: 'category-wrapper',
-              item_wrapper_class: 'category-item',
-              input_html: {class: 'category-selector'} %>
-            <%= g.input :question_topic, as: :radio_buttons, label: 'Add the topic',
-              collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
-              input_html: { class: "tag-selector" },
-              item_wrapper_class: 'tag-item' %>
+            <%= g.input :question_content, as: :text, label: 'Add your first question' %>
+
           <% end %>
         </div>
         <%= f.submit 'Continue', class: 'btn btn-click' %>
@@ -31,8 +22,12 @@
       </div>
     </div>
     <div class="item-b">
+      <div class="card-questions" style="color:darkgray;">
+      <h4>Step 1</h4>
+      <h4>Add your information and the first question</h4>
+      </div>
       <div class="card-questions">
-        <h5 class="mb-5">Don't know where to start? Copy a question</h5>
+        <h5 class="mb-5" style="color:darkgray;">Don't know where to start? Copy a question</h5>
         <% @questions.each do |question| %>
           <div data-controller="clipboard" class="question-card">
             <textarea  data-target="clipboard.source" readonly><%= question.question_content %></textarea>
