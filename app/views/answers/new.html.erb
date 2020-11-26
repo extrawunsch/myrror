@@ -1,7 +1,3 @@
-<h1>TEST</h1>
-
-
-
 
 <%# <% Iteration to create every Form for the questions %>
 
@@ -35,6 +31,7 @@
                 <% when "Open Question" %>
                   <%= simple_form_for [@form, @answer] do |f| %>
                     <%= f.input :answer_content, label: "Answer" %>
+                    <%= f.hidden_field :question_id, value: question.id %>
                     <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"%>
                   <%end%>
                 <% when "Multiple-Choice" %>

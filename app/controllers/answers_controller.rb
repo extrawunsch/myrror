@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :new, :create ]
+  skip_before_action :authenticate_user!, only: [ :new, :create, :feedback ]
   def new
     @answer = Answer.new
     @form = Form.find(params[:form_id])
@@ -8,8 +8,8 @@ class AnswersController < ApplicationController
   end
 
   def create
-    raise
-    @answer = Answer.find(params[answer_id])
+    @answer = Answer.new(answer_params)
+    @answer.save
   end
 
   def feedback
@@ -25,5 +25,11 @@ class AnswersController < ApplicationController
     @form = Form.find(params[:form_id])
     @question = Question.find(params[:question_id])
     @answers = policy_scope(Answer).where(question: @question)
+  end
+
+  private
+
+  def answer_params
+    params.require(:answer).permit(:answer_content, :question_id)
   end
 end
