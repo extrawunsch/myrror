@@ -3,20 +3,16 @@
     <div class="sidebar">dashboard</div>
     <div class="form-display">
     <div class="tab-bar">
-      <ul id="menu">
-        <li style="color: black; font-weight: 500">My forms</li>
-        <li>Presets</li>
-        <li>Deleted</li>
-      </ul>
-      <div class="interactive my-3">
+      <div class="button-position">
         <%=link_to 'Back to my form', form_path(@form), class:"btn-above-page mr-5"%>
       </div>
     </div>
-    <div class="headline"><h1>Discover everyone's viewpoint:</h1></div>
     <div>
+    <hr id="divider">
+    <div class="headline"><h1>Discover everyone's viewpoint:</h1></div>
         <!-- <div class="show-content"><h1><span><%= @form.name %></span></h1></div> -->
         <div class="show-content"><h2><span>Question: <%= @question.question_content  %></span></h2></div>
-        <ul style="list-style-type:none;">
+        <ul style="list-style-type:none; border-left:1px solid #000;height:50vh;">
         <li>
           <% @answers.each do |answer| %>
           <div class="show-content"><span><%= answer.answer_content %><span></div>

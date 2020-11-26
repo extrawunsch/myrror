@@ -4,10 +4,10 @@ class FormsController < ApplicationController
   def index
     @forms = policy_scope(Form).order(created_at: :desc)
   end
-  
+
   def show
     @form = Form.find(params[:id])
-    @questions = Question.where(params[:form_id])
+    @questions = Question.where(form_id: @form)
     #@answers = Answer.where(params[:question_id])
     authorize @form
   end
