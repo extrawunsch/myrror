@@ -1,52 +1,63 @@
-<div class="background pb-5">
-  <div class="grid-container">
-    <div class="item-a mt-5">
-      <div class="card-form">
-        <h5 class="mb-3">You selected the following Information</h5>
-          <%= simple_form_for(@form) do |f| %>
-          <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Choose the dates" %>
-          <%= f.input :name, label: "Title" %>
-          <%= f.input :speaker, label: "Speaker Name" %>
-      </div>
-      <div class="mb-5">
-        <div class="card-form">
-          <h5 class="mb-3">Try it by adding another question</h5>
-          <%= simple_fields_for(@question) do |g| %>
-            <%= g.input :question_content, label: "What do you want to know from the audience?" %>
-            <%= g.input :question_topic, as: :radio_buttons, label: 'Add the topic',
-              collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
-              input_html: { class: "tag-selector" },
-              item_wrapper_class: 'tag-item' %>
-            <%= g.input :question_type, as: :radio_buttons, label: 'Add the question type', 
-              collection: ["Open Question"], #, "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
-              collection_wrapper_tag: 'div',
-              collection_wrapper_class: 'category-wrapper',
-              item_wrapper_class: 'category-item',
-              input_html: {class: 'category-selector'} %>
-          <% end %>
+<div class="background">
+  <div class="pb-5 main-container">
+    <div class="inside-container">
+      <div class="grid-container">
+        <div class="item-a mt-5">
+          <div class="card-form">
+              <%= simple_form_for(@form) do |f| %>
+              <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Chosen dates" %>
+              <%= f.input :name, label: "Chosen Title" %>
+              <%= f.input :speaker, label: "Chosen Speaker Name" %>
+          </div>
+          <div class="mb-5">
+            <div class="card-questions-focus">
+              <h5 class="mb-3">Try it by adding another question</h5>
+              <%= simple_fields_for(@question) do |g| %>
+                <%= g.input :question_content, label: "What do you want to know from the audience?" %>
+                <%= g.input :question_topic, as: :radio_buttons, label: 'Add the topic',
+                  collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+                <%= g.input :question_type, as: :radio_buttons, label: 'Add the question type', 
+                  collection: ["Open Question"], #, "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
+                  collection_wrapper_tag: 'div',
+                  collection_wrapper_class: 'category-wrapper',
+                  item_wrapper_class: 'category-item',
+                  input_html: {class: 'category-selector'} %>
+              <% end %>
+            </div>
+            <%= f.submit 'Continue', class: 'btn btn-click' %>
+            <% end %>
+          </div>
         </div>
-        <%= f.submit 'Continue', class: 'btn btn-click' %>
-        <% end %>
-      </div>
-    </div>
-    <div class="item-b mt-5">
-      <div class="card-questions" style="color:darkgray;">
-        <h4 class="mx-3">Step 2</h4>
-        <h4 class="mx-3 mb-4">Choose a topics</h4>
-        <div class="topic-card">
-          <h4 class="question_topic_tag">General</h4>
-          <p>Ask the Audience for overall feedback.</p>
-          <h4 class="question_topic_tag">Content</h4>
-          <p>Ask the audience if the content and message were clear.</p>
-          <h4 class="question_topic_tag">Body Language.</h4>
-          <p>Ask how the audience liked your body language.</p>
-          <h4 class="question_topic_tag">Speaking Style</h4>
-          <p>Ask how the audience liked your speaking style</p>
-          <h4 class="question_topic_tag">Organization</h4>
-          <p>Ask the audience if the talk was well organized.</p>
+        <div class="item-b mt-5">
+          <div class="card-questions" style="color:darkgray;">
+            <h5 class="mx-3 mt-3 mb-4">Step 3 - Choose one of the following topics</h5>
+            <div class="topic-card">
+              <h4 class="question_topic_tag">General</h4>
+              <p>Ask the Audience for overall feedback.</p>
+              <h4 class="question_topic_tag">Content</h4>
+              <p>Ask the audience if the content and message were clear.</p>
+              <h4 class="question_topic_tag">Body Language.</h4>
+              <p>Ask how the audience liked your body language.</p>
+              <h4 class="question_topic_tag">Speaking Style</h4>
+              <p>Ask how the audience liked your speaking style</p>
+              <h4 class="question_topic_tag">Organization</h4>
+              <p>Ask the audience if the talk was well organized.</p>
+            </div>
+          </div> 
+          <div class="card-questions">
+            <h5 class="mb-4 mt-3" style="color:darkgray;">Examples - Ask your audience about Body Language</h5>
+            <% @questions.each do |question| %>
+              <div data-controller="clipboard" class="question-card">
+                <textarea  data-target="clipboard.source" readonly><%= question.question_content %></textarea>
+                <button class='btn btn-outline' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
+              </div>
+              <br>
+            <% end %>
+          </div>
         </div>
-      </div> 
-         
+      </div>
     </div>
   </div>
 </div>

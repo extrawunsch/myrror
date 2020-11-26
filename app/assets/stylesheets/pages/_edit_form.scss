@@ -107,3 +107,14 @@
     background-color: $myrror;
     color: white;
   }
+
+  .question_topic_tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    border-radius: 50rem;
+    padding: 0.2rem 0.4rem;
+    background-color: $myrror;
+    color: $lightmyrror;
+    margin-right: 0.6rem;
+    margin-bottom: 0.4rem;
+  } 
