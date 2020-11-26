@@ -18,6 +18,60 @@ chris = User.create(email: 'chris@gmail.com', password: '123456')
 niklas = User.create(email: 'niklas@gmail.com', password: '123456')
 
 puts 'User done, Questions seed started'
+  predefined1_body_language = Question.create(
+    question_content: "How did you like the body language of the speaker? What did you like/dislike about it?",
+    question_topic: "Body Language",
+    question_type: "Open Question"
+    )
+
+  predefined2_body_language = Question.create(
+    question_content: "Did the speaker pay good attention to the body language?",
+    question_topic: "Body Language",
+    question_type: "Open Question"
+  )
+
+  predefined1_content = Question.create(
+    question_content: "What else would you like to see in future speeches on the same topic?",
+    question_topic: "Content",
+    question_type: "Open Question"
+  )
+
+  predefined2_content = Question.create(
+    question_content: "Was the message of the speaker clear?",
+    question_topic: "Content",
+    question_type: "Open Question"
+  )
+
+  predefined3_content = Question.create(
+    question_content: "What was the most important concept/idea you took away today?",
+    question_topic: "Content",
+    question_type: "Open Question"
+  )
+
+  predefined4_content = Question.create(
+    question_content: "What could the speaker have left out? What could she have added?",
+    question_topic: "Content",
+    question_type: "Open Question"
+  )
+
+  predefined1_general = Question.create(
+    question_content: "What did you find most useful about the presentation or speech?",
+    question_topic: "General",
+    question_type: "Open Question"
+  )
+
+  predefined2_general = Question.create(
+    question_content: "Did the speech meet your expectations?",
+    question_topic: "General",
+    question_type: "Open Question"
+  )
+
+  predefined3_general = Question.create(
+    question_content: "What did you find least useful about the speech?",
+    question_topic: "General",
+    question_type: "Open Question"
+  )
+
   body_language_question = Question.create(
     question_content: "How was my body language during the presentation?",
     question_topic: ["Body Language", "Speaking Style", "Content", "General", "Organization"].sample,

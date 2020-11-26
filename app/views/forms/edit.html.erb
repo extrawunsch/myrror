@@ -26,13 +26,13 @@
               item_wrapper_class: 'tag-item' %>
           <% end %>
         </div>
-        <%= f.submit 'Create Form', class: 'btn btn-click' %>
+        <%= f.submit 'Continue', class: 'btn btn-click' %>
         <% end %>
       </div>
     </div>
     <div class="item-b">
       <div class="card-questions">
-        <h5 class="mb-5">Don't know where to start? Copy a question</h5>
+        <h5 class="mb-5">Get inspired! Copy a question</h5>
         <% @questions.each do |question| %>
           <div data-controller="clipboard" class="question-card">
             <textarea  data-target="clipboard.source" readonly><%= question.question_content %></textarea>

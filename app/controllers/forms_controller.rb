@@ -56,9 +56,9 @@ class FormsController < ApplicationController
       question_topic = params[:question_topic]
       @question = Question.new(question_content: question_content, question_type: question_type, question_topic: question_topic, predefined: false)
       if @question.save
-        redirect_to forms_path
+        redirect_to new_form_question_path(@form)
       else
-        render :new
+        render :edit
       end
     end
   end
