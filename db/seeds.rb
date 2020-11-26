@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 User.destroy_all
 FormQuestion.destroy_all
 Question.destroy_all
@@ -34,9 +35,9 @@ puts 'User done, Questions seed started'
     question_type: ["Open Question", "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"].sample
     )
 
-  form_agnes = Form.create(name: "Talk about how to improve your public speaking skills", presented_on: "15.12.2020", presentation_key: "L3WAGON", user_id: agnes.id, speaker: "Til Schweiger")
-  form_niklas = Form.create(name: "Online Class MSc Global Business: Family Business Lecture 4", presented_on: "17.12.2020", presentation_key: "L4WAGON", user_id: niklas.id, speaker: "Atze Schroeder")
-  form_ramona = Form.create(name: "Yoga Class: Morning Salitation", presented_on: "21.12.2020", presentation_key: "CB0NE", user_id: ramona.id, speaker: "Witta Glöckner")
+  form_agnes = Form.create(name: "Talk about how to improve your public speaking skills", presented_on: "15.12.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: agnes.id, speaker: "Til Schweiger")
+  form_niklas = Form.create(name: "Online Class MSc Global Business: Family Business Lecture 4", presented_on: "17.12.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: niklas.id, speaker: "Atze Schroeder")
+  form_ramona = Form.create(name: "Yoga Class: Morning Salitation", presented_on: "21.12.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: ramona.id, speaker: "Witta Glöckner")
 
   FormQuestion.create(form_id: form_agnes.id, question_id: content_question.id)
   FormQuestion.create(form_id: form_agnes.id, question_id: presentation_style_question.id)
