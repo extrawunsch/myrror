@@ -1,7 +1,9 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "new_form";
+@import "form_success";
 @import "edit_form";
+
 
 .main-container {
   display: flex;
@@ -62,6 +64,12 @@
     padding: 0 16px;
     font-size: 28px;
   }
+}
+
+.button-position {
+  margin-left: 80%;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 #divider {

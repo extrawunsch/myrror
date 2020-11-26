@@ -1,11 +1,37 @@
-<div class="container w-100 background pb-5">
-  <div class="mx-5 w-50">
-    <h3 class="text-center pt-5 pb-3">Create your questions</h3>
-    <%= simple_form_for([@form, @question]) do |f| %>
-      <%= f.input :question_content, label: 'Add your first question' %>
-      <%= f.input :question_type, label: 'Add the question type', collection: ["Open Question", "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"] %>
-      <%= f.input :question_topic, label: 'Add a topic', collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"] %>
-      <%= f.submit 'Create Question', class: 'btn btn-click mt-3' %>
-    <% end %>
+<div class="background pb-5">
+  <div class="grid-container">
+    <div class="item-a mt-5">
+      <div class="card-form">
+        <h4 class="mb-3">Add another question</h4>
+        <%= simple_form_for([@form, @question]) do |f| %>
+          <%= f.input :question_content, label: "What do you want to know from the audience?" %>
+          <%= f.input :question_topic, as: :radio_buttons, label: 'Add the topic',
+            collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
+            input_html: { class: "tag-selector" },
+            item_wrapper_class: 'tag-item' %>
+          <%= f.input :question_type, as: :radio_buttons, label: 'Add the question type', 
+            collection: ["Open Question"],# "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'} %>
+          <%= f.submit 'Continue', class: 'btn btn-click mt-3' %>
+        <% end %>
+      </div>
+      <%= link_to 'Create Form', form_path(@form), class: 'btn btn-click mx-2 mt-3' %>
+    </div>
+    
+    <div class="item-b mt-5">
+      <div class="card-questions">
+        <h5 class="mb-5">Get inspired! Copy a question</h5>
+        <% @questions.each do |question| %>
+          <div data-controller="clipboard" class="question-card">
+            <textarea  data-target="clipboard.source" readonly><%= question.question_content %></textarea>
+            <button class='btn btn-outline' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
+          </div>
+          <br>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
+</div>>
