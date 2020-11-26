@@ -13,6 +13,11 @@ class FormPolicy < ApplicationPolicy
     end
   end
 
+  def success?
+    true
+  end
+
+
   def show?
     true
   end

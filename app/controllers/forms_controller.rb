@@ -1,3 +1,6 @@
+require 'securerandom'
+require 'rqrcode'
+
 class FormsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
@@ -23,8 +26,7 @@ class FormsController < ApplicationController
     @questions = Question.where(predefined: true)
     @form = Form.new(form_params)
     @form.user = current_user
-    # placeholder for proper presentation key
-    @form.presentation_key = rand()
+    @form.presentation_key = SecureRandom.alphanumeric(5)
     authorize @form
     if @form.save
       # need to connect question with form_question if needed
@@ -61,6 +63,12 @@ class FormsController < ApplicationController
         render :new
       end
     end
+  end
+  
+  def success
+    @form = Form.find(params[:id])
+    authorize @form
+    @qr = RQRCode::QRCode.new( 'http://myrror.org/feedback', :size => 4, :level => :h )
   end
 
   private
