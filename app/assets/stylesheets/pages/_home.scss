@@ -26,6 +26,7 @@ h1 {
   padding: 20px;
   // filter: blur(4px);
   border-radius: 8px;
+  filter: drop-shadow(0px 2px 2px $lightmyrror)
 }
 
 .card-homepage {
@@ -52,7 +53,8 @@ h1 {
   font-size: 1.3em;
   color: $myrror;
   margin: 20px;
-  color: black;
+  color: rgba(0, 0, 0, 0.73);
+  // filter: drop-shadow(0px 2px 2px $myrror);
 }
 
 .why-block{
@@ -126,7 +128,7 @@ h1 {
 }
 
 .ready-to-start-journey-text {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   color: black;
   margin-top: 50px;
@@ -145,10 +147,26 @@ h1 {
 }
 
 .your-place-to-talk-block{
-  display: flex;
   width: 25%;
   font-style: bold;
 }
+
+.your-place-to-talk-text {
+  color: $myrror;
+  font-size: 22px;
+}
+
+.your-place-to-talk-icons-block {
+  display: flex;
+  font-size: 24px;
+  padding-top: 20px;
+}
+
+.social-media {
+  color: white;
+  margin: 5px;
+}
+
 .footer-small-block {
   display: flex;
   width: 20%;
@@ -168,3 +186,4 @@ h1 {
 .CTA-buttom-page {
   font-size: 20px;
 }
+
