@@ -6,7 +6,7 @@
 
     <div class="navbar-wrapper">
       <div class="titles-navbar">
-        <span class="home-black">Home</span>
+        <%= link_to "Home", "#", class: "home-black" %>
       </div>
 
       <div class="titles-navbar">
@@ -23,47 +23,15 @@
       </div>
 
       <div class="titles-navbar">
-        <span class="btn-above-page">Login</span>
-
-         <%# <ul class="navbar-nav mr-auto"> %>
-            <%# <% if user_signed_in? %> 
-             <%# <li class="nav-item active"> %>
-              <%# <%= link_to "Home", "#", class: "nav-link" %> 
-           <%# </li> %>
-            <%# <li class="nav-item"> %>
-              <%# <%= link_to "Messages", "#", class: "nav-link" %> 
-        <%# </li> %>
-         <%# <li class="nav-item dropdown"> %>
-          <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %> 
-          <%# <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> %>
-            <%# <%= link_to "Action", "#", class: "dropdown-item" %> 
-            <%# <%= link_to "Another action", "#", class: "dropdown-item" %> 
-            <%# <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %> 
-          <%# </div> %>
-        <%# </li> %>
-      <%# <% else %> 
-        <%# <li class="nav-item"> %>
-          <%# <%= link_to "Login", new_user_session_path, class: "nav-link" %> 
-        <%# </li> %>
-      <%# <% end %> 
-    <%# </ul> %>
+        <% if user_signed_in? %> 
+        <span><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-outline" %></span>
+        <% else %>
+        <span><%= link_to "Login", new_user_session_path, class: "btn-above-page" %></span>
+        <% end %> 
       </div>
     </div>
     
-    <%# <div class="navbar navbar-expand-sm navbar-light navbar-lewagon"> %>
-  <%# <%= link_to "#", class: "navbar-brand" do %>
-    <%# <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <%# <% end %>
-
-  <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> %>
-    <%# <span class="navbar-toggler-icon"></span> %>
-  <%# </button> %>
-
-
-  <%# <div class="collapse navbar-collapse" id="navbarSupportedContent"> %>
    
-  <%# </div> %>
-<%# </div> %>
 
     <div class="banner-title">
       <h1>my:rror</h1>
