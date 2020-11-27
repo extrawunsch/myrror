@@ -149,7 +149,6 @@ puts 'User done, Questions seed started'
   FormQuestion.create(form_id: form1.id, question_id: content_question3.id)
   FormQuestion.create(form_id: form1.id, question_id: content_question4.id)
   FormQuestion.create(form_id: form1.id, question_id: body_language_question2.id)
-  FormQuestion.create(form_id: form1.id, question_id: general_question2.id)
   FormQuestion.create(form_id: form1.id, question_id: content_question2.id)
 
   FormQuestion.create(form_id: form2.id, question_id: general_question1.id)
