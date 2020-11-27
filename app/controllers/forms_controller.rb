@@ -30,12 +30,15 @@ class FormsController < ApplicationController
     authorize @form
     if @form.save
       # need to connect question with form_question if needed
+      formquestion = FormQuestion.new
+      formquestion.form_id = @form.id
       @question = Question.new(question_params)
       @question.predefined = false
       @question.question_topic = 'General'
       @question.question_type = 'Open Question'
       if @question.save
-        FormQuestion.create(form_id: params[:form_id], question_id: @question.id)
+        formquestion.question_id = @question.id
+        formquestion.save
         redirect_to edit_form_path(@form)
       else
         render :new

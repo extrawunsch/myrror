@@ -1,5 +1,15 @@
 // FOR RADIO BUTTONS
 
+.textarea-questions {
+    resize: none;
+    overflow: hidden;
+    cursor: default;
+}
+
+.textarea-questions:focus, input:focus {
+  outline: 0;
+}
+
 .category-wrapper {
     display: flex;
     justify-content: space-between;
@@ -33,12 +43,12 @@
   
   
   #question_type_open_question + label {
-    color: $purple;
+    color: $rouge;
   }
   
   #question_type_open_question:checked + label {
-    background-color: $purple;
-    border-color: $purple;
+    background-color: $rouge;
+    border-color: $rouge;
   }
   
   

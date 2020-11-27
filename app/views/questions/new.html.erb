@@ -4,6 +4,12 @@
       <div class="card-form">
         <h4 class="mb-3">Add another question</h4>
         <%= simple_form_for([@form, @question]) do |f| %>
+              <div class="form-group">
+                <% @form.questions.each do |form_question| %>
+                  <label for="text"><%= form_question.question_content %></label>
+                  <input class="form-control" type="text">
+                <% end %>
+              </div>
           <%= f.input :question_content, label: "What do you want to know from the audience?" %>
           <%= f.input :question_topic, as: :radio_buttons, label: 'Add the topic',
             collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 

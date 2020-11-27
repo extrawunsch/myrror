@@ -10,7 +10,12 @@
   margin: 12px 0px 12px 12px;
 }
 
-textarea {
+.btn-rouge:hover {
+  text-decoration: none;
+  background: $rouge;
+}
+
+.textarea {
   resize: none;
   overflow: hidden;
   border: none;
@@ -21,14 +26,14 @@ textarea {
   cursor: default;
 }
 
-textarea:focus, input:focus {
+.textarea:focus, input:focus {
   outline: 0;
 }
 
-.btn-outline {
+.btn-rouge {
   text-decoration: none;    
-  color: $myrror;
-  border: 1px solid $myrror;
+  color: $rouge;
+  border: 1px solid $rouge;
   padding: 4px 12px;
   border-radius: 12px;
   font-weight: lighter;
@@ -36,9 +41,10 @@ textarea:focus, input:focus {
   margin-bottom: 0.4rem;
 }
 
-.btn-outline:hover {
+.btn-rouge:hover {
+  color: white;
   text-decoration: none;
-  background: $myrror;
+  background: $rouge
 }
 
 .card-form {
@@ -133,12 +139,12 @@ textarea:focus, input:focus {
 
 
 #question_question_type_open_question + label {
-  color: $purple;
+  color: $rouge;
 }
 
 #question_question_type_open_question:checked + label {
-  background-color: $purple;
-  border-color: $purple;
+  background-color: $rouge;
+  border-color: $rouge;
 }
 
 
