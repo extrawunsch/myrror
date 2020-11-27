@@ -50,7 +50,7 @@
 
 .btn-above-page-navbar:hover {
   // text-decoration: none;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 30px rgb(0, 0, 0);
   color: white;
   background: $myrror-hover;
   border: 1px solid $myrror-hover;
@@ -112,7 +112,7 @@ h1 {
   margin-top: 100px;
 }
 
-.btn-above-page-homepage {
+.btn-above-page-banner {
   text-decoration: none;
   color: white;
   background: $myrror;
@@ -125,7 +125,7 @@ h1 {
   font-size: 25px;
 }
 
-.btn-above-page-homepage:hover {
+.btn-above-page-banner:hover {
   text-decoration: none;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   color: white;
@@ -284,6 +284,26 @@ h1 {
   // font-weight: bold;
   color: black;
   margin-top: 50px;
+}
+
+.btn-above-page-ready {
+  text-decoration: none;
+  color: white;
+  background: $myrror;
+  border: 1px solid $myrror;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: 400;
+  transition: 0.4s ease;
+
+}
+
+.btn-above-page-ready:hover {
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  color: white;
+  background: $myrror-hover;
+  border: 1px solid $myrror-hover;
 }
 
 // FOOTER
