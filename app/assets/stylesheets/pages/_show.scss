@@ -1,3 +1,111 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "new_form";
+
+
+.main-container-show {
+  display: flex;
+  height: 1000px;
+}
+
+.sidebar-show {
+  width: 240px;
+  height: 100%;
+  margin-right: 24px;
+  background-color: royalblue;
+}
+
+.headline-show {
+  color: $myrror;
+}
+
+.show-content {
+  color: black;
+  border-radius: 24px;
+  margin: 12px;
+  padding: 12px;
+  background: white;
+  width: fit-content;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(52, 203, 176, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(52, 203, 176, 0.2);
+  box-shadow:  4px 4px 8px 0px rgba(52, 203, 176, 0.2);
+}
+
+.show-questions {
+  padding: 100px;
+}
+
+.form-display-show {
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 2px 4px 4px 0px rgba(0,0,0,0.45);
+  padding: 48px 0px 48px 96px;
+  background: $lightmyrror;
+  border-radius: 24px 0 0 24px;
+  margin: 12px 0px 12px 12px;
+}
+
+.tab-bar-show {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 48px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    display: flex;
+  }
+
+  #menu li{
+    list-style: none;
+    padding: 0 16px;
+    font-size: 28px;
+  }
+}
+
+.btn-above-page-show {
+  text-decoration: none;
+  color: white;
+  background: $myrror;
+  border: 1px solid $myrror;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: 0.4s ease;
+}
+
+.btn-above-page-show:hover {
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+#divider-show {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.9);
+  margin: 1em 0 1em 16px ;
+  padding: 0;
+}
+
+.btn-outline-show {
+  text-decoration: none;
+  color: $myrror;
+  border: 1px solid $myrror;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: 0.4s ease;
+  margin-top: 30px;
+}
+
+.btn-outline-show:hover {
+  text-decoration: none;
+  background: $myrror;
+  color: white;
+}
