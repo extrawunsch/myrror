@@ -1,21 +1,192 @@
-
-<div class="banner" style="background-image: linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1)), url(https://images.unsplash.com/photo-1495722281458-25edbdb08a1c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1900&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1)), url(https://images.unsplash.com/photo-1482996047029-21dd6f306f3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80);">
   <div class="container">
-    <div class="banner-title">
-    <h1>my:rror</h1>
-    <div class="color-backdrop"></div>
+ 
+    <div class="navbar-wrapper">
+      <div class="titles-navbar">
+         <span><%= link_to "Home", "#", class: "home-black" %></span>
+      </div>
+ 
+      <div class="titles-navbar">
+         <span><%= link_to "Our solution", "#", class: "titles-navbar-white" %></span>
+      </div>
+ 
+      <div class="titles-navbar">
+        <span><%= link_to "Pricing", "#", class: "titles-navbar-white" %></span>
+      </div>
+ 
+      <div class="titles-navbar">
+        <span><%= link_to "About us", "#", class: "titles-navbar-white" %></span>
+      </div>
+ 
+      <div class="titles-navbar">
+        <% if user_signed_in? %> 
+        <span><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-outline" %></span>
+        <% else %>
+        <span><%= link_to "Login", new_user_session_path, class: "btn-above-page-navbar" %></span>
+        <% end %> 
+      </div>
     </div>
-    <h1>honest, anonymous feedback app</h1>
-    <a class="btn-above-page m-3" href="#">Apply now</a>
+   
+    <div class="banner-title">
+      <h1>myrror</h1>
+      <div class="color-backdrop"></div>
+    
+      <h1>get honest, anonymous feedback</h1>
+      <div class="color-backdrop-2"></div>
+ 
+      <h4 class="tagline">Speak your mind. Know your impact.</h4></div>
+    </div>
+    
+    <div class="CTA-button">
+    <span><%= link_to "Get your feedback", new_form_path, class: "btn-above-page-banner" %></span>
+    </div>
+ 
   </div>
 </div>
-<div class="content container">
+ 
+ 
+<div class="content">
   <div class="row justify-content-center">
-    <div class="col-12 col-md-10 col-lg-10">
-      <h1>Pages#home</h1>
-      <div class="btn-above-page m-3"></div>
-      <div class="btn-outline m-3"></div>
-      <div class="btn-click m-3"></div>
-      <div class="btn-standard m-3"></div>
+    <div class="col-12">
+ 
+      <div class="why-block">
+        <h1 class="why">Why ?</h1>
+ 
+        <div class="tripple-wrapper">
+          
+          <div class="tripple-card">
+          <i class="fas fa-balance-scale"></i>
+          <p class="title-card">Honest feedback</p>
+          <p class="tripple-wrapper-content">It's anonymous.
+          People are not afraid anymore
+          to say what they think.
+          They will provide an honest 
+          and qualitative feedback.</p>
+          </div>
+          
+          <div class="tripple-card">
+          <i class="fas fa-lock-open"></i>
+          <p class="title-card">Think broader</p>
+          <p class="tripple-wrapper-content">Discover different ways of thinking you didn't think about. <br>
+          It will give you a wider aspect of your speech and that will help you to improve your way to pitch.</p>
+          </div>
+ 
+          <div class="tripple-card">
+          <i class="fas fa-history"></i>
+          <p class="title-card">Time-saving</p>
+          <p class="tripple-wrapper-content">With my:rror, creating your form is quick and easy, thanks to some predefined questions. Everything is thought to save you time.</p>
+          </div>
+        
+        </div>
+      </div>
+ 
+      <div class="quote-container">
+        <div class="quote">
+        “We all need people who will give us feedback. That's how we improve.”<br>
+        </div>
+        
+        <div class="bill-gates">
+        <p>Bill Gates</p>
+        </div>
+ 
+      </div>
+ 
+      <div class="card-homepage">
+        <div><h1 class="how">How does it work?</h1>
+        </div>
+        <div class="container-wrapper">
+          <div class="container-with-3-points">
+ 
+            <div class="key-points">
+              <i class="far fa-question-circle bottom-icons"></i>
+              <p>Create your questions<br>or use preformed questions </p>
+            </div>
+ 
+            <div class="key-points">
+              <i class="fas fa-qrcode bottom-icons"></i>
+              <p>Get your personalized code or QR code<br>
+              to give access to the form to your audience.</p>
+            </div>
+ 
+            <div class="key-points">
+              <i class="fas fa-thumbs-up bottom-icons"></i>
+              <p>Receive valuable feedback data to improve<br>yourself and to share on social media.</p>
+            </div>
+          </div>
+        
+          <div class="iphone">
+          <%=image_tag("iphonecapture.png")%>
+          </div>
+        </div>
+        
+      </div>
+ 
+      <div class="ready-to-start-journey">
+      <div class="ready-to-start-journey-text"><p>Ready to start the journey?</p></div>
+      <span><%= link_to "Create my:form", new_form_path, class: "CTA-buttom-page btn-above-page-ready" %></span>
+      
+      </div>
+ 
+      <div class="footer">
+        <div class="footer-up">
+          <div class="your-place-to-talk-block">
+            <div class="your-place-to-talk-text">Your place to talk :</div>
+            <div class="your-place-to-talk-icons-block">
+              <span><%= link_to "", "#", class: "fab fa-facebook-square social-media" %></span>
+              <span><%= link_to "", "#", class: "fab fa-instagram social-media" %></span>
+              <span><%= link_to "", "#", class: "fab fa-linkedin-in social-media" %></span>
+              <span><%= link_to "", "#", class: "fab fa-youtube social-media" %></span>
+            </div>
+          </div>
+ 
+          <div class="footer-small-block">
+            <div class="title-footer-small-block">Company
+            </div>
+              <div>
+                <span><%= link_to "Jobs", "#", class: "subtitles-footer-small-block" %></span>
+                <br>
+                <span><%= link_to "About", "#", class: "subtitles-footer-small-block" %></span>
+              </div>
+          </div>
+ 
+          <div class="footer-small-block">
+            <div class="title-footer-small-block">Ressources
+            </div>
+              <div>
+                <span><%= link_to "Blog", "#", class: "subtitles-footer-small-block" %></span>
+                <br>
+                <span><%= link_to "Partners", "#", class: "subtitles-footer-small-block" %></span>
+                <br>
+                <span><%= link_to "Support", "#", class: "subtitles-footer-small-block" %></span>
+              </div>
+          </div>
+ 
+          <div class="footer-small-block">
+            <div class="title-footer-small-block">Policies
+            </div>
+              <div>
+                <span><%= link_to "Terms", "#", class: "subtitles-footer-small-block" %></span>
+                <br>
+                <span><%= link_to "Policy", "#", class: "subtitles-footer-small-block" %></span>
+              </div>
+          </div>
+        </div>
+ 
+        <div class="hr-tag">
+        </div>
+ 
+        <div class="footer-down">
+          <div class="footer-down-logo">
+            <%=image_tag("logo_dark_background.png")%>
+            <div class="myrror-wrapper"><p>my:rror</p></div>
+          </div>
+ 
+          <div>
+             <span><%= link_to "Sign up", new_user_session_path, class: "footer-down-sign-up btn-above-page" %></span>
+          </div>
+        </div>
+ 
+      </div>
     </div>
+  </div>
 </div>
