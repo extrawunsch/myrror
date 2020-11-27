@@ -16,21 +16,24 @@
 }
 
 .btn-outline {
-  text-decoration: none;    
+  text-decoration: none;
   color: $myrror;
   border: 1px solid $myrror;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
   transition: 0.4s ease;
+  display: flex;
+  align-items: center;
 }
 
 .btn-outline:hover {
   text-decoration: none;
   background: $myrror;
+  color: white;
 }
 
-.btn-click {  
+.btn-click {
   background: $myrror;
   text-decoration: none;
   color: white;
@@ -41,14 +44,14 @@
   transition: 0.4s ease;
 }
 
-.btn-click:hover { 
+.btn-click:hover {
   text-decoration: none;
   -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.35);
   -moz-box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.35);
   box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.35);
 }
 
-.btn-standard {  
+.btn-standard {
   background: $myrror;
   text-decoration: none;
   color: white;

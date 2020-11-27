@@ -28,11 +28,13 @@
   color: $myrror;
 }
 
-.show-content span {
-  background-color: white;
-  margin: 12px;
+.show-content-show {
+  color: black;
   border-radius: 24px;
+  margin: 12px;
   padding: 12px;
+  background: white;
+  width: fit-content;
 }
 
 .form-display {
@@ -66,11 +68,25 @@
   }
 }
 
-.button-position {
-  margin-left: 80%;
-  margin-top: 3px;
-  margin-bottom: 3px;
+.btn-above-page-show {
+  text-decoration: none;
+  color: white;
+  background: $myrror;
+  border: 1px solid $myrror;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: 0.4s ease;
+  display: flex;
+  align-items: center;
 }
+
+.btn-above-page-show:hover {
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 #divider {
   display: block;
