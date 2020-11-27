@@ -1,10 +1,16 @@
 <div class="background pb-5">
   <div class="grid-container">
-    <div class="item-a mt-5">
+    <div class="item-a mt-2">
       <div class="card-form">
-        <h4 class="mb-3">Add another question</h4>
-        <%= simple_form_for([@form, @question]) do |f| %>
-          <%= f.input :question_content, label: "What do you want to know from the audience?" %>
+        <h4 class="mb-3">Add more questions</h4>
+        <%= simple_form_for([@form, @question], remote: true) do |f| %>
+          <div class="form-group">
+            <% @form.questions.each do |form_question| %>
+              <label for="text"><%= form_question.question_content %></label>
+              <textarea disabled="yes" class="form-control textarea-questions mb-3" type="text"></textarea>
+            <% end %>
+          </div>
+          <%= f.input :question_content, placeholder: "What else do you want to know from the audience?", label: "Add another question" %>
           <%= f.input :question_topic, as: :radio_buttons, label: 'Add the topic',
             collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
             input_html: { class: "tag-selector" },
@@ -18,20 +24,22 @@
           <%= f.submit 'Continue', class: 'btn btn-click mt-3' %>
         <% end %>
       </div>
-      <%= link_to 'Create Form', form_path(@form), class: 'btn btn-click mx-2 mt-3' %>
     </div>
     
-    <div class="item-b mt-5">
+    <div class="item-b mt-2">
       <div class="card-questions">
-        <h5 class="mb-5">Get inspired! Copy a question</h5>
+        <h5 class="mb-5 mt-3">Get inspired! Copy a question</h5>
         <% @questions.each do |question| %>
           <div data-controller="clipboard" class="question-card">
-            <textarea  data-target="clipboard.source" readonly><%= question.question_content %></textarea>
-            <button class='btn btn-outline' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
+            <textarea class="textarea" data-target="clipboard.source" readonly><%= question.question_content %></textarea>
+            <button class='btn btn-rouge' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
           </div>
           <br>
         <% end %>
       </div>
     </div>
   </div>
-</div>>
+      <div class="mb-3 d-flex justify-content-center">
+      <%= link_to 'Create Form', success_form_path(@form), class: 'btn btn-create mx-2 mt-3' %>
+    </div>
+</div>

@@ -22,6 +22,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     authorize @question
     if @question.save
+      FormQuestion.create(form_id: @form.id, question_id: @question.id)
       redirect_to new_form_question_path(@form)
     else
       render :new

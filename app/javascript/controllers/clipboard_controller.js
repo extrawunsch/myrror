@@ -5,6 +5,5 @@ export default class extends Controller {
   copy() {
     this.sourceTarget.select()
     document.execCommand("copy")
-    alert("Copied to clipboard!");
   }
 }

@@ -1,4 +1,31 @@
 // FOR RADIO BUTTONS
+.btn-create {  
+  background: $rouge;
+  text-decoration: none;
+  color: white;
+  border: 1px solid $rouge;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: 0.4s ease;
+}
+
+.btn-create:hover { 
+  text-decoration: none;
+  -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.35);
+  box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.35);
+}
+
+.textarea-questions {
+    resize: none;
+    overflow: hidden;
+    cursor: default;
+}
+
+.textarea-questions:focus, input:focus {
+  outline: 0;
+}
 
 .category-wrapper {
     display: flex;
@@ -33,12 +60,12 @@
   
   
   #question_type_open_question + label {
-    color: $purple;
+    color: $rouge;
   }
   
   #question_type_open_question:checked + label {
-    background-color: $purple;
-    border-color: $purple;
+    background-color: $rouge;
+    border-color: $rouge;
   }
   
   
@@ -107,3 +134,14 @@
     background-color: $myrror;
     color: white;
   }
+
+  .question_topic_tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    border-radius: 50rem;
+    padding: 0.2rem 0.4rem;
+    background-color: $myrror;
+    color: $lightmyrror;
+    margin-right: 0.6rem;
+    margin-bottom: 0.4rem;
+  } 
