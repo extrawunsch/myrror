@@ -1,4 +1,21 @@
 // FOR RADIO BUTTONS
+.btn-create {  
+  background: $rouge;
+  text-decoration: none;
+  color: white;
+  border: 1px solid $rouge;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: 0.4s ease;
+}
+
+.btn-create:hover { 
+  text-decoration: none;
+  -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.35);
+  box-shadow: inset 2px 2px 2px 0px rgba(0,0,0,0.35);
+}
 
 .textarea-questions {
     resize: none;
