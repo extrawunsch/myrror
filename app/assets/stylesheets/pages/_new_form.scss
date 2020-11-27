@@ -202,16 +202,16 @@
   font-size: 0.8rem;
   border-radius: 50rem;
   padding: 0.4rem 0.6rem;
-  background-color: $myrror;
-  color: $lightmyrror;
-  border: 1px solid $lightmyrror;
+  background-color: $lightmyrror;
+  color: $myrror;
+  border: 1px solid $myrror;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
 }
 
 .tag-selector:checked + label {
-  background-color: $lightmyrror;
-  color: $myrror;
+  background-color: $myrror;
+  color: $lightmyrror;
   border: 1px solid $myrror;
 }
 

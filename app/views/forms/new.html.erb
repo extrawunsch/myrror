@@ -1,9 +1,9 @@
 <div class="background">
   <div class="pb-5 main-container">
     <div class="inside-container">
-      <h1 style="color:darkgray;" class="text-center pt-5 mb-3">Create your form</h1>
       <div class="grid-container">
-        <div class="item-a">
+        <div class="item-a pt-5">
+          <h3 style="color:darkgray;" class="text-center mb-3">Create your form</h3>
           <div class="card-questions-focus">
             <h4 style="color:darkgray;" class="mb-5">Step 1 - Add some information on the form</h4>
               <%= simple_form_for(@form, remote: true) do |f| %>
@@ -13,12 +13,12 @@
           </div>
         </div>
         
-        <div class="item-b">
+        <div class="item-b pt-5">
           <div class="card-questions">
             <h5 class="mb-4 mt-3" style="color:darkgray;">Don't know where to start? Copy a question</h5>
             <% @questions.each do |question| %>
               <div data-controller="clipboard" class="question-card">
-                <textarea  data-target="clipboard.source" readonly><%= question.question_content %></textarea>
+                <textarea class="textarea" data-target="clipboard.source" readonly><%= question.question_content %></textarea>
                 <button class='btn btn-rouge' data-action="clipboard#copy" data-no-turbolink="true"><i class="far fa-clipboard"></i></button>
               </div>
               <br>

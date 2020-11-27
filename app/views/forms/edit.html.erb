@@ -5,7 +5,7 @@
         <div class="item-a mt-5">
           <div class="card-form">
             <h5 class="mb-3">Information</h5>
-              <%= simple_form_for(@form) do |f| %>
+              <%= simple_form_for(@form, remote: true) do |f| %>
               <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: false %>
               <%= f.input :name, label: false %>
               <%= f.input :speaker, label: false %>
@@ -16,8 +16,8 @@
               <h5 class="mb-3">Try it by adding another question</h5>
               <div class="form-group">
                 <% @form.questions.each do |form_question| %>
-                  <label for="text"><%= "1. #{form_question.question_content}" %></label>
-                  <textarea disabled="yes" class="form-control textarea-questions" type="text"></textarea>
+                  <label for="text"><%= form_question.question_content %></label>
+                  <textarea disabled="yes" class="form-control textarea-questions mb-3" type="text"></textarea>
                 <% end %>
               </div>
               <%= simple_fields_for(@question) do |g| %>

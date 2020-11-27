@@ -3,7 +3,7 @@
     <div class="item-a mt-2">
       <div class="card-form">
         <h4 class="mb-3">Add more questions</h4>
-        <%= simple_form_for([@form, @question]) do |f| %>
+        <%= simple_form_for([@form, @question], remote: true) do |f| %>
           <div class="form-group">
             <% @form.questions.each do |form_question| %>
               <label for="text"><%= form_question.question_content %></label>
