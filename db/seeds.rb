@@ -24,7 +24,7 @@ puts 'User done, Questions seed started'
     question_topic: "Body Language",
     question_type: "Open Question",
     predefined: true
-    )
+  )
 
   predefined2_body_language = Question.create(
     question_content: "Did the speaker pay good attention to the body language?",
@@ -82,40 +82,94 @@ puts 'User done, Questions seed started'
     predefined: true
   )
 
-  body_language_question = Question.create(
-    question_content: "How was my body language during the presentation?",
-    question_topic: ["Body Language", "Speaking Style", "Content", "General", "Organization"].sample,
-    question_type: ["Open Question","Open Question"].sample
+  general_question1 = Question.create(
+    question_content: "Did the speech meet your expectations?",
+    question_topic: "General",
+    question_type: "Open Question"
+  )
+
+  general_question2 = Question.create(
+    question_content: "What did you find most useful about the presentation?",
+    question_topic: "General",
+    question_type: "Open Question"
+  )
+
+  body_language_question1 = Question.create(
+    question_content: "Did the speaker pay good attention to the body language?",
+    question_topic: "Body Language",
+    question_type: "Open Question"
     )
-  presentation_style_question = Question.create(
-    question_content: "What annoyed you the most regarding the presentation style?",
-    question_topic: ["Body Language", "Speaking Style", "Content", "General", "Organization"].sample,
-    question_type: ["Single-Choice","Single-Choice"].sample
-    )
-  content_question = Question.create(
+  body_language_question2 = Question.create(
+    question_content: "How did you like the body language of the speaker? What did you like/dislike about it?",
+    question_topic: "Body Language",
+    question_type: "Open Question"
+  )
+
+  content_question1 = Question.create(
     question_content: "Did the transmitted content met your expections?",
-    question_topic: ["Body Language", "Speaking Style", "Content", "General", "Organization"].sample,
-    question_type: ["Multiple-Choice", "Multiple-Choice"].sample
+    question_topic: "Content",
+    question_type: "Open Question"
     )
 
-  form_agnes = Form.create(name: "Talk about how to improve your public speaking skills", presented_on: "15.12.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: agnes.id, speaker: "Til Schweiger")
-  form_niklas = Form.create(name: "Online Class MSc Global Business: Family Business Lecture 4", presented_on: "17.12.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: niklas.id, speaker: "Atze Schroeder")
-  form_ramona = Form.create(name: "Yoga Class: Morning Salitation", presented_on: "21.12.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: ramona.id, speaker: "Witta Glöckner")
+    content_question2 = Question.create(
+      question_content: "What else would you like to see in future speeches on the same topic?",
+      question_topic: "Content",
+      question_type: "Open Question"
+    )
+  
+    content_question3 = Question.create(
+      question_content: "Was the message of the speaker clear?",
+      question_topic: "Content",
+      question_type: "Open Question"
+    )
+  
+    content_question4 = Question.create(
+      question_content: "What was the most important concept/idea you took away today?",
+      question_topic: "Content",
+      question_type: "Open Question"
+    )
+  
+    content_question5 = Question.create(
+      question_content: "What could the speaker have left out? What could she have added?",
+      question_topic: "Content",
+      question_type: "Open Question"
+    )
+  
+    content_question6 = Question.create(
+      question_content: "What did you find least useful about the speech?",
+      question_topic: "Content",
+      question_type: "Open Question"
+    )
+  
+  form1 = Form.create(name: "Ted Talk: What do top students do differently?", presented_on: "05.01.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: niklas.id, speaker: "Niklas Koch")
+  form2 = Form.create(name: "Webinar: I finished my Coding bootcamp - Insights and Learnings", presented_on: "07.12.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: niklas.id, speaker: "Niklas Koch")
+  form3 = Form.create(name: "Webinar: How to find a job in tech after Coding bootcamp", presented_on: "08.01.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: niklas.id, speaker: "Niklas Koch")
 
-  FormQuestion.create(form_id: form_agnes.id, question_id: content_question.id)
-  FormQuestion.create(form_id: form_agnes.id, question_id: presentation_style_question.id)
-  FormQuestion.create(form_id: form_agnes.id, question_id: body_language_question.id)
-  FormQuestion.create(form_id: form_niklas.id, question_id: content_question.id)
-  FormQuestion.create(form_id: form_niklas.id, question_id: presentation_style_question.id)
-  FormQuestion.create(form_id: form_niklas.id, question_id: body_language_question.id)
-  FormQuestion.create(form_id: form_ramona.id, question_id: content_question.id)
-  FormQuestion.create(form_id: form_ramona.id, question_id: presentation_style_question.id)
-  FormQuestion.create(form_id: form_ramona.id, question_id: body_language_question.id)
+  FormQuestion.create(form_id: form1.id, question_id: general_question1.id)
+  FormQuestion.create(form_id: form1.id, question_id: content_question3.id)
+  FormQuestion.create(form_id: form1.id, question_id: content_question4.id)
+  FormQuestion.create(form_id: form1.id, question_id: body_language_question2.id)
+  FormQuestion.create(form_id: form1.id, question_id: general_question2.id)
+  FormQuestion.create(form_id: form1.id, question_id: content_question2.id)
 
-  Answer.create(question_id: content_question.id, answer_content: "Inspirational talk, but you tend to speak too fast")
-  Answer.create(question_id: presentation_style_question.id, answer_content: "I really dislike that you do not include the whole audience into your lectures")
-  Answer.create(question_id: body_language_question.id, answer_content: "You look cute, add me on insta - cbone96")
-  Answer.create(question_id: presentation_style_question.id, answer_content: "You look cute, add me on insta - cbone96")
-  Answer.create(question_id: content_question.id, answer_content: "You look cute, add me on insta - enkay27")
+  FormQuestion.create(form_id: form2.id, question_id: general_question1.id)
+  FormQuestion.create(form_id: form2.id, question_id: content_question3.id)
+  FormQuestion.create(form_id: form2.id, question_id: content_question4.id)
+  FormQuestion.create(form_id: form2.id, question_id: body_language_question2.id)
+  FormQuestion.create(form_id: form2.id, question_id: general_question2.id)
+  FormQuestion.create(form_id: form2.id, question_id: content_question2.id)
+
+  FormQuestion.create(form_id: form3.id, question_id: general_question1.id)
+  FormQuestion.create(form_id: form3.id, question_id: content_question3.id)
+  FormQuestion.create(form_id: form3.id, question_id: content_question4.id)
+  FormQuestion.create(form_id: form3.id, question_id: body_language_question2.id)
+  FormQuestion.create(form_id: form3.id, question_id: general_question2.id)
+  FormQuestion.create(form_id: form3.id, question_id: content_question2.id)
+
+  Answer.create(question_id: general_question1.id, answer_content: "Inspirational talk, but you tend to speak too fast")
+  Answer.create(question_id: general_question1.id, answer_content: "I really dislike that you do not include the whole audience into your lectures")
+  Answer.create(question_id: general_question1.id, answer_content: "You look cute, add me on insta - cbone96")
+  Answer.create(question_id: general_question1.id, answer_content: "You look cute, add me on insta - cbone96")
+  Answer.create(question_id: general_question1.id, answer_content: "You look cute, add me on insta - enkay27")
 
 puts "#{User.count} Users created; #{Question.count} Questions created; #{Form.count} Forms created; #{FormQuestion.count} FormsQuestions created; #{Answer.count} Answers created."
