@@ -37,7 +37,7 @@
 }
 
 .form-display {
-  width: 100%;
+  width: calc(100vw - 200px);
   height: 100%;
   box-shadow: inset 2px 4px 4px 0px rgba(0,0,0,0.45);
   padding: 48px 0px 48px 96px;

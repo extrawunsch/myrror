@@ -24,19 +24,18 @@
 
 .sidebar a {
   display: block;
-  color: black;
+  color: $gray;
   padding: 16px;
   text-decoration: none;
+  border-radius: 0 24px 24px 0;
 }
  
 .sidebar a.active {
-  background-color: $myrror;
-  color: white;
+  color: black;
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
+  color: $myrror;
 }
 
 @media screen and (max-width: 700px) {
