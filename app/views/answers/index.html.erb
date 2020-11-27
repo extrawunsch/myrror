@@ -3,9 +3,7 @@
     <div class="sidebar">dashboard</div>
     <div class="form-display">
     <div class="tab-bar">
-      <div class="button-position">
-        <%=link_to 'Back to my form', form_path(@form), class:"btn-above-page mr-5"%>
-      </div>
+        <%=link_to 'Back to my form', form_path(@form), class:"btn-above-page-show mr-5"%>
     </div>
     <div>
     <hr id="divider">
@@ -15,7 +13,7 @@
         <ul style="list-style-type:none; border-left:1px solid #000;height:50vh;">
         <li>
           <% @answers.each do |answer| %>
-          <div class="show-content"><span><%= answer.answer_content %><span></div>
+          <div class="show-content"><%= answer.answer_content %></div>
         </li>
         <% end %>
         </ul>

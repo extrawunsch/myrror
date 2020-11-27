@@ -3,18 +3,19 @@
     <div class="sidebar">dashboard</div>
     <div class="form-display">
     <div class="tab-bar">
-      <div class="button-position">
-        <%=link_to "Back to all my Forms", forms_path, class:"btn-above-page mr-5"%>
-      </div>
+        <%=link_to "Back to all my Forms", forms_path, class:"btn-above-page-show mr-5"%>
     </div>
     <div>
       <hr id="divider">
         <div class="headline"><h1>Here's your form:</h1></div>
-        <div class=show-content><h1><span> <%= @form.name %> | <%= @form.presented_on %> </span></h1></div>
+        <h2 class="show-content"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %> </h2>
         <ul style="list-style-type:none; border-left:1px solid #000;height:50vh">
          <% @form.questions.each do |question|  %>
-          <li>
-            <div class="show-content"><span><%= question.question_content %> | <%= link_to "See all #{question.answers.count} Answers", form_question_answers_path(@form, question) %><span></div>
+          <li class="d-flex align-items-center">
+            <div class="show-content">
+            <%= question.question_content %>
+            </div>
+            <%= link_to "See all #{question.answers.count} Answers", form_question_answers_path(@form, question) %>
           </li>
         <% end %>
         </ul>
