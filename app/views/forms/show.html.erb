@@ -1,13 +1,12 @@
 <div class="background">
-  <div class="main-container">
+  <div class="main-container-show">
     <div class="sidebar">dashboard</div>
-    <div class="form-display">
-    <div class="tab-bar">
-        <%=link_to "Back to all my Forms", forms_path, class:"btn-above-page-show mr-5"%>
+    <div class="form-display-show">
+    <div class="tab-bar-show">
+        <%=link_to "Back to all my Forms", forms_path, class:"btn btn-outline mr-5"%>
     </div>
     <div>
       <hr id="divider">
-        <div class="headline"><h1>Here's your form:</h1></div>
         <h2 class="show-content"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %> </h2>
         <ul style="list-style-type:none; border-left:1px solid #000;height:50vh">
          <% @form.questions.each do |question|  %>
@@ -15,9 +14,12 @@
             <div class="show-content">
             <%= question.question_content %>
             </div>
-            <%= link_to "See all #{question.answers.count} Answers", form_question_answers_path(@form, question) %>
+            <%= link_to "See all #{question.answers.count} Answers", form_question_answers_path(@form, question), class:"btn-above-page-show" %>
           </li>
         <% end %>
+          <div class="tab-bar-show">
+            <%= link_to "Add a new question", new_form_question_path(@form), class:"btn-outline-show mr-5"  %>
+         </div>
         </ul>
       </div>
     </div>
