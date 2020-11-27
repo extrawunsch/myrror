@@ -61,6 +61,13 @@ puts 'User done, Questions seed started'
     predefined: true
   )
 
+  predefined5_content = Question.create(
+    question_content: "What did you find least useful about the speech?",
+    question_topic: "Content",
+    question_type: "Open Question",
+    predefined: true
+  )
+
   predefined1_general = Question.create(
     question_content: "What did you find most useful about the presentation or speech?",
     question_topic: "General",
@@ -70,13 +77,6 @@ puts 'User done, Questions seed started'
 
   predefined2_general = Question.create(
     question_content: "Did the speech meet your expectations?",
-    question_topic: "General",
-    question_type: "Open Question",
-    predefined: true
-  )
-
-  predefined3_general = Question.create(
-    question_content: "What did you find least useful about the speech?",
     question_topic: "General",
     question_type: "Open Question",
     predefined: true

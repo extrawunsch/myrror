@@ -1,5 +1,5 @@
 require 'securerandom'
-require 'rqrcode'
+#require 'rqrcode'
 
 class FormsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
@@ -30,11 +30,15 @@ class FormsController < ApplicationController
     authorize @form
     if @form.save
       # need to connect question with form_question if needed
+      formquestion = FormQuestion.new
+      formquestion.form_id = @form.id
       @question = Question.new(question_params)
       @question.predefined = false
       @question.question_topic = 'General'
       @question.question_type = 'Open Question'
       if @question.save
+        formquestion.question_id = @question.id
+        formquestion.save
         redirect_to edit_form_path(@form)
       else
         render :new
@@ -45,13 +49,13 @@ class FormsController < ApplicationController
   end
 
   def edit
-    @questions = Question.where(["predefined = ? and question_topic = ?", true, "Content"])
+    @questions = Question.where(["predefined = ? and question_topic = ?", true, "Body Language"])
     @form = Form.find(params[:id])
     authorize @form
   end
 
   def update
-    @questions = Question.where(["predefined = ? and question_topic = ?", true, "Content"])
+    @questions = Question.where(["predefined = ? and question_topic = ?", true, "Body Language"])
     @form = Form.find(params[:id])
     authorize @form
     if @form.update(form_params)
@@ -60,6 +64,7 @@ class FormsController < ApplicationController
       question_topic = params[:question_topic]
       @question = Question.new(question_content: question_content, question_type: question_type, question_topic: question_topic, predefined: false)
       if @question.save
+        FormQuestion.create(form_id: @form.id, question_id: @question.id)
         redirect_to new_form_question_path(@form)
       else
         render :edit

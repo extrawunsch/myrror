@@ -1,8 +1,21 @@
 .background {
     background-color: $lightmyrror;
-  }
+}
+.inside-container {
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 2px 4px 4px 0px rgba(0,0,0,0.45);
+  background: $lightmyrror;
+  border-radius: 24px 0 0 24px;
+  margin: 12px 0px 12px 12px;
+}
 
-textarea {
+.btn-rouge:hover {
+  text-decoration: none;
+  background: $rouge;
+}
+
+.textarea {
   resize: none;
   overflow: hidden;
   border: none;
@@ -13,14 +26,14 @@ textarea {
   cursor: default;
 }
 
-textarea:focus, input:focus {
+.textarea:focus, input:focus {
   outline: 0;
 }
 
-.btn-outline {
+.btn-rouge {
   text-decoration: none;    
-  color: $myrror;
-  border: 1px solid $myrror;
+  color: $rouge;
+  border: 1px solid $rouge;
   padding: 4px 12px;
   border-radius: 12px;
   font-weight: lighter;
@@ -28,9 +41,10 @@ textarea:focus, input:focus {
   margin-bottom: 0.4rem;
 }
 
-.btn-outline:hover {
+.btn-rouge:hover {
+  color: white;
   text-decoration: none;
-  background: $myrror;
+  background: $rouge
 }
 
 .card-form {
@@ -39,20 +53,28 @@ textarea:focus, input:focus {
   border-radius: 20px;
   padding: 28px 32px;
   border: transparent;
-  margin-bottom: 28px;
-  margin-right: 10px;
+  margin-bottom: 16px;
 }
 
 .card-questions {
   color: $gray;
   background-color: white;
   border-radius: 20px;
-  padding: 28px 32px;
+  padding: 12px 24px;
   border: transparent;
-  margin-bottom: 28px;
-  margin-left: 10px;
+  margin-bottom: 16px;
 }
 
+.card-questions-focus {
+  box-shadow: 0 0 16px rgba(0,0,0,0.6);;
+  color: $darkgray;
+  background-color: white;
+  border-radius: 20px;
+  padding: 28px 32px;
+  border: 1px solid $middlemyrror;
+  margin-bottom: 28px;
+  margin-top: 28px;
+}
 
 .question-card {
   border-bottom: 1px solid $light-gray;
@@ -62,7 +84,7 @@ textarea:focus, input:focus {
 .topic-card {
   background-color: $lightmyrror;
   border-radius: 20px;
-  padding: 16px 28px;
+  padding: 12px 20px;
   border: transparent;
   margin-bottom: 28px;
   margin-left: 10px;
@@ -80,41 +102,6 @@ textarea:focus, input:focus {
 
 .item-b {
   justify-self: center;
-}
-
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .grid-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .grid-container {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 // FOR RADIO BUTTONS
@@ -152,12 +139,12 @@ textarea:focus, input:focus {
 
 
 #question_question_type_open_question + label {
-  color: $purple;
+  color: $rouge;
 }
 
 #question_question_type_open_question:checked + label {
-  background-color: $purple;
-  border-color: $purple;
+  background-color: $rouge;
+  border-color: $rouge;
 }
 
 
@@ -214,7 +201,7 @@ textarea:focus, input:focus {
   display: inline-block;
   font-size: 0.8rem;
   border-radius: 50rem;
-  padding: 0.2rem 0.6rem;
+  padding: 0.4rem 0.6rem;
   background-color: $lightmyrror;
   color: $myrror;
   border: 1px solid $myrror;
@@ -224,19 +211,42 @@ textarea:focus, input:focus {
 
 .tag-selector:checked + label {
   background-color: $myrror;
-  color: white;
+  color: $lightmyrror;
+  border: 1px solid $myrror;
 }
 
-.question_topic_tag {
-  display: inline-block;
-  font-size: 0.8rem;
-  border-radius: 50rem;
-  padding: 0.4rem 0.6rem;
-  background-color: $myrror;
-  color: $lightmyrror;
-  margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
-} 
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
 
-// Style alert message
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
