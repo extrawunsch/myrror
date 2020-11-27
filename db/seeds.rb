@@ -167,9 +167,33 @@ puts 'User done, Questions seed started'
   FormQuestion.create(form_id: form3.id, question_id: content_question2.id)
 
   Answer.create(question_id: general_question1.id, answer_content: "Inspirational talk, but you tend to speak too fast")
-  Answer.create(question_id: general_question1.id, answer_content: "I really dislike that you do not include the whole audience into your lectures")
+  Answer.create(question_id: general_question1.id, answer_content: "The talk exceeded my expectations - I loved it")
+  Answer.create(question_id: general_question1.id, answer_content: "Don't really know if this makes me a better student")
   Answer.create(question_id: general_question1.id, answer_content: "You look cute, add me on insta - cbone96")
-  Answer.create(question_id: general_question1.id, answer_content: "You look cute, add me on insta - cbone96")
-  Answer.create(question_id: general_question1.id, answer_content: "You look cute, add me on insta - enkay27")
+  Answer.create(question_id: general_question1.id, answer_content: "Very catchy talk")
+
+  Answer.create(question_id: content_question3.id, answer_content: "Well, I know that it was about being a better student")
+  Answer.create(question_id: content_question3.id, answer_content: "I loved his personal stories and he structured the talk very well")
+  Answer.create(question_id: content_question3.id, answer_content: "I don't know")
+  Answer.create(question_id: content_question3.id, answer_content: "The message of the talk was pretty clear to me")
+  Answer.create(question_id: content_question3.id, answer_content: "Yes")
+
+  Answer.create(question_id: content_question4.id, answer_content: "Shutting off my phone to not be distracted when studying")
+  Answer.create(question_id: content_question4.id, answer_content: "I have to watch less youtube and study more")
+  Answer.create(question_id: content_question4.id, answer_content: "I learned a lot - the talk was very inspiring")
+  Answer.create(question_id: content_question4.id, answer_content: "No idea")
+  Answer.create(question_id: content_question4.id, answer_content: "Just study hard I guess")
+
+  Answer.create(question_id: body_language_question2.id, answer_content: "Inspirational talk, but you tend to speak too fast")
+  Answer.create(question_id: body_language_question2.id, answer_content: "The body language supported your speech")
+  Answer.create(question_id: body_language_question2.id, answer_content: "It was neither distracting nor very special")
+  Answer.create(question_id: body_language_question2.id, answer_content: "Can't complain - I liked it")
+  Answer.create(question_id: body_language_question2.id, answer_content: "You look cute, add me on insta - cbone96")
+
+  Answer.create(question_id: content_question2.id, answer_content: "Great talk, but talk slower please")
+  Answer.create(question_id: content_question2.id, answer_content: "I really dislike that you do not include the whole audience into your lectures")
+  Answer.create(question_id: content_question2.id, answer_content: "I would like to see less text on your slides")
+  Answer.create(question_id: content_question2.id, answer_content: "Nothing - I liked it as it was")
+  Answer.create(question_id: content_question2.id, answer_content: "You could ask some more questions during your presentation")
 
 puts "#{User.count} Users created; #{Question.count} Questions created; #{Form.count} Forms created; #{FormQuestion.count} FormsQuestions created; #{Answer.count} Answers created."
