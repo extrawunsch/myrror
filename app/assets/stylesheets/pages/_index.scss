@@ -4,18 +4,20 @@
 @import "form_success";
 @import "edit_form";
 
+.background {
+  min-height: 100%;
+  width: 100%;
+}
+
 
 .main-container {
   display: flex;
-  height: 1000px;
+  min-height: 100%;
+  margin-left: 200px;
+  margin-top: 16px;
 }
 
-.sidebar {
-  width: 240px;
-  height: 100%;
-  margin-right: 24px;
-  background-color: royalblue;
-}
+
 
 .show-content {
   color: black;
