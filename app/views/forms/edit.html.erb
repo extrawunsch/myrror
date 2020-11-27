@@ -1,45 +1,70 @@
-<div class="background pb-5">
-  <h1 class="text-center pt-5 pb-3">Create your form</h1>
-  <div class="grid-container">
-    <div class="item-a">
-      <div class="card-form">
-        <h4 class="mb-3">Information</h4>
-          <%= simple_form_for(@form) do |f| %>
-          <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Choose the dates" %>
-          <%= f.input :name, label: "Title" %>
-          <%= f.input :speaker, label: "Speaker Name" %>
-      </div>
-      <div class="mb-5">
-        <div class="card-form">
-          <h4 class="mb-3">Add a question</h4>
-          <%= simple_fields_for(@question) do |g| %>
-            <%= g.input :question_content, label: "What do you want to know from the audience?" %>
-            <%= g.input :question_type, as: :radio_buttons, label: 'Add the question type', 
-              collection: ["Open Question", "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
-              collection_wrapper_tag: 'div',
-              collection_wrapper_class: 'category-wrapper',
-              item_wrapper_class: 'category-item',
-              input_html: {class: 'category-selector'} %>
-            <%= g.input :question_topic, as: :radio_buttons, label: 'Add the topic',
-              collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
-              input_html: { class: "tag-selector" },
-              item_wrapper_class: 'tag-item' %>
-          <% end %>
-        </div>
-        <%= f.submit 'Create Form', class: 'btn btn-click' %>
-        <% end %>
-      </div>
-    </div>
-    <div class="item-b">
-      <div class="card-questions">
-        <h5 class="mb-5">Don't know where to start? Copy a question</h5>
-        <% @questions.each do |question| %>
-          <div data-controller="clipboard" class="question-card">
-            <textarea  data-target="clipboard.source" readonly><%= question.question_content %></textarea>
-            <button class='btn btn-outline' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
+<div class="background">
+  <div class="pb-5 main-container">
+    <div class="inside-container">
+      <div class="grid-container">
+        <div class="item-a mt-5">
+          <div class="card-form">
+            <h5 class="mb-3">Information</h5>
+              <%= simple_form_for(@form, remote: true) do |f| %>
+              <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: false %>
+              <%= f.input :name, label: false %>
+              <%= f.input :speaker, label: false %>
+              
           </div>
-          <br>
-        <% end %>
+          <div class="mb-5">
+            <div class="card-questions-focus">
+              <h5 class="mb-3">Try it by adding another question</h5>
+              <div class="form-group">
+                <% @form.questions.each do |form_question| %>
+                  <label for="text"><%= form_question.question_content %></label>
+                  <textarea disabled="yes" class="form-control textarea-questions mb-3" type="text"></textarea>
+                <% end %>
+              </div>
+              <%= simple_fields_for(@question) do |g| %>
+                <%= g.input :question_content, placeholder: "What else do you want to know from the audience?", label: "Add another question" %>
+                <%= g.input :question_topic, as: :radio_buttons, label: 'Add the topic',
+                  collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+                <%= g.input :question_type, as: :radio_buttons, label: 'Add the question type', 
+                  collection: ["Open Question"], #, "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
+                  collection_wrapper_tag: 'div',
+                  collection_wrapper_class: 'category-wrapper',
+                  item_wrapper_class: 'category-item',
+                  input_html: {class: 'category-selector'} %>
+              <% end %>
+            </div>
+            <%= f.submit 'Continue', class: 'btn btn-click' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="item-b mt-5">
+          <div class="card-questions" style="color:darkgray;">
+            <h5 class="mx-3 mt-3 mb-4">Step 3 - Choose one of the following topics</h5>
+            <div class="topic-card">
+              <h4 class="question_topic_tag">General</h4>
+              <p>Ask the Audience for overall feedback.</p>
+              <h4 class="question_topic_tag">Content</h4>
+              <p>Ask the audience if the content and message were clear.</p>
+              <h4 class="question_topic_tag">Body Language.</h4>
+              <p>Ask how the audience liked your body language.</p>
+              <h4 class="question_topic_tag">Speaking Style</h4>
+              <p>Ask how the audience liked your speaking style</p>
+              <h4 class="question_topic_tag">Organization</h4>
+              <p>Ask the audience if the talk was well organized.</p>
+            </div>
+          </div> 
+          <div class="card-questions">
+            <h5 class="mb-4 mt-3" style="color:darkgray;">Examples - Ask your audience about Body Language</h5>
+            <% @questions.each do |question| %>
+              <div data-controller="clipboard" class="question-card">
+                <textarea class="textarea" data-target="clipboard.source" readonly><%= question.question_content %></textarea>
+                <button class='btn btn-rouge' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
+              </div>
+              <br>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

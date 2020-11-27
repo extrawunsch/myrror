@@ -12,17 +12,18 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @questions = Question.all
+    @questions = Question.where(["predefined = ? and question_topic = ?", true, "Content"])
     @question = Question.new
     authorize @question
   end
 
   def create
-    @questions = Question.all
+    @questions = Question.where(predefined: true)
     @question = Question.new(question_params)
     authorize @question
     if @question.save
-      redirect_to form_path(@form)
+      FormQuestion.create(form_id: @form.id, question_id: @question.id)
+      redirect_to new_form_question_path(@form)
     else
       render :new
     end

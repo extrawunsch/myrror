@@ -3,8 +3,4 @@ class PagesController < ApplicationController
 
   def home
   end
-
-  def feedback
-    @form = Form.new
-  end
 end
