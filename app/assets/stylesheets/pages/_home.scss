@@ -68,7 +68,7 @@
  color: white;
 }
 
-.banner h5 {
+.banner h4 {
   color: white;
 
 }
@@ -87,7 +87,7 @@
   top: 40px;
   left: 16px;
   background-color: rgba(52, 203, 176, 0.4);
-  width: 200px;
+  width: 185px;
   height: 35px;
 }
 
@@ -96,7 +96,7 @@
   top: 120px;
   left: 18px;
   background-color: rgba(52, 203, 176, 0.4);
-  width: 975px;
+  width: 965px;
   height: 35px;
 }
 
@@ -239,7 +239,7 @@ h1 {
 }
 
 .fas {
-  font-size: 28px;
+  font-size: 34px;
   color: $myrror;
   margin-bottom: 20px;
 }
@@ -342,6 +342,12 @@ h1 {
 .social-media {
   color: white;
   margin: 5px;
+  text-decoration: none;
+}
+
+.social-media:hover {
+  color: $myrror;
+  text-decoration: none;
 }
 
 .footer-small-block {
@@ -357,8 +363,13 @@ h1 {
 }
 
 .subtitles-footer-small-block {
-  // text-align: left;
+  color: white;
 }
+
+.subtitles-footer-small-block:hover {
+  color: white;
+}
+
 
 .hr-tag {
   width: 80%;

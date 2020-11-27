@@ -28,13 +28,13 @@
     </div>
    
     <div class="banner-title">
-      <h1>my:rror</h1>
+      <h1>myrror</h1>
       <div class="color-backdrop"></div>
     
       <h1>get honest, anonymous feedback</h1>
       <div class="color-backdrop-2"></div>
 
-      <h5 class="tagline">Speak your mind. Know your impact.</h5></div>
+      <h4 class="tagline">Speak your mind. Know your impact.</h4></div>
     </div>
     
     <div class="CTA-button">
@@ -132,27 +132,43 @@
           <div class="your-place-to-talk-block">
             <div class="your-place-to-talk-text">Your place to talk :</div>
             <div class="your-place-to-talk-icons-block">
-              <i class="fab fa-facebook-square social-media"></i>
-              <i class="fab fa-instagram social-media"></i>
-              <i class="fab fa-linkedin-in social-media"></i>
-              <i class="fab fa-youtube social-media"></i>
+              <span><%= link_to "", "#", class: "fab fa-facebook-square social-media" %></span>
+              <span><%= link_to "", "#", class: "fab fa-instagram social-media" %></span>
+              <span><%= link_to "", "#", class: "fab fa-linkedin-in social-media" %></span>
+              <span><%= link_to "", "#", class: "fab fa-youtube social-media" %></span>
             </div>
           </div>
 
           <div class="footer-small-block">
-            <div class="title-footer-small-block">Company</div>
-            <div class="subtitles-footer-small-block">Jobs<br>About</div>
+            <div class="title-footer-small-block">Company
+            </div>
+              <div>
+                <span><%= link_to "Jobs", "#", class: "subtitles-footer-small-block" %></span>
+                <br>
+                <span><%= link_to "About", "#", class: "subtitles-footer-small-block" %></span>
+              </div>
           </div>
 
           <div class="footer-small-block">
-            <div class="title-footer-small-block">Ressources</div>
-            Blog<br>Partners<br>Support
+            <div class="title-footer-small-block">Ressources
+            </div>
+              <div>
+                <span><%= link_to "Blog", "#", class: "subtitles-footer-small-block" %></span>
+                <br>
+                <span><%= link_to "Partners", "#", class: "subtitles-footer-small-block" %></span>
+                <br>
+                <span><%= link_to "Support", "#", class: "subtitles-footer-small-block" %></span>
+              </div>
           </div>
 
           <div class="footer-small-block">
-            <div class="title-footer-small-block">Policies</div>
-            Terms<br>Policy
-
+            <div class="title-footer-small-block">Policies
+            </div>
+              <div>
+                <span><%= link_to "Terms", "#", class: "subtitles-footer-small-block" %></span>
+                <br>
+                <span><%= link_to "Policy", "#", class: "subtitles-footer-small-block" %></span>
+              </div>
           </div>
         </div>
 
