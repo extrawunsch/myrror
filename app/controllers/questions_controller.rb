@@ -12,6 +12,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    @questions_predefined = Question.where(predefined: true)
     if params[:query].present?
       sql_query = "(question_topic ILIKE :query OR question_content ILIKE :query) AND predefined = true"
       @questions = Question.where(sql_query, query: "%#{params[:query]}%")

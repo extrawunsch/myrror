@@ -29,13 +29,13 @@
     <div class="item-b mt-2">
       <div class="card-questions">
         <h5 class="mb-3 mt-3">What is your question about?</h5>       
-        <%= form_tag new_form_question_path(@form), method: :get do %>
-        <%= select_tag 'query', options_for_select(['General', 'Content', 'Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-3" %>
+        <%= form_tag new_form_question_path(@form, remote: true), method: :get do %>
+        <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-4", prompt: 'Choose a question topic', onchange:"this.form.submit();", value: params[:query], html: {selected: true} %>
         <%#= text_field_tag :query,
           params[:query],
           class: "form-control mb-3"
         %>
-        <%= submit_tag "Search", class: "btn btn-rouge" %>
+        <%#= submit_tag "Search", class: "btn btn-rouge" %>
       <% end %>
 
         <h5 class="mb-3 mt-3">Select your question</h5>
