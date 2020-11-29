@@ -30,9 +30,9 @@
       <div class="card-questions">
         <h5 class="mb-5 mt-3">Get inspired! Copy a question</h5>
         <% @questions.each do |question| %>
-          <div data-controller="clipboard" class="question-card">
-            <textarea class="textarea" id="copyhere" data-target="clipboard.source" readonly><%= question.question_content %></textarea>
-            <button id="buttonclick" class='btn btn-rouge' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
+          <div class="question-card">
+            <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
+            <button class='btn btn-rouge'>+</button>
           </div>
           <br>
         <% end %>
