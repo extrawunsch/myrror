@@ -30,20 +30,15 @@
       <div class="card-questions">
         <h5 class="mb-3 mt-3">What is your question about?</h5>       
         <%= form_tag new_form_question_path(@form), method: :get do %>
-        <%= select_tag 'question_topic', options_for_select(@questions.collect{ |q| [q.question_topic, q.question_content] }) %>
-        <%= text_field_tag :query,
+        <%= select_tag 'query', options_for_select(['General', 'Content', 'Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-3" %>
+        <%#= text_field_tag :query,
           params[:query],
           class: "form-control mb-3"
         %>
         <%= submit_tag "Search", class: "btn btn-rouge" %>
       <% end %>
 
-      <select class="select2" name="country">
-        <option value="general">General</option>
-        <option value="content">Content</option>
-      </select>
-
-        <h5 class="mb-3 mt-5">Select your question</h5>
+        <h5 class="mb-3 mt-3">Select your question</h5>
         <% @questions.each do |question| %>
           <div class="question-card">
             <textarea class="textarea" readonly><%= question.question_content %></textarea>
