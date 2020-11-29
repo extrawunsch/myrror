@@ -1,25 +1,24 @@
 <div class="background">
+  <%= render "components/vertical_navbar"%>
+  <div class="dummy-temporary" style="width: 200px;"></div>
   <div class="main-container">
       <div class="form-display"> 
-        <div class="card mt-3 mx-5">
+        <div class="card-success">
           <h2 class="mt-3" style="opacity: 0.6;" >Congrats! Your form has been created</h2>
-
           <div class="inner-card">
-            <h5 class="mb-4">Share QR code in your presentation</h5>
+            <h5>Share QR code in your presentation</h5>
             <div class="center">
               <%= raw @qr.as_html %>
             </div>
-            <h5 class="mt-5 mb-3">Or share Presentation Key</h5>
-            
+            <h5>Or share Presentation Key</h5>
             <div class="center">
               <div class="card-codes center">
-                <h4 style=margin:0;"><%= @form.presentation_key %></h4>
+                <h4><%= @form.presentation_key %></h4>
               </div>
               <h6 class="mb-2 mt-4">Your audience can input the key via</h6>
               <%= link_to 'myrror.org/feedback', feedback_path, class: 'mb-4 btn btn-outline' %>
             </div>
           </div>
-
         </div>
       </div>
     </div>
