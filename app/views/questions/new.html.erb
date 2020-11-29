@@ -30,7 +30,7 @@
       <div class="card-questions">
         <h5 class="mb-3 mt-3">What is your question about?</h5>       
         <%= form_tag new_form_question_path(@form, remote: true), method: :get do %>
-        <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-4", prompt: 'Choose a question topic', onchange:"this.form.submit();", value: params[:query], html: {selected: true} %>
+        <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-4", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
         <%#= text_field_tag :query,
           params[:query],
           class: "form-control mb-3"
