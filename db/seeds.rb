@@ -144,6 +144,7 @@ puts 'User done, Questions seed started'
   form1 = Form.create(name: "Ted Talk: What do top students do differently?", presented_on: "05.01.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: niklas.id, speaker: "Niklas Koch")
   form2 = Form.create(name: "Webinar: I finished my Coding bootcamp - Insights and Learnings", presented_on: "07.12.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: niklas.id, speaker: "Niklas Koch")
   form3 = Form.create(name: "Webinar: How to find a job in tech after Coding bootcamp", presented_on: "08.01.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: niklas.id, speaker: "Niklas Koch")
+  form4 = Form.create(name: "Presentation: How i overcame my writers block", presented_on: "04.01.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: niklas.id, speaker: "Niklas Koch")
 
   FormQuestion.create(form_id: form1.id, question_id: general_question1.id)
   FormQuestion.create(form_id: form1.id, question_id: content_question3.id)
