@@ -2,17 +2,17 @@
 @import "home";
 @import "new_form";
 
-.main-container-show {
-  display: flex;
-  height: 1000px;
+.background {
+  min-height: 100%;
+  width: 100%;
 }
 
-.sidebar-show {
-  width: 240px;
-  height: 100%;
-  margin-right: 24px;
-  background-color: royalblue;
+.main-container-show {
+  display: flex;
+  min-height:100% ;
+  margin-left: 200px;
 }
+
 
 .headline-show {
   color: $myrror;

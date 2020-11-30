@@ -1,11 +1,15 @@
+:root{
+  --bg-color: white;
+}
+
 .card {
-  width: 800px;
+  width: 100%;
   display: inline-block;
   text-align: center;
   background-color: white;
   color: $darkgray;
   border-radius: 20px;
-  padding: 28px 32px;
+  padding: 24px 16px;
   box-shadow: 2px 2px 2px 2px rgba(40, 40, 40, 0.1);
 }
 
@@ -18,7 +22,7 @@
   text-align: center;
   background-color: $lightmyrror;
   color: $darkgray;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 28px 32px;
   margin: 28px;
   box-shadow: 2px 2px 2px 2px rgba(40, 40, 40, 0.1);
@@ -48,3 +52,111 @@ td {
 
 td.black { border-color: #000; }
 td.white { border-color: #fff; }
+
+h1{
+  font-size: 3em;
+  font-weight: normal;
+}
+
+/* Basic styles for title-animation */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.title-animation {
+  width: 50vw;
+  h1{
+    font-size: 1.5em;
+    font-weight: 400;
+    color: black;
+  }
+}
+/* title styles */
+.home-title span{
+  position: relative;
+  overflow: hidden;
+  display: block;
+  line-height: 1.2;
+}
+
+.home-title span::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
+  transform: translateX(-101%);
+}
+
+.home-title span::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
+  transform: translateX(0);
+}
+
+.home-title span:nth-of-type(1)::before,
+.home-title span:nth-of-type(1)::after{
+  animation-delay: 0.2s;
+}
+
+.home-title span:nth-of-type(2)::before,
+.home-title span:nth-of-type(2)::after{
+  animation-delay: 0.5s;
+}
+
+@keyframes a-ltr-after{
+  0% {transform: translateX(-100%)}
+  100% {transform: translateX(101%)}
+}
+
+@keyframes a-ltr-before{
+  0% {transform: translateX(0)}
+  100% {transform: translateX(200%)}
+}
+
+.textarea-green {
+  resize: none;
+  overflow: hidden;
+  cursor: default;
+  background-color: $middlemyrror;
+  border: none;
+  width: 80px;
+  height: 32px;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.textarea-green:focus, input:focus {
+outline: 0;
+}
+
+.btn-clipboard {
+  text-decoration: none;
+  color: #34CBB0;
+  border: 1px solid #34CBB0;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: lighter;
+  transition: 0.4s ease;
+  display: inline-block;
+  align-items: center;
+  margin-bottom: 16px;
+}
+ 
+.btn-clipboard:hover {
+  text-decoration: none;
+  background: $myrror;
+  color: white;
+}

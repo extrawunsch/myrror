@@ -1,5 +1,6 @@
-.background {
-    background-color: $lightmyrror;
+.editor-container {
+  display: flex;
+  min-height: 100%;
 }
 .inside-container {
   width: 100%;
