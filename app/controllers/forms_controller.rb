@@ -40,20 +40,25 @@ class FormsController < ApplicationController
         formquestion.save
         redirect_to edit_form_path(@form)
       end
-      redirect_to edit_form_path(@form)
     else
       render :new
     end
   end
 
   def edit
-    @questions = Question.where(["predefined = ? and question_topic = ?", true, "Body Language"])
+    if params[:query].present?
+      sql_query = "(question_topic ILIKE :query OR question_content ILIKE :query) AND predefined = true"
+      @questions = Question.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @questions = Question.where(predefined: true)
+    end
+    @question = Question.new
     @form = Form.find(params[:id])
     authorize @form
   end
 
   def update
-    @questions = Question.where(["predefined = ? and question_topic = ?", true, "Body Language"])
+    @questions = Question.where(predefined: true)
     @form = Form.find(params[:id])
     authorize @form
     if @form.update(form_params)
