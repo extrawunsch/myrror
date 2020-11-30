@@ -18,6 +18,34 @@
       </div>
     </div>
     <hr id="divider">
+
+              <ul class="dashboard">
+                <li class="dashboard-items">
+                  <i class="fab fa-wpforms"></i>
+                  <p><%= "my:forms - #{@forms.count}" %></p>
+                </li>
+                <li class="dashboard-items">
+                  <i class="fab fa-wpforms"></i>
+                  <p><%= "my:forms - #{@forms.count}" %></p>
+                </li>
+                <li class="dashboard-items">
+                  <i class="fab fa-wpforms"></i>
+                  <p><%= "my:forms - #{@forms.count}" %></p>
+                </li>
+                <li class="dashboard-items">
+                  <i class="fab fa-wpforms"></i>
+                  <p><%= "my:forms - #{@forms.count}" %></p>
+                </li>
+              </ul>
+              <%# @forms.each do |form| %>
+              <%# sum += form.questions.count %>
+              <p><%#= "my:questions - #{sum}" %></p>
+              <%# end %>
+              <p><%#= "my:answers - #{Answer.joins(question:  {form_questions: :form} ).where(forms: {id: form.id}).count}" %></p>
+
+
+
+      <hr id="divider">
       <div class="card-grid" id="slick-show">
         <% @forms.each do |form| %>
           <div class="card-index">
@@ -29,25 +57,13 @@
                   <div class="inside-card"><%= "my:answers: #{Answer.joins(question:  {form_questions: :form} ).where(forms: {id: form.id}).count}" %></div>
                 </div>
               <hr>
-                <div id="delete-bin"class="delete-form"><%= link_to "", form_path(form), data: {:confirm => 'Are you sure?'}, :method => :delete, class:"fas fa-trash"  %></div>
+                <div class="delete-form"><%= link_to "", form_path(form), data: {:confirm => 'Are you sure?'}, :method => :delete, class:"fas fa-trash"  %></div>
             </div>
           </div>
         <% end %>
       </div>
-      <hr id="divider">
-      <div class="card-grid">
-          <div class="card-index">
-            <div class="card-dasboard">
-              <p><%= "my:forms - #{@forms.count}" %></p>
-              <%# @forms.each do |form| %>
-              <%# sum += form.questions.count %>
-              <p><%#= "my:questions - #{sum}" %></p>
-              <%# end %>
-              <p><%#= "my:answers - #{Answer.joins(question:  {form_questions: :form} ).where(forms: {id: form.id}).count}" %></p>
-              <hr>
-            </div>
-          </div>
-      </div>
+
+
     </div>
   </div>
 </div>
