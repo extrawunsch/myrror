@@ -3,7 +3,22 @@
   	<%= image_tag "Myrror_logo_transparent.png", class:"navbar-logo"%>
 	</div>
 	<a href="#contact">Overview</a>
-	<%= link_to "My Forms", forms_path, class:"active" %>
+	
+	
+	
+	<% if active=="My Forms" %>
+	  <%= link_to "My Forms", forms_path, class:"active" %>
+	<% else %>
+	  <%= link_to "My Forms", forms_path %>
+	<% end %>
+	
 	<%= link_to "Form Editor", new_form_path %>
-	<a href="#contact">Analytics</a>
+
+	<% if active=="Analytics" %>
+	  <%= link_to "Analytics", forms_analytics_path, class:"active" %>
+	<% else %>
+	  <%= link_to "Analytics", forms_analytics_path %>
+	<% end %>
+	
+	
 </div

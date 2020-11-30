@@ -3,12 +3,12 @@
 @import "new_form";
 @import "form_success";
 @import "edit_form";
+@import "analytics";
 
 .background {
   max-height: 100%;
   width: 100vw;
 }
-
 
 .main-container {
   display: flex;
@@ -16,8 +16,6 @@
   margin-left: 200px;
   background-color: $myrror-grey;
 }
-
-
 
 .show-content {
   color: black;
