@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get '/feedback', to: 'answers#feedback', as: 'feedback'
   get '/error', to: 'pages#error'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :forms do
+  resources :forms, only: [:index, :show, :new, :edit] do
+    post '/forms/new', to: 'form#create', as: 'create_form'
+    put '/form/:id/edit', to: 'form#update', as: 'update_form'
     member do # member when you want id in link
       get :success
     end
