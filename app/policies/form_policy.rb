@@ -3,14 +3,14 @@ class FormPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def show?
-      true
-    end
+  def show?
+    true
+  end
 
-    def answers?
-      true
-    end
+  def answers?
+    true
   end
 
   def success?
