@@ -19,10 +19,14 @@ class QuestionsController < ApplicationController
       @questions = Question.where(predefined: true)
     end
     @question = Question.new
+    #@answer = Answer.new
     authorize @question
   end
 
   def create
+    # question with question_id
+    # question has 3 answers = answer_content and predefined = true and question_id
+    # if question_type star rating --> answer_content 1-5
     @questions = Question.where(predefined: true)
     @question = Question.new(question_params)
     authorize @question
