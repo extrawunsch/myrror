@@ -13,7 +13,9 @@ const initCopyQuestion = () => {
       const elementtocopy = copyhere[i];
       // paste it into other element
       pastehere.innerHTML = elementtocopy.innerHTML;
+      pastehere.style.background = '#98E4D6';
       pastehereedit.innerHTML = elementtocopy.innerHTML;
+      pastehereedit.style.background = '#98E4D6';
     });
   }
 
