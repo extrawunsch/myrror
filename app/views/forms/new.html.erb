@@ -1,4 +1,4 @@
-<div class="background">
+<div class="background-green">
   <%= render "components/vertical_navbar"%>
   <div class="dummy-temporary" style="width: 200px;"></div>
   <div class="main-container">
@@ -25,7 +25,7 @@
         </div>
 
         <div class="item-b pt-5">
-        <h5 class="mb-3 mx-3">Don't know where to start? <br> Select one of the predefined questions</h5>
+        <h5 class="mb-3 mx-3 mt-3">Don't know where to start?</h5>
           <div class="card-questions-scroll">
             <%= form_tag new_form_path(@form, remote: true), method: :get do %>
               <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-4", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>

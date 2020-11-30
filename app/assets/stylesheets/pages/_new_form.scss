@@ -1,7 +1,9 @@
-.editor-container {
-  display: flex;
-  min-height: 100%;
+.background-green {
+  background-color: $lightmyrror;
+  max-height: 100%;
+  width: 100vw;
 }
+
 .inside-container {
   width: calc(100vw - 200px);
   box-shadow: inset 2px 4px 4px 0px rgba(0,0,0,0.45);

@@ -29,15 +29,18 @@
               <%= f.submit 'Continue', class: 'btn btn-click mt-3' %>
             <% end %>
           </div>
+          <%= link_to 'Create Form', success_form_path(@form), class: 'btn btn-outline mb-5' %>
         </div>
         
-        <div class="item-b">
-          <h5 class="mb-3 mx-3 mt-5">Form Information</h5> 
+        <div class="item-b"> 
+          <h5 class="mb-3 mx-3 mt-4">Form Information</h5>
           <div class="form-info-card">
             <div class="form-group">
-              <input id="date" disabled="yes" class="form-control mb-2 mt-3" type="date" value=<%= @form.presented_on %>>
-              <input id="name" disabled="yes" class="form-control mb-2" type="text" value=<%= @form.name %>>
-              <input id="speaker" disabled="yes" class="form-control" type="text" value=<%= @form.speaker%>>
+              <%= "Date: #{@form.presented_on.strftime('%d.%m.%Y')}" %>
+              <br>
+              <%= "Talk: #{@form.name}" %>
+              <br>
+              <%= "Speaker: #{@form.speaker}"%>
             </div>
           </div>
 
@@ -58,7 +61,6 @@
 
         </div>
       </div>
-      <%= link_to 'Create Form', success_form_path(@form), class: 'btn btn-outline mx-5' %>
 
     </div>
   </div>
