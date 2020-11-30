@@ -3,18 +3,15 @@
     <div class="inside-container">
       <div class="grid-container">
 
+        <div class="item-a pt-5">
+          <%= simple_form_for(@form) do |f| %>
+            <div class="card-questions-focus">
+              <h4 style="color:darkgray;" class="mb-3">Your Form</h4>
+              <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Choose the dates" %>
+              <%= f.input :name, label: "Title" %>
+              <%= f.input :speaker, label: "Speaker Name" %>
+            </div>
 
-
-        <div class="item-a mt-5">
-          <div class="card-form">
-            <h5 class="mb-3">Information</h5>
-            <%= simple_form_for(@form, remote: true) do |f| %>
-              <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: false %>
-              <%= f.input :name, label: false %>
-              <%= f.input :speaker, label: false %>
-              
-          </div>
-          <div class="mb-5">
             <div class="card-questions-focus">
               <h5 class="mb-3">Try it by adding another question</h5>
               <div class="form-group">
@@ -37,12 +34,9 @@
                   input_html: {class: 'category-selector'} %>
               <% end %>
             </div>
-            <%= f.submit 'Continue', class: 'btn btn-click' %>
+              <%= f.submit 'Continue', class: 'btn btn-click' %>
             <% end %>
-          </div>
         </div>
-
-
 
         <div class="item-b mt-5">
           <div class="card-questions" style="color:darkgray;">
