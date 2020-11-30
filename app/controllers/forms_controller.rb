@@ -67,9 +67,9 @@ class FormsController < ApplicationController
     @form = Form.find(params[:id])
     authorize @form
     if @form.update(form_params)
-      question_content = params[:question_content]
-      question_type = params[:question_type]
-      question_topic = params[:question_topic]
+      question_content = params[:question][:question_content]
+      question_type = params[:question][:question_type]
+      question_topic = params[:question][:question_topic]
       @question = Question.new(question_content: question_content, question_type: question_type, question_topic: question_topic, predefined: false)
       if @question.save
         FormQuestion.create(form_id: @form.id, question_id: @question.id)
