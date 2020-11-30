@@ -1,5 +1,3 @@
-
-
 .feedback-container {
   //background-image: url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80')
   height: 100vh;
@@ -11,9 +9,13 @@
   justify-content: center;
   font-size: 16px;
   color: white;
-  margin-top: 5vh;
+  margin-top: 8vh;
   font-style: lighter;
   text-shadow: 1px black solid;
+
+  #text {
+    letter-spacing: 4px;
+  }
 }
 
 .landing-page-feedback-giver {
@@ -23,6 +25,7 @@
   margin: 0 auto;
   font-size: 32px;
   text-align: center;
+  
   img {
     width: 80%;
     margin-top: 5vh;
@@ -31,6 +34,7 @@
   form {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -49,7 +53,7 @@
   height: 70px;
 }
 
-.btn-above-page {
+.btn-above-page-feedback {
   text-decoration: none;
   color: white;
   background: $myrror;
@@ -59,26 +63,18 @@
   font-weight: lighter;
   transition: 0.4s ease;
   width: 100%;
-  margin-bottom: 65px;
   }
 
  .link-feedback {
   color:  $myrror;
  }
 
- #feedback-form {
-  padding-left: 24px;
-  padding-right: 24px;
-  background-color: #343434;
- }
-
-
  .link-feedback:hover {
   text-decoration: none;
   color: $middlemyrror;
  }
 
-.btn-above-page:hover {
+.btn-above-page-feedback:hover {
   text-decoration: none;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
 }
