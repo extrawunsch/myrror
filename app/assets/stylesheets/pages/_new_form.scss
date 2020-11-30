@@ -64,6 +64,16 @@
   width: 500px;
 }
 
+.form-info-card {
+  color: white;
+  background-color: $myrror-grey;
+  border-radius: 20px;
+  padding: 16px 24px;
+  margin-bottom: 28px;
+  margin-top: 20px;
+  width: 500px;
+}
+
 .card-questions-scroll {
   color: $gray;
   background-color: white;
@@ -77,7 +87,7 @@
 }
 
 .card-questions-focus {
-  box-shadow: 0 0 16px rgba(0,0,0,0.6);;
+  box-shadow: 0 0 16px rgba(0,0,0,0.6);
   color: $darkgray;
   background-color: white;
   border-radius: 20px;

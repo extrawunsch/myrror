@@ -8,7 +8,7 @@
         <div class="item-a">
           <%= simple_form_for(@form) do |f| %>
           <h4 style="color:$darkgray;" class="mb-2 mt-3 mx-3">My form</h4> 
-            <div class="card-questions-focus">
+            <div class="form-info-card">
               <h6 style="color:$darkgray;" class="mb-3">Form Information</h6>
               <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: false%>
               <%= f.input :name, label: false %>
@@ -23,7 +23,6 @@
                 <% end %>
               </div>
               <%= simple_fields_for(@question) do |g| %>
-                <h6 class="mb-3">Add another question</h6>
                 <%= g.input :question_content, placeholder: "What else do you want to know from the audience?", label: "Add another question" %>
                 <%= g.input :question_topic, as: :radio_buttons, label: 'Add the topic',
                   collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
@@ -43,7 +42,7 @@
 
         <div class="item-b">
           <div class="card-questions" style="color:darkgray;">
-            <h5 class="ml-3 mt-3 mb-3">Step 3 - Choose a question topic</h5>
+            <h5 class="ml-3 mt-4 mb-3">Step 3 - Choose a question topic</h5>
             <div class="topic-card">
               <h4 class="question_topic_tag">General</h4>
               <p>Ask the Audience for overall feedback.</p>

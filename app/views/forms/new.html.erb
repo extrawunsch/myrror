@@ -6,18 +6,18 @@
       <div class="grid-container">
 
         <div class="item-a">
-          <h4 style="color:$darkgray;" class="mb-2 mt-3 mx-3">My form</h4> 
+          <h4 style="color:$darkgray;" class="mt-2 mx-3">My form</h4> 
           <%= simple_form_for(@form) do |f| %>
             <div class="card-questions-focus">
-              <h5 style="color:darkgray;" class="mb-3">Step 1 - Add some information</h5>
+              <h5>Step 1 - Add some information</h5>
               <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Choose the dates" %>
               <%= f.input :name, label: "Title" %>
               <%= f.input :speaker, label: "Speaker Name" %>
             </div>
             <div class="card-questions-focus">
-              <h5 class="mb-3" style="color:darkgray;">Step 2: Add your first question </h5>
+              <h5 class="mb-3">Step 2: Add your first question </h5>
               <%= simple_fields_for(@question) do |g| %>
-                <%= g.input :question_content, as: :text, label: 'Add your first question' %>
+                <%= g.input :question_content, as: :text, label: false, placeholder: 'What would you like to know from your audience?' %>
               <% end %>
             <%= f.submit 'Continue', class: 'btn btn-click mt-4 mb-2' %>
           <% end %>
@@ -25,13 +25,13 @@
         </div>
 
         <div class="item-b pt-5">
-        <h5 class="mb-3 mx-3 mt-5" style="color:$darkgray;">Predefined questions</h5>
+        <h5 class="mb-3 mx-3">Don't know where to start? <br> Select one of the predefined questions</h5>
           <div class="card-questions-scroll">
             <%= form_tag new_form_path(@form, remote: true), method: :get do %>
               <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-4", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
             <% end %>
           
-            <h5 class="mb-3 mt-3">Select your question</h5>
+            <h5 class="mb-3 mt-3">Select your question by clicking the +</h5>
             <% @questions.each do |question| %>
               <div class="question-card">
                 <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
