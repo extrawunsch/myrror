@@ -9,7 +9,17 @@
   width: 100vw;
 }
 
+.slick-prev:before, .slick-next:before {
+  color: $myrror !important;
+}
 
+.slick-list .draggable {
+  height: 240px;
+}
+
+.slick-track {
+  height: 250px;
+}
 
 
 .main-container {
@@ -21,12 +31,16 @@
 
 .delete-form {
   height: 24px;
-  width: 24px;
-  display: flex;
+  width: 100%;
+  align: right;
+}
+
+#delete-bin:toggle {
+  color: $middlemyrror;
 }
 
 .inside-card {
-  display: inline-block;
+  display: space-between;
   font-size: 12px;
 }
 
