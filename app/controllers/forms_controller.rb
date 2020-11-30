@@ -27,21 +27,18 @@ class FormsController < ApplicationController
     @form = Form.new(form_params)
     @form.user = current_user
     @form.presentation_key = SecureRandom.alphanumeric(5)
-    formquestion = FormQuestion.new
     authorize @form
-    if @form.save
-      # need to connect question with form_question if needed
-      formquestion.form_id = @form.id
-      @question = Question.new(question_params)
-      @question.predefined = false
-      @question.question_topic = 'General'
-      @question.question_type = 'Open Question'
+    @question = Question.new(question_params)
+    @question.predefined = false
+    @question.question_topic = 'General'
+    @question.question_type = 'Open Question'
+    if @form.save && @question.save
       if @question.save
+        formquestion = FormQuestion.new
+        formquestion.form_id = @form.id
         formquestion.question_id = @question.id
         formquestion.save
         redirect_to edit_form_path(@form)
-      else
-        render :new
       end
     else
       render :new

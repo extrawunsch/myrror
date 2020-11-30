@@ -1,27 +1,24 @@
 <div class="background">
-  <div class="main-container-show">
-    <div class="sidebar">dashboard</div>
-    <div class="form-display-show">
-    <div class="tab-bar-show">
-        <%=link_to "Back to all my Forms", forms_path, class:"btn btn-outline mr-5"%>
-    </div>
-    <div>
-      <hr id="divider">
-        <h4 class="show-content mb-3 ml-3"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %> </h4>
-        <ul style="list-style-type:none; border-left:1px solid #000;height:50vh">
-         <% @form.questions.each do |question|  %>
-          <li class="d-flex align-items-center">
-            <div class="show-content">
-            <%= question.question_content %>
-            </div>
-            <%= link_to "See all #{question.answers.count} Answers", form_question_answers_path(@form, question), class:"btn-above-page-show" %>
-          </li>
-        <% end %>
-        <div class="mt-5"><%= link_to "Add a new question", new_form_question_path(@form), class:"btn-outline-show"  %></div>
-        </ul>
+  <div class="main-container">
+    <div class="form-display">
+      <div class="tab-bar-show">
+          <%=link_to "Back to all my Forms", forms_path, class:"btn btn-outline mr-5"%>
+      </div>
+        <div>
+          <hr id="divider">
+          <h4 class="show-content mb-3 ml-3"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %> </h4>
+          <ul style="list-style-type:none; border-left:1px solid #000;height:50vh">
+            <% @form.questions.each do |question|  %>
+              <li class="d-flex align-items-center">
+                <div class="show-content">
+                <%= question.question_content %>
+                </div>
+                <%= link_to "See all #{question.answers.count} Answers", form_question_answers_path(@form, question), class:"btn-above-page-show" %>
+              </li>
+            <% end %>
+            <div class="mt-5"><%= link_to "Add a new question", new_form_question_path(@form), class:"btn-outline-show"  %></div>
+          </ul>
+        </div>
       </div>
     </div>
-    </div>
-    </div>
   </div>
-</div>
