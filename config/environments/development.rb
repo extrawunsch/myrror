@@ -63,5 +63,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   #added manually by niklas
-  config.assets.check_precompiled_asset = false
+  #config.assets.check_precompiled_asset = false
 end

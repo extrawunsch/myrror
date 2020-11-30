@@ -1,11 +1,12 @@
-<div class="feedback-container">
-  <div class = landing-page-feedback-giver>
-    <%= image_tag("myrror_logo_transparent.png") %>
-    <form action="/feedback" method="get">
-      <input id="presentation_key" name="presentation_key" placeholder="Presentation Key" class="feedback-label" ><br>
-      <input type="submit" class="btn-above-page" value="Enter">
-    </form>
-    <div class="landing-page-footer"><p>Create your own myrror for free <br> <%= link_to "myrror.org", root_path, class:"link-feedback" %> </p></div>
+
+  <div class="feedback-container">
+    <div class = landing-page-feedback-giver>
+      <%= image_tag("myrror_logo_transparent.png") %>
+      <form action="/feedback" method="get" id="feedback-form">
+        <input id="presentation_key" name="presentation_key" placeholder="Presentation Key" class="feedback-label" ><br>
+        <input type="submit" class="btn-above-page" value="Enter">
+      </form>
+      <div class="landing-page-advertisement">Create your own myrror for free <br> <%= link_to "myrror.org", root_path, class:"link-feedback" %></div>
+    </div>
   </div>
-</div>
 

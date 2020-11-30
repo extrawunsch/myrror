@@ -1,3 +1,5 @@
+
+
 .feedback-container {
   //background-image: url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80')
   height: 100vh;
@@ -5,14 +7,13 @@
   background-color: #343434;
 }
 
-.landing-page-footer{
+.landing-page-advertisement{
   justify-content: center;
   font-size: 16px;
   color: white;
   margin-top: 5vh;
   font-style: lighter;
   text-shadow: 1px black solid;
-  background-color: #343434;
 }
 
 .landing-page-feedback-giver {
@@ -58,10 +59,17 @@
   font-weight: lighter;
   transition: 0.4s ease;
   width: 100%;
+  margin-bottom: 65px;
   }
 
  .link-feedback {
   color:  $myrror;
+ }
+
+ #feedback-form {
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: #343434;
  }
 
 
