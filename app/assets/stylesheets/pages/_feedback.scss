@@ -2,29 +2,40 @@
   //background-image: url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80')
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1)), url("myrror_bnw.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 0;
-  justify-content: center;
+  background-color: #343434;
 }
 
-.landing-page-footer{
+.landing-page-advertisement{
   justify-content: center;
   font-size: 16px;
-  color: black;
+  color: white;
+  margin-top: 8vh;
   font-style: lighter;
-  margin-top: 65px;
   text-shadow: 1px black solid;
+
+  #text {
+    letter-spacing: 4px;
+  }
 }
 
 .landing-page-feedback-giver {
-    height: 100%;
-    width: 400px;
-    justify-content: center;
-    margin: 0 auto;
-    font-size: 32px;
-    text-align: center;
+  height: 100%;
+  width: 300px;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 32px;
+  text-align: center;
+  
+  img {
+    width: 80%;
+    margin-top: 5vh;
+  }
+
+  form {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+  }
 }
 
 .feedback-label {
@@ -42,7 +53,7 @@
   height: 70px;
 }
 
-.btn-above-page {
+.btn-above-page-feedback {
   text-decoration: none;
   color: white;
   background: $myrror;
@@ -54,7 +65,16 @@
   width: 100%;
   }
 
-.btn-above-page:hover {
+ .link-feedback {
+  color:  $myrror;
+ }
+
+ .link-feedback:hover {
+  text-decoration: none;
+  color: $middlemyrror;
+ }
+
+.btn-above-page-feedback:hover {
   text-decoration: none;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
 }
