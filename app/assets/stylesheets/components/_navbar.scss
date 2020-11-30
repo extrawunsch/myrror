@@ -9,4 +9,55 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+} 
+
+.navbar-logo{
+  width: 80px;
+  margin-left: 24px;
+  margin-top: 24px;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: $myrror-grey;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+
+.sidebar a {
+  display: block;
+  color: $gray;
+  padding: 16px;
+  text-decoration: none;
+  border-radius: 0 24px 24px 0;
+  margin-left: 24px;
+}
+ 
+.sidebar a.active {
+  color: black;
+}
+
+.sidebar a:hover:not(.active) {
+  color: $myrror;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.main-container {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
 }
