@@ -4,6 +4,11 @@ require 'securerandom'
 class FormsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :destroy]
 
+  def analytics
+    @forms = policy_scope(Form).order(created_at: :desc)
+    # @forms = Form.all 
+  end
+
   def index
     @forms = policy_scope(Form).order(created_at: :desc)
   end

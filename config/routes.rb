@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/feedback', to: 'answers#feedback', as: 'feedback'
   get '/error', to: 'pages#error'
+  get 'forms/analytics', to: 'forms#analytics'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :forms do
+  resources :forms do 
     member do # member when you want id in link
       get :success
     end

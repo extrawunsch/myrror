@@ -3,12 +3,14 @@
 @import "new_form";
 @import "form_success";
 @import "edit_form";
+@import "analytics";
 
 .background {
   max-height: 100%;
   width: 100vw;
 }
 
+<<<<<<< HEAD
 .slick-prev:before, .slick-next:before {
   color: $myrror !important;
 }
@@ -22,6 +24,8 @@
 }
 
 
+=======
+>>>>>>> f3cc47347090b9a2d032b709c5a64b8b6a173b85
 .main-container {
   display: flex;
   height: 100vh;
@@ -29,6 +33,7 @@
   background-color: $myrror-grey;
 }
 
+<<<<<<< HEAD
 .delete-form {
   height: 24px;
   width: 100%;
@@ -44,6 +49,8 @@
   font-size: 12px;
 }
 
+=======
+>>>>>>> f3cc47347090b9a2d032b709c5a64b8b6a173b85
 .show-content {
   color: black;
   border-radius: 24px;
@@ -53,6 +60,10 @@
 
 .headline {
   color: $myrror;
+  
+  h1 {
+    font-size: 40px;
+  }
 }
 
 .show-content-show {
