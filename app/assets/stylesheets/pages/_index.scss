@@ -10,6 +10,8 @@
 }
 
 
+
+
 .main-container {
   display: flex;
   height: 100vh;
@@ -20,6 +22,12 @@
 .delete-form {
   height: 24px;
   width: 24px;
+  display: flex;
+}
+
+.inside-card {
+  display: inline-block;
+  font-size: 12px;
 }
 
 .show-content {

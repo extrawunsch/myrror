@@ -21,9 +21,9 @@
               <%=link_to "#{form.name}",  form_path(form), class:"card-link"%>
               <p><%=form.presented_on%></p>
               <div class="delete-form">
-                <%= link_to "", form_path(form), data: {:confirm => 'Are you sure?'}, :method => :delete, class:"fas fa-trash"  %>
-                  <p> <%= "Questions: #{form.questions.count} | Answers: #{Answer.joins(question:  {form_questions: :form} ).where(forms: {id: form.id}).count
-}" %></p>
+                <div class="inside-card"><%= link_to "", form_path(form), data: {:confirm => 'Are you sure?'}, :method => :delete, class:"fas fa-trash"  %></div>
+                  <div class="inside-card"><%= "my:questions: #{form.questions.count} " %></div>
+                  <div class="inside-card"><%= "my:answers: #{Answer.joins(question:  {form_questions: :form} ).where(forms: {id: form.id}).count}" %></div>
                 </div>
               <hr>
             </div>
