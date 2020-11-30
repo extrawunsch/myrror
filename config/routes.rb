@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :forms, only: [:index, :show, :new, :edit] do
     post '/forms/new', to: 'form#create', as: 'create_form'
-    put '/form/:id/edit', to: 'form#update', as: 'update_form'
+    put '/edit', to: 'form#update', as: 'update_form'
     member do # member when you want id in link
       get :success
     end

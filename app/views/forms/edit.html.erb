@@ -4,7 +4,7 @@
       <div class="grid-container">
 
         <div class="item-a pt-5">
-          <%= simple_form_for(@form) do |f| %>
+          <%= simple_form_for(@form, url: update_form_path) do |f| %>
             <div class="card-questions-focus">
               <h4 style="color:darkgray;" class="mb-3">Your Form</h4>
               <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Choose the dates" %>
