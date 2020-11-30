@@ -172,7 +172,7 @@
     padding: 20px;
     // filter: blur(4px);
     border-radius: 8px;
-    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3), 0 0px 0px rgba(0, 0, 0, 0.3);
+    // box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3), 0 0px 0px rgba(0, 0, 0, 0.3);
   }
    
   .title-card {
@@ -188,13 +188,13 @@
   // QUOTE 
    
   .quote-container {
-    background-color:rgba(52, 203, 176, 0.2);;
+    background-color: $myrror;
     padding-top: 40px;
     height: 150px;
   }
    
   .quote {
-    color: black;
+    color: white;
     font-size: 26px;
     text-align: center;
     font-style: italic;
@@ -202,7 +202,7 @@
   }
    
   .bill-gates {
-    color: black;
+    color: white;
     font-family: "Work Sans";
     font-style: normal;
     float: right;
