@@ -9,9 +9,9 @@
         <li>Presets</li>
         <li>Deleted</li>
       </ul>
-      <div class="interactive my-3"> 
+      <div class="interactive my-3">
         <%=link_to "Create", new_form_path, class:"btn-above-page mr-5"%>
-      </div> 
+      </div>
     </div>
     <hr id="divider">
       <div class="card-grid">
@@ -20,9 +20,13 @@
             <div class="card-content">
               <%=link_to "#{form.name}",  form_path(form), class:"card-link"%>
               <p><%=form.presented_on%></p>
+              <div class="delete-form">
+                <%= link_to "", form_path(form), data: {:confirm => 'Are you sure?'}, :method => :delete, class:"fas fa-trash"  %>
+                  <p> <%= "Questions: #{form.questions.count} | Answers: #{form.answers.count}" %></p>
+                </div>
               <hr>
             </div>
-          </div>  
+          </div>
         <% end %>
       </div>
       <hr id="divider">
@@ -34,9 +38,9 @@
               <p><%=form.presented_on%></p>
               <hr>
             </div>
-          </div>  
+          </div>
         <% end %>
       </div>
     </div>
-  </div> 
+  </div>
 </div>
