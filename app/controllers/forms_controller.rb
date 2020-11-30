@@ -28,20 +28,17 @@ class FormsController < ApplicationController
     @form.user = current_user
     @form.presentation_key = SecureRandom.alphanumeric(5)
     authorize @form
-    if @form.save
-      # need to connect question with form_question if needed
-      formquestion = FormQuestion.new
-      formquestion.form_id = @form.id
-      @question = Question.new(question_params)
-      @question.predefined = false
-      @question.question_topic = 'General'
-      @question.question_type = 'Open Question'
+    @question = Question.new(question_params)
+    @question.predefined = false
+    @question.question_topic = 'General'
+    @question.question_type = 'Open Question'
+    if @form.save && @question.save
       if @question.save
+        formquestion = FormQuestion.new
+        formquestion.form_id = @form.id
         formquestion.question_id = @question.id
         formquestion.save
         redirect_to edit_form_path(@form)
-      else
-        render :new
       end
     else
       render :new
@@ -49,13 +46,19 @@ class FormsController < ApplicationController
   end
 
   def edit
-    @questions = Question.where(["predefined = ? and question_topic = ?", true, "Body Language"])
+    if params[:query].present?
+      sql_query = "(question_topic ILIKE :query OR question_content ILIKE :query) AND predefined = true"
+      @questions = Question.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @questions = Question.where(predefined: true)
+    end
+    @question = Question.new
     @form = Form.find(params[:id])
     authorize @form
   end
 
   def update
-    @questions = Question.where(["predefined = ? and question_topic = ?", true, "Body Language"])
+    @questions = Question.where(predefined: true)
     @form = Form.find(params[:id])
     authorize @form
     if @form.update(form_params)

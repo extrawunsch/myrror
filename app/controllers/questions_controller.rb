@@ -12,7 +12,12 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @questions = Question.where(["predefined = ? and question_topic = ?", true, "Content"])
+    if params[:query].present?
+      sql_query = "(question_topic ILIKE :query OR question_content ILIKE :query) AND predefined = true"
+      @questions = Question.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @questions = Question.all
+    end
     @question = Question.new
     authorize @question
   end
