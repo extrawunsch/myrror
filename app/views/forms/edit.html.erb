@@ -2,10 +2,13 @@
   <div class="pb-5 main-container">
     <div class="inside-container">
       <div class="grid-container">
+
+
+
         <div class="item-a mt-5">
           <div class="card-form">
             <h5 class="mb-3">Information</h5>
-              <%= simple_form_for(@form, remote: true) do |f| %>
+            <%= simple_form_for(@form, remote: true) do |f| %>
               <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: false %>
               <%= f.input :name, label: false %>
               <%= f.input :speaker, label: false %>
@@ -38,6 +41,9 @@
             <% end %>
           </div>
         </div>
+
+
+
         <div class="item-b mt-5">
           <div class="card-questions" style="color:darkgray;">
             <h5 class="mx-3 mt-3 mb-4">Step 3 - Choose one of the following topics</h5>
@@ -54,22 +60,25 @@
               <p>Ask the audience if the talk was well organized.</p>
             </div>
           </div> 
+
           <div class="card-questions">
             <h5 class="mb-3 mt-3">What is your question about?</h5>
             <%= form_tag edit_form_path(@form, remote: true), method: :get do %>
-            <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-4", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
+              <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-4", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
             <% end %>
             
             <h5 class="mb-3 mt-3">Select your question</h5>
             <% @questions.each do |question| %>
-            <div class="question-card">
-              <textarea class="textarea" readonly><%= question.question_content %></textarea>
-              <button class='btn btn-rouge'>+</i></button>
-            </div>
-            <br>
+              <div class="question-card">
+                <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
+                <button class='btn btn-rouge'>+</i></button>
+              </div>
             <% end %>
           </div>
-        </div>
+        </div> 
+
+
+
       </div>
     </div>
   </div>

@@ -23,12 +23,12 @@
         </div>
 
         <div class="item-b pt-5">
-          <div class="card-questions">
+            <div class="card-questions">
             <h5 class="mb-4 mt-3" style="color:darkgray;">Don't know where to start? Copy a question</h5>
             <% @questions.each do |question| %>
-              <div data-controller="clipboard" class="question-card">
-                <textarea class="textarea" data-target="clipboard.source" readonly><%= question.question_content %></textarea>
-                <button class='btn btn-rouge' data-action="clipboard#copy" data-no-turbolink="true"><i class="far fa-clipboard"></i></button>
+              <div class="question-card">
+                <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
+                <button class='btn btn-rouge'>+</i></button>
               </div>
             <% end %>
           </div>
