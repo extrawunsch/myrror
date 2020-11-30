@@ -1,7 +1,6 @@
 <div class="background">
+<%= render "components/vertical_navbar", active: ""%>
   <div class="main-container">
-    <%= render "components/vertical_navbar"%>
-    <div class="dummy-temporary" style="width: 200px;"></div>
     <div class="form-display">
     <div class="tab-bar-show">
         <%=link_to 'Back to my form', form_path(@form), class:"btn btn-outline mr-5"%>
