@@ -2,8 +2,23 @@
   <%= render "components/vertical_navbar"%>
   <div class="dummy-temporary" style="width: 200px;"></div>
     <div class="main-container">
-    <div class="form-display">
-    
-    </div>
-  </div> 
+      <div class="form-display">
+        <div class="tab-bar">
+          <ul id="menu">
+            <li style="color: black; font-weight: 500">Today</li>
+            <li style="color: grey"> This week</li>
+            <li style="color: grey">This month</li>
+          </ul>
+          <div class="interactive my-3"> 
+            <%=link_to "Create a new form", new_form_path, class:"btn-above-page mr-5"%>
+          </div> 
+        </div>
+
+        <hr id="divider">
+
+        <div class="content-analytics" style="background-image: linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1)), width: 100%, url(https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1055&q=80);">
+        </div>
+
+      </div>
+    </div> 
 </div>
