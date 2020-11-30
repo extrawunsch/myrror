@@ -26,7 +26,7 @@
   }
    
   .home-black {
-    color: black;
+    color: $myrror;
     margin-left: 70px;
   }
    
@@ -60,7 +60,10 @@
     background: $myrror-hover;
     border: 1px solid $myrror-hover;
   }
-   
+  
+
+
+
   // BANNER
    
   .banner {
