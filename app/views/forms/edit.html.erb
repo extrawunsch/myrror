@@ -56,6 +56,9 @@
           </div> 
           <div class="card-questions">
             <h5 class="mb-4 mt-3" style="color:darkgray;">Examples - Ask your audience about Body Language</h5>
+            <%= form_tag new_form_question_path(@form, remote: true), method: :get do %>
+            <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-4", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
+            <% end %>
             <% @questions.each do |question| %>
               <div data-controller="clipboard" class="question-card">
                 <textarea class="textarea" data-target="clipboard.source" readonly><%= question.question_content %></textarea>
