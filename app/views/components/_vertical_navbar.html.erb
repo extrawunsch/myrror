@@ -1,17 +1,17 @@
 <div class="sidebar">
   <div class="logo">
-  	<%= image_tag "Myrror_logo_transparent.png", class:"navbar-logo"%>
+  	<%= image_tag "myrror_logo_transparent.png", class:"navbar-logo"%>
 	</div>
 	<a href="#contact">Overview</a>
-	
-	
-	
+
+
+
 	<% if active=="My Forms" %>
 	  <%= link_to "My Forms", forms_path, class:"active" %>
 	<% else %>
 	  <%= link_to "My Forms", forms_path %>
 	<% end %>
-	
+
 	<%= link_to "Form Editor", new_form_path %>
 
 	<% if active=="Analytics" %>
@@ -19,6 +19,6 @@
 	<% else %>
 	  <%= link_to "Analytics", forms_analytics_path %>
 	<% end %>
-	
-	
+
+
 </div>
