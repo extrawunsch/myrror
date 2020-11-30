@@ -9,19 +9,28 @@
   justify-content: center;
   font-size: 16px;
   color: white;
+  margin-top: 5vh;
   font-style: lighter;
-  margin-top: 65px;
   text-shadow: 1px black solid;
   background-color: #343434;
 }
 
 .landing-page-feedback-giver {
-    height: 100%;
-    width: 400px;
-    justify-content: center;
-    margin: 0 auto;
-    font-size: 32px;
-    text-align: center;
+  height: 100%;
+  width: 300px;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 32px;
+  text-align: center;
+  img {
+    width: 80%;
+    margin-top: 5vh;
+  }
+
+  form {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 }
 
 .feedback-label {
