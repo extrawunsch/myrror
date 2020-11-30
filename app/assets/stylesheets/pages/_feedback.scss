@@ -10,17 +10,28 @@
   flex-direction: row;
   background-color: #343434;
   border-radius: 12px;
+  justify-content: space-around;
 }
+
+.dashboard > i {
+  width: 200px;
+  height: 200px;
+}
+
+.dashboard > p {
+  justify-content: center;
+}
+
 
 .dashboard-items {
   display: inline-block;
-  width: 100px;
+  width: 120px;
   margin: 10px;
   text-align: center;
   line-height: 75px;
   font-size: 30px;
-  justify-content: space-around;
   color: $myrror;
+  justify-content: center;
 }
 
 .landing-page-advertisement{

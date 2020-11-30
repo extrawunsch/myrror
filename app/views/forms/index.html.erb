@@ -17,24 +17,33 @@
         <%=link_to "Create", new_form_path, class:"btn-above-page mr-5"%>
       </div>
     </div>
-    <hr id="divider">
 
               <ul class="dashboard">
                 <li class="dashboard-items">
-                  <i class="fab fa-wpforms"></i>
-                  <p><%= "my:forms - #{@forms.count}" %></p>
+                  <i id="icon-dashboard" class="fab fa-wpforms"></i>
+                  <p><%= "my:forms  #{@forms.count}" %></p>
                 </li>
                 <li class="dashboard-items">
-                  <i class="fab fa-wpforms"></i>
-                  <p><%= "my:forms - #{@forms.count}" %></p>
+                  <i id="icon-dashboard" class="fas fa-question-circle"></i>
+                  <% sum = 0 %>
+                  <% @forms.each do |form| %>
+                  <% sum += form.questions.count %>
+                  <% end %>
+                  <p><%= "my:questions  #{sum}" %></p>
                 </li>
                 <li class="dashboard-items">
-                  <i class="fab fa-wpforms"></i>
-                  <p><%= "my:forms - #{@forms.count}" %></p>
+                  <i id="icon-dashboard" class="fas fa-comment-dots"></i>
+                  <% sum = 0 %>
+                  <% @forms.each do |form| %>
+                    <% form.questions.each do |question| %>
+                      <% sum += question.answers.count %>
+                    <% end %>
+                  <% end %>
+                  <p><%= "my:answers  #{sum}" %></p>
                 </li>
                 <li class="dashboard-items">
-                  <i class="fab fa-wpforms"></i>
-                  <p><%= "my:forms - #{@forms.count}" %></p>
+                  <i id="icon-dashboard" class="fas fa-star"></i>
+                  <p><%= "my:rating  #{@forms.count}" %></p>
                 </li>
               </ul>
               <%# @forms.each do |form| %>
