@@ -10,6 +10,36 @@
   width: 100vw;
 }
 
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  background-color: #343434;
+  border-radius: 12px;
+  justify-content: space-around;
+  padding: 50px;
+}
+
+.dashboard > i {
+  width: 200px;
+  height: 200px;
+}
+
+.dashboard > p {
+  justify-content: center;
+}
+
+
+.dashboard-items {
+  display: inline-block;
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  color: $myrror;
+  justify-content: center;
+}
+
 .slick-prev:before, .slick-next:before {
   color: $myrror !important;
 }
@@ -31,18 +61,20 @@
 
 
 .delete-form {
-  height: 24px;
   width: 100%;
   align: right;
+  font-size: 15px;
+  text-align: right;
 }
 
-#delete-bin:toggle {
-  color: $middlemyrror;
+.fa-trash:before {
+  color: $myrror;
 }
+
 
 .inside-card {
   display: space-between;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .show-content {
