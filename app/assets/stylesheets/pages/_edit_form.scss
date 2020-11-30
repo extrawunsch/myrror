@@ -1,12 +1,22 @@
-.btn-create {  
-  background: $rouge;
-  text-decoration: none;
+
+.form-info-card {
   color: white;
-  border: 1px solid $rouge;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  transition: 0.4s ease;
+  background-color: $myrror-grey;
+  border-radius: 20px;
+  padding: 16px 24px;
+  margin-bottom: 28px;
+  margin-top: 20px;
+  width: 500px;
+}
+
+.form-info-card-green {
+  color: $myrror-grey;
+  background-color: $lightmyrror;
+  border-radius: 20px;
+  padding: 16px 24px;
+  margin-bottom: 28px;
+  margin-top: 20px;
+  width: 500px;
 }
 
 .btn-create:hover { 
