@@ -22,7 +22,8 @@
               <p><%=form.presented_on%></p>
               <div class="delete-form">
                 <%= link_to "", form_path(form), data: {:confirm => 'Are you sure?'}, :method => :delete, class:"fas fa-trash"  %>
-                  <p> <%= "Questions: #{form.questions.count} | Answers: #{form.answers.count}" %></p>
+                  <p> <%= "Questions: #{form.questions.count} | Answers: #{Answer.joins(question:  {form_questions: :form} ).where(forms: {id: form.id}).count
+}" %></p>
                 </div>
               <hr>
             </div>
