@@ -1,19 +1,21 @@
 <div class="background">
+  <%= render "components/vertical_navbar"%>
+  <div class="dummy-temporary" style="width: 200px;"></div>
   <div class="main-container">
     <div class="inside-container">
       <div class="grid-container">
 
         <div class="item-a">
           <%= simple_form_for(@form) do |f| %>
+          <h4 style="color:$darkgray;" class="mb-2 mt-3 mx-3">My form</h4> 
             <div class="card-questions-focus">
-              <h4 style="color:darkgray;" class="mb-3">Your Form</h4>
+              <h6 style="color:$darkgray;" class="mb-3">Form Information</h6>
               <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: false%>
               <%= f.input :name, label: false %>
               <%= f.input :speaker, label: false %>
             </div>
 
             <div class="card-questions-focus">
-              <h5 class="mb-3">Add another question</h5>
               <div class="form-group">
                 <% @form.questions.each do |form_question| %>
                   <label for="text"><%= form_question.question_content %></label>
@@ -21,6 +23,7 @@
                 <% end %>
               </div>
               <%= simple_fields_for(@question) do |g| %>
+                <h6 class="mb-3">Add another question</h6>
                 <%= g.input :question_content, placeholder: "What else do you want to know from the audience?", label: "Add another question" %>
                 <%= g.input :question_topic, as: :radio_buttons, label: 'Add the topic',
                   collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
@@ -55,8 +58,8 @@
             </div>
           </div> 
 
+          <h5 class="mb-3 mx-3 mt-5" style="color:$darkgray;">Predefined questions</h5>
           <div class="card-questions-scroll">
-            <h5 class="mb-3">Filter for a topic</h5>
             <%= form_tag edit_form_path(@form, remote: true), method: :get do %>
               <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-4", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
             <% end %>
@@ -65,7 +68,7 @@
             <% @questions.each do |question| %>
               <div class="question-card">
                 <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
-                <button class='btn btn-rouge'>+</i></button>
+                <button class='btn btn-plus'>+</i></button>
               </div>
             <% end %>
           </div>

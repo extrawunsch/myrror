@@ -11,11 +11,6 @@
   overflow-y: scroll;
 }
 
-.btn-rouge:hover {
-  text-decoration: none;
-  background: $rouge;
-}
-
 .textarea {
   resize: none;
   overflow: hidden;
@@ -31,21 +26,21 @@
   outline: 0;
 }
 
-.btn-rouge {
+.btn-plus {
   text-decoration: none;    
-  color: $rouge;
-  border: 1px solid $rouge;
+  color: $myrror;
+  border: 1px solid $myrror;
   padding: 4px 12px;
   border-radius: 12px;
   font-weight: lighter;
   transition: 0.4s ease;
-  margin-bottom: 0.4rem;
+  margin-bottom: 1.7rem;
 }
 
-.btn-rouge:hover {
+.btn-plus:hover {
   color: white;
   text-decoration: none;
-  background: $rouge
+  background: $myrror
 }
 
 .card-form {
@@ -63,8 +58,8 @@
   background-color: white;
   border-radius: 20px;
   border: transparent;
-  padding: 28px 32px;
-  margin-bottom: 20px;
+  padding: 28px 0;
+  margin-bottom: 28px;
   height: 450px;
   width: 500px;
 }
@@ -73,10 +68,10 @@
   color: $gray;
   background-color: white;
   border-radius: 20px;
-  padding: 12px 24px;
+  padding: 8px 20px;
   border: transparent;
   margin-bottom: 16px;
-  height: 500px;
+  height: 600px;
   width: 500px;
   overflow-y: scroll;
 }
