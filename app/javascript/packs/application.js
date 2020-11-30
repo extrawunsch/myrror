@@ -29,10 +29,12 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 import { initFlatpickr } from '../plugins/init_flatpickr';
+import { initCopyQuestion } from '../components/copy_question';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initFlatpickr();
+  initCopyQuestion();
 });
 
 import "controllers"
