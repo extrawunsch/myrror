@@ -32,13 +32,15 @@
               <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-2", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
             <% end %>
             <%= render "components/modal"%>
-          
-            <% @questions.each do |question| %>
-              <div class="question-card">
-                <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
-                <button class='button btn btn-plus'>+</i></button>
-              </div>
-            <% end %>
+
+            <div class="scrollbar">
+              <% @questions.each do |question| %>
+                <div class="question-card">
+                  <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
+                  <button class='button btn btn-plus'>+</i></button>
+                </div>
+              <% end %>
+            </div>
           </div> 
         </div>    
 
