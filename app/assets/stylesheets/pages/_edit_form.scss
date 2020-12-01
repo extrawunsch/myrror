@@ -1,6 +1,6 @@
 /* width */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 5px;
 }
 
 /* Track */
@@ -11,13 +11,19 @@
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $myrror-grey; 
+  background: gray; 
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $myrror-grey; 
+  background: gray; 
+}
+
+.scrollbar {
+  height: 600px;
+  overflow-y: scroll;
+  padding-right: 24px;
 }
 
 

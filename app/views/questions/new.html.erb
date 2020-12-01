@@ -8,45 +8,48 @@
         <div class="item-a">
           <h4 style="color:$darkgray;" class="mb-2 mt-3 mx-3">My form</h4> 
           <div class="card-questions-focus">
-            <%= simple_form_for([@form, @question], remote: true) do |f| %>
-              <div class="form-group">
-                <% @form.questions.each do |form_question| %>
-                  <label for="text"><%= form_question.question_content %></label>
-                  <textarea disabled="yes" class="form-control textarea-questions mb-3" type="text"></textarea>
-                <% end %>
-              </div>
-              <%= f.input :question_content, placeholder: "What else do you want to know from the audience?", label: "Add another question" %>
-              <%= f.input :question_topic, as: :radio_buttons, label: 'Add the topic',
-                collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
-                input_html: { class: "tag-selector" },
-                item_wrapper_class: 'tag-item' %>
-              <%= f.input :question_type, as: :radio_buttons, label: 'Add the question type', 
-                collection: ["Open Question", "Star Rating"],# "Multiple-Choice", "Single-Choice", "Text Slider"],
-                collection_wrapper_tag: 'div',
-                collection_wrapper_class: 'category-wrapper',
-                item_wrapper_class: 'category-item',
-                input_html: {class: 'category-selector'} %>
-              <%= f.submit 'Add question', class: 'btn btn-click mt-3 mb-3' %>
-            <% end %>
-            <%= link_to 'Create Form', success_form_path(@form), class: 'btn btn-outline mb-2' %>
+            <div class="scrollbar">
+              <%= simple_form_for([@form, @question], remote: true) do |f| %>
+                <div class="form-group">
+                  <% @form.questions.each do |form_question| %>
+                    <label for="text"><%= form_question.question_content %></label>
+                    <textarea disabled="yes" class="form-control textarea-questions mb-3" type="text"></textarea>
+                  <% end %>
+                </div>
+                <%= f.input :question_content, placeholder: "What else do you want to know from the audience?", label: "Add another question" %>
+                <%= f.input :question_topic, as: :radio_buttons, label: 'Add the topic',
+                  collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+                <%= f.input :question_type, as: :radio_buttons, label: 'Add the question type', 
+                  collection: ["Open Question", "Star Rating"],# "Multiple-Choice", "Single-Choice", "Text Slider"],
+                  collection_wrapper_tag: 'div',
+                  collection_wrapper_class: 'category-wrapper',
+                  item_wrapper_class: 'category-item',
+                  input_html: {class: 'category-selector'} %>
+                <%= f.submit 'Add question', class: 'btn btn-click mt-3 mb-3' %>
+              <% end %>
+              <%= link_to 'Create Form', success_form_path(@form), class: 'btn btn-outline mb-2' %>
+            </div>
           </div>
         </div>
         
         <div class="item-b"> 
-
           <h4 class="mb-3 mx-3 mt-3" style="color:$darkgray;">Predefined questions</h4>
-          <div class="card-questions-scroll">
-            <%= form_tag new_form_question_path(@form, remote: true), method: :get do %>
-              <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-2", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
-            <% end %>
-            <%= render "components/modal"%>
-
-            <% @questions.each do |question| %>
-              <div class="question-card mt-3">
-                <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
-                <button class='button btn btn-plus'>+</button>
-              </div>
-            <% end %>
+          <div class="card-questions">
+              <%= form_tag new_form_question_path(@form, remote: true), method: :get do %>
+                <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-2", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
+              <% end %>
+              <%= render "components/modal"%>
+              
+            <div class="scrollbar">
+              <% @questions.each do |question| %>
+                <div class="question-card mt-3">
+                  <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
+                  <button class='button btn btn-plus'>+</button>
+                </div>
+              <% end %>
+            </div>
           </div>
 
         </div>
