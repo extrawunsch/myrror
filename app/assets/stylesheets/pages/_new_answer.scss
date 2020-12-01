@@ -22,6 +22,10 @@ $border: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .illustration {
+    width: 18vw;
+  }
 }
 
 .carousel-inner {
@@ -30,9 +34,18 @@ $border: 24px;
   border-radius:$border;
   box-shadow: inset 2px 4px 4px 0px rgba(0,0,0,0.45);
   // padding: 120px;
-  align-items: center;
-  display: flex;
+  // align-items: center;
+  // display: flex;
   height: $baseheight;
+  
+  .carousel-item {
+    h4 {
+      margin: 16px 24px;
+    }
+    #answer-form {
+      margin: 16px 24px;
+    }
+  }
 }
 
 // CODE FOR THE RADIO BUTTON STAR INPUT
@@ -77,5 +90,14 @@ input[type="radio"]:checked + label {
 @media only screen and (max-width: 600px) {
   .question-form {
     width: 90vw;
+    height: 72vh;
+    display: flex;
+  }
+  .symbol-field {
+    width: 90vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
