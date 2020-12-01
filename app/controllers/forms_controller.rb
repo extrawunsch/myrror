@@ -2,7 +2,7 @@ require 'securerandom'
 #require 'rqrcode'
 
 class FormsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show, :destroy]
 
   def analytics
     @forms = policy_scope(Form).order(created_at: :desc)
@@ -79,7 +79,14 @@ class FormsController < ApplicationController
       end
     end
   end
-  
+
+  def destroy
+    @form = Form.find(params[:id])
+    authorize @form
+    @form.destroy
+    redirect_to forms_path
+  end
+
   def success
     @form = Form.find(params[:id])
     authorize @form
