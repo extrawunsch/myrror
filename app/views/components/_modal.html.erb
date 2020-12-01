@@ -1,0 +1,41 @@
+        <!-- Trigger the modal with a button -->
+        <button type="button" id="myBtn" class="btn btn-outline-edit" data-toggle="modal" data-target="#myModal">What's the question topic?</button>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Choose a question topic</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                
+              </div>
+              <div class="modal-body">
+                <h4 class="question_topic_tag">General</h4>
+                <p>Ask the Audience for overall feedback.</p>
+                <h4 class="question_topic_tag">Content</h4>
+                <p>Ask the audience if the message was clear.</p>
+                <h4 class="question_topic_tag">Body Language.</h4>
+                <p>Ask how the audience liked your body language.</p>
+                <h4 class="question_topic_tag">Speaking Style</h4>
+                <p>Ask how the audience liked your speaking style</p>
+                <h4 class="question_topic_tag">Organization</h4>
+                <p>Ask the audience if the talk was well organized.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <script>
+          $(document).ready(function(){
+            $("#myBtn").click(function(){
+              $("#myModal").modal({backdrop: true});
+            });
+          });
+        </script>
