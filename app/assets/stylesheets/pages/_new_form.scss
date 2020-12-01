@@ -79,15 +79,17 @@
 }
 
 .card-questions-focus {
-  box-shadow: 0 0 16px rgba(0,0,0,0.6);
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
   color: $darkgray;
   background-color: white;
   border-radius: 20px;
   padding: 28px 32px;
-  border: 1px solid $middlemyrror;
+  border: 1px solid $gray;
   margin-bottom: 28px;
   margin-top: 28px;
+  //height: 600px;
   width: 500px;
+  //overflow-y: scroll;
 }
 
 .question-card {
