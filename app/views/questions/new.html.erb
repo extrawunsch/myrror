@@ -29,20 +29,20 @@
                   input_html: {class: 'category-selector'} %>
                 <%= f.submit 'Add question', class: 'btn btn-click mt-3 mb-3' %>
               <% end %>
-              <%= link_to 'Create Form', success_form_path(@form), class: 'btn btn-outline mb-2' %>
             </div>
           </div>
+          <%= link_to 'Create Form', success_form_path(@form), class: 'btn btn-outline mb-2' %>
         </div>
         
         <div class="item-b"> 
-          <h4 class="mb-3 mx-3 mt-3" style="color:$darkgray;">Predefined questions</h4>
+          <h4 class="mb-2 mx-3 mt-3" style="color:$darkgray;">Predefined questions</h4>
           <div class="card-questions">
               <%= form_tag new_form_question_path(@form, remote: true), method: :get do %>
                 <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-2", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
               <% end %>
               <%= render "components/modal"%>
-              
-            <div class="scrollbar">
+
+            <div class="scrollbar-questions">
               <% @questions.each do |question| %>
                 <div class="question-card mt-3">
                   <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
