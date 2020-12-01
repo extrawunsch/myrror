@@ -1,24 +1,29 @@
 <div class="background">
 <%= render "components/vertical_navbar", active: ""%>
   <div class="main-container">
-  
+
     <div class="form-display">
       <div class="tab-bar-show">
           <%=link_to "Back to all my Forms", forms_path, class:"btn btn-outline mr-5"%>
       </div>
         <div>
           <hr id="divider">
-          <h4 class="show-content mb-3 ml-3"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %> </h4>
+          <div class="show-parent">
+          <h4 class="show-content mb-3 ml-3"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %></h4>
+          <div class="qr-div"><%= link_to "", success_form_path(@form), class:"fas fa-qrcode"  %></div>
           <ul style="list-style-type:none; border-left:1px solid #000;height:50vh">
             <% @form.questions.each do |question|  %>
               <li class="d-flex align-items-center">
                 <div class="show-content">
                 <%= question.question_content %>
                 </div>
-                <%= link_to "See all #{question.answers.count} Answers", form_question_answers_path(@form, question), class:"btn-above-page-show" %>
+                <%= link_to "See all #{pluralize question.answers.size, "Answer"}", form_question_answers_path(@form, question), class:"btn-above-page-show" %>
               </li>
             <% end %>
-            <div class="mt-5"><%= link_to "Add a new question", new_form_question_path(@form), class:"btn-outline-show"  %></div>
+            <div class="show-links mt-5">
+              <%= link_to "Add a new question", new_form_question_path(@form), class:"btn-outline-show"  %>
+            </div>
+            </div>
           </ul>
         </div>
       </div>

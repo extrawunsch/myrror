@@ -13,6 +13,33 @@
   margin-left: 200px;
 }
 
+.show-links {
+  margin-top: 5px;
+  width: 50%;
+  justify-content: space-between;
+  display-items: inline-block;
+}
+
+.show-parent {
+  position: relative;
+  width: 100%
+}
+
+.qr-div {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+}
+
+.fa-qrcode:before {
+  color: $myrror;
+  font-size: 50px;
+}
+
+.fa-qrcode:before:toggle {
+  color: #343434;
+  text-decoration: none;
+}
 
 .headline-show {
   color: $myrror;
