@@ -20,7 +20,7 @@
               <ul class="dashboard">
                 <li class="dashboard-items">
                   <p>my:forms</p>
-                 <div><%= "#{@forms.count}" %> <i id="icon-dashboard" class="fas fa-pen fa-lg"></i></div>
+                 <div><%= "#{@forms.count}" %> <i id="icon-dashboard" class="fas fa-pen"></i></div>
                 </li>
                 <li class="dashboard-items">
                   <p>my:questions</p>
@@ -28,7 +28,7 @@
                   <% @forms.each do |form| %>
                   <% sum += form.questions.count %>
                   <% end %>
-                  <div><%= "#{sum}" %> <i id="icon-dashboard" class="fas fa-question-circle fa-lg"></i></div>
+                  <div><%= "#{sum}" %> <i id="icon-dashboard" class="fas fa-question-circle"></i></div>
                 </li>
                 <li class="dashboard-items">
                   <p>my:answers</p>
@@ -38,19 +38,15 @@
                       <% sum += question.answers.count %>
                     <% end %>
                   <% end %>
-                  <%= "#{sum}" %> <i id="icon-dashboard" class="fas fa-comment-dots fa-lg"></i>
+                  <%= "#{sum}" %> <i id="icon-dashboard" class="fas fa-comment-dots"></i>
 
                 </li>
                 <li class="dashboard-items">
                   <p>my:rating</p>
-                  <%=   "#{@forms.count}" %> <i id="icon-dashboard" class="fas fa-star fa-lg"></i>
+                  <%=   "#{@forms.count}" %> <i id="icon-dashboard" class="fas fa-star"></i>
                 </li>
               </ul>
-              <%# @forms.each do |form| %>
-              <%# sum += form.questions.count %>
-              <p><%#= "my:questions - #{sum}" %></p>
-              <%# end %>
-              <p><%#= "my:answers - #{Answer.joins(question:  {form_questions: :form} ).where(forms: {id: form.id}).count}" %></p>
+
 
 
 
