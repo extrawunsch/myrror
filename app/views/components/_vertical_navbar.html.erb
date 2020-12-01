@@ -12,7 +12,14 @@
 	  <%= link_to "My Forms", forms_path %>
 	<% end %>
 
-	<%= link_to "Form Editor", new_form_path %>
+	<% if active=="Form Editor" %>
+	  <%= link_to "Form Editor", new_form_path, class:"active" %>
+	<% else %>
+	  <%= link_to "Form Editor", new_form_path %>
+	<% end %>
+
+	<a href="#contact">Analytics</a>
+
 
 	<% if active=="Analytics" %>
 	  <%= link_to "Analytics", forms_analytics_path, class:"active" %>

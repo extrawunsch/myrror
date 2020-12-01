@@ -2,7 +2,7 @@ require 'securerandom'
 #require 'rqrcode'
 
 class FormsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show, :destroy]
 
   def analytics
     @forms = policy_scope(Form).order(created_at: :desc)
@@ -21,14 +21,19 @@ class FormsController < ApplicationController
   end
 
   def new
+    if params[:query].present?
+      sql_query = "(question_topic ILIKE :query OR question_content ILIKE :query) AND predefined = true"
+      @questions = Question.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @questions = Question.where(predefined: true)
+    end
     @form = Form.new
     authorize @form
     @question = Question.new
-    @questions = Question.where(["predefined = ? and question_topic = ?", true, "General"])
   end
 
   def create
-    @questions = Question.where(["predefined = ? and question_topic = ?", true, "General"])
+    @questions = Question.where(predefined: true)
     @form = Form.new(form_params)
     @form.user = current_user
     @form.presentation_key = SecureRandom.alphanumeric(5)
@@ -79,7 +84,14 @@ class FormsController < ApplicationController
       end
     end
   end
-  
+
+  def destroy
+    @form = Form.find(params[:id])
+    authorize @form
+    @form.destroy
+    redirect_to forms_path
+  end
+
   def success
     @form = Form.find(params[:id])
     authorize @form

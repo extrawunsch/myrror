@@ -1,13 +1,70 @@
-// FOR RADIO BUTTONS
-.btn-create {  
-  background: $rouge;
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: $light-gray;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: gray; 
+}
+
+.scrollbar {
+  height: 100vh;
+  overflow-y: scroll;
+  padding-right: 24px;
+}
+
+.scrollbar-questions {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+
+.btn-outline-edit {
   text-decoration: none;
-  color: white;
-  border: 1px solid $rouge;
-  padding: 8px 24px;
-  border-radius: 50px;
+  color: $myrror;
+  border-radius: 10px;
   font-weight: lighter;
   transition: 0.4s ease;
+  align-items: center;
+}
+ 
+.btn-outline-edit:hover {
+  text-decoration: none;
+  background: $myrror;
+  color: white;
+}
+
+.form-info-card {
+  color: white;
+  background-color: $myrror-grey;
+  border-radius: 20px;
+  padding: 16px 24px;
+  margin-bottom: 28px;
+  margin-top: 20px;
+  width: 500px;
+}
+
+.form-info-card-green {
+  color: $myrror-grey;
+  background-color: $lightmyrror;
+  border-radius: 20px;
+  padding: 16px 24px;
+  margin-bottom: 28px;
+  margin-top: 20px;
+  width: 500px;
 }
 
 .btn-create:hover { 

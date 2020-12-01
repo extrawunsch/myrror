@@ -1,41 +1,91 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"/>
+</head>
 <div class="background">
   <%= render "components/vertical_navbar", active: "My Forms"%>
   <div class="main-container">
     <div class="form-display">
-    <div class="tab-bar">
+    <div class="tab-bar-index">
       <ul id="menu">
         <li style="color: black; font-weight: 500">My forms</li>
-        <li>Presets</li>
-        <li>Deleted</li>
+        <li></li>
+        <li></li>
       </ul>
-      <div class="interactive my-3"> 
-        <%=link_to "Create", new_form_path, class:"btn-above-page mr-5"%>
-      </div> 
+      <div class="interactive my-3">
+        <%=link_to "Create New Form", new_form_path, class:"btn-above-page mr-5"%>
+      </div>
     </div>
-    <hr id="divider">
-      <div class="card-grid">
+
+    <div class="grid-container">
+              <ul class="dashboard">
+                <li class="dashboard-items">
+                  <p>my:forms</p>
+                 <div><%= "#{@forms.count}" %> <i id="icon-dashboard" class="fas fa-pen"></i></div>
+                </li>
+                <li class="dashboard-items">
+                  <p>my:questions</p>
+                  <% sum = 0 %>
+                  <% @forms.each do |form| %>
+                  <% sum += form.questions.count %>
+                  <% end %>
+                  <div><%= "#{sum}" %> <i id="icon-dashboard" class="fas fa-question-circle"></i></div>
+                </li>
+                <li class="dashboard-items">
+                  <p>my:answers</p>
+                  <% sum = 0 %>
+                  <% @forms.each do |form| %>
+                    <% form.questions.each do |question| %>
+                      <% sum += question.answers.count %>
+                    <% end %>
+                  <% end %>
+                  <%= "#{sum}" %> <i id="icon-dashboard" class="fas fa-comment-dots"></i>
+
+                </li>
+                <li class="dashboard-items">
+                  <p>my:rating</p>
+                  <%=   "#{@forms.count}" %> <i id="icon-dashboard" class="fas fa-star"></i>
+                </li>
+              </ul>
+    </div>
+
+
+
+
+      <hr id="divider">
+      <div class="card-grid" id="slick-show">
         <% @forms.each do |form| %>
           <div class="card-index">
+                <div class="delete-form"><%= link_to "", form_path(form), data: {:confirm => 'Are you sure you want to delete your form?'}, :method => :delete, class:"fas fa-trash"  %></div>
             <div class="card-content">
               <%=link_to "#{form.name}",  form_path(form), class:"card-link"%>
               <p><%=form.presented_on%></p>
               <hr>
+              <div class="card-content">
+                  <div class="inside-card"><%= "my:questions: #{form.questions.count} " %></div>
+                  <div class="inside-card"><%= "my:answers: #{Answer.joins(question:  {form_questions: :form} ).where(forms: {id: form.id}).count}" %></div>
+              </div>
             </div>
-          </div>  
+          </div>
         <% end %>
       </div>
-      <hr id="divider">
-      <div class="card-grid">
-        <% @forms.each do |form| %>
-          <div class="card-index">
-            <div class="card-content">
-              <%=link_to "#{form.name}", form_path(form), class:"card-link"%>
-              <p><%=form.presented_on%></p>
-              <hr>
-            </div>
-          </div>  
-        <% end %>
-      </div>
+
+
+
+
     </div>
-  </div> 
+  </div>
 </div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $(document).ready(function(){
+  $('.card-grid').slick({
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows: true
+  });
+});
+</script>
