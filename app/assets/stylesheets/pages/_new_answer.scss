@@ -1,3 +1,18 @@
+.question-container {
+  width: 70vw;
+}
+
+.display-image{
+  width: 20%;
+  background: @myrror-grey;
+}
+.question-form {
+  width: 80%;
+}
+
+
+// CODE FOR THE RADIO BUTTON STAR INPUT
+
 input[type="radio"] {
   display:none;
 }
@@ -19,7 +34,7 @@ input[type="radio"] {
 
   .collection_radio_buttons:hover {
     cursor:pointer;
-    background-image: url("stern-full.png");
+    background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url("stern-full.png");
   }
 }
 
@@ -27,4 +42,12 @@ input[type="radio"] {
 
 input[type="radio"]:checked + label {
   background-image: url("stern-full.png");
+}
+
+// MEDIA QUERY RULES TO SWITCH STYLING
+
+@media only screen and (max-width: 600px) {
+  .question-form {
+    width: 90vw;
+  }
 }
