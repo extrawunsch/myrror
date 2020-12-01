@@ -41,13 +41,14 @@
         </div>
 
         <div class="item-b">
-          <h5 class="mb-3 mx-3 mt-5" style="color:$darkgray;">Predefined questions</h5>
+          <h4 class="mb-4 mx-3 mt-5" style="color:$darkgray;">Predefined questions</h4>
           <div class="card-questions-scroll">
             <%= form_tag edit_form_path(@form, remote: true), method: :get do %>
-              <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-4", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
+              <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-2", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
             <% end %>
+            <%= render "components/modal"%>
           
-            <h5 class="mb-3 mt-3">Select your question</h5>
+            <h5 class="mb-3 mt-4">Select your question</h5>
             <% @questions.each do |question| %>
               <div class="question-card">
                 <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
