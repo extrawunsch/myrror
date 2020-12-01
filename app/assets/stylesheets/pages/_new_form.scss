@@ -6,6 +6,7 @@
 
 .inside-container {
   width: calc(100vw - 200px);
+  box-shadow: inset 2px 4px 4px 0px rgba(0,0,0,0.45);
   background: white;
   border-radius: 24px 0 0 24px;
   margin: 12px 0px 12px 12px;
@@ -113,6 +114,11 @@
 
 // FOR RADIO BUTTONS
 
+.question-types {
+  .category-item {
+    margin-right: 8px;
+  }
+}
 .category-wrapper {
   display: flex;
   justify-content: left;
