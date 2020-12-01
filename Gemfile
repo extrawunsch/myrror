@@ -31,6 +31,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'pundit'
 gem 'rqrcode'
+gem 'dragonfly'
+gem 'rqrcode_png'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
