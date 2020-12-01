@@ -4,52 +4,11 @@
 @import "form_success";
 @import "edit_form";
 @import "analytics";
+@import "index_page";
 
 .background {
   max-height: 100%;
   width: 100vw;
-}
-
-.dashboard {
-  display: flex;
-  flex-direction: row;
-  background-color: #343434;
-  border-radius: 12px;
-  justify-content: space-around;
-  padding: 50px;
-}
-
-.dashboard > i {
-  width: 200px;
-  height: 200px;
-}
-
-.dashboard > p {
-  justify-content: center;
-}
-
-
-.dashboard-items {
-  display: inline-block;
-  width: 300px;
-  margin: 10px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
-  color: $myrror;
-  justify-content: center;
-}
-
-.slick-prev:before, .slick-next:before {
-  color: $myrror !important;
-}
-
-.slick-list .draggable {
-  height: 240px;
-}
-
-.slick-track {
-  height: 300px;
 }
 
 .main-container {
@@ -60,30 +19,7 @@
 }
 
 
-.delete-form {
-  width: 100%;
-  align: right;
-  font-size: 15px;
-  text-align: right;
-}
 
-.fa-trash:before {
-  color: $myrror;
-  font-size: 18px;
-}
-
-
-.inside-card {
-  display: space-between;
-  font-size: 16px;
-}
-
-.show-content {
-  color: black;
-  border-radius: 24px;
-  margin: 12px;
-  padding: 12px;
-}
 
 .headline {
   color: $myrror;
@@ -93,13 +29,11 @@
   }
 }
 
-.show-content-show {
+.show-content {
   color: black;
   border-radius: 24px;
   margin: 12px;
   padding: 12px;
-  background: white;
-  width: fit-content;
 }
 
 .form-display {
@@ -131,25 +65,6 @@
     padding: 0 16px;
     font-size: 4vh;
   }
-}
-
-.btn-above-page-show {
-  text-decoration: none;
-  color: white;
-  background: $myrror;
-  border: 1px solid $myrror;
-  padding: 8px 24px;
-  border-radius: 50px;
-  font-weight: lighter;
-  transition: 0.4s ease;
-  display: flex;
-  align-items: center;
-}
-
-.btn-above-page-show:hover {
-  color: white;
-  text-decoration: none;
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
 }
 
 
