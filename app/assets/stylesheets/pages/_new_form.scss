@@ -73,7 +73,7 @@
   padding: 8px 20px;
   border: transparent;
   margin-bottom: 16px;
-  height: 600px;
+  height: 700px;
   width: 500px;
   overflow-y: scroll;
 }
@@ -87,9 +87,7 @@
   border: 1px solid $gray;
   margin-bottom: 28px;
   margin-top: 28px;
-  //height: 600px;
   width: 500px;
-  //overflow-y: scroll;
 }
 
 .question-card {
@@ -124,7 +122,7 @@
 
 .category-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
 }
 
 .category-item {
@@ -155,12 +153,12 @@
 
 
 #question_question_type_open_question + label {
-  color: $rouge;
+  color: $myrror;
 }
 
 #question_question_type_open_question:checked + label {
-  background-color: $rouge;
-  border-color: $rouge;
+  background-color: $myrror;
+  border-color: $myrror;
 }
 
 
@@ -184,12 +182,12 @@
 }
 
 #question_question_type_star_rating + label {
-  color: $rouge;
+  color: $myrror;
 }
 
 #question_question_type_star_rating:checked + label {
-  background-color: $rouge;
-  border-color: $rouge;
+  background-color: $myrror;
+  border-color: $myrror;
 }
 
 #question_question_type_text_slider + label {

@@ -21,15 +21,15 @@
                 input_html: { class: "tag-selector" },
                 item_wrapper_class: 'tag-item' %>
               <%= f.input :question_type, as: :radio_buttons, label: 'Add the question type', 
-                collection: ["Open Question"],# "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
+                collection: ["Open Question", "Star Rating"],# "Multiple-Choice", "Single-Choice", "Text Slider"],
                 collection_wrapper_tag: 'div',
                 collection_wrapper_class: 'category-wrapper',
                 item_wrapper_class: 'category-item',
                 input_html: {class: 'category-selector'} %>
-              <%= f.submit 'Continue', class: 'btn btn-click mt-3' %>
+              <%= f.submit 'Add question', class: 'btn btn-click mt-3 mb-3' %>
             <% end %>
+            <%= link_to 'Create Form', success_form_path(@form), class: 'btn btn-outline mb-2' %>
           </div>
-          <%= link_to 'Create Form', success_form_path(@form), class: 'btn btn-outline mb-5' %>
         </div>
         
         <div class="item-b"> 

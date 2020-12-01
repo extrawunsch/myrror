@@ -9,7 +9,7 @@
           <%= simple_form_for(@form) do |f| %>
           <h4 style="color:$darkgray;" class="mb-2 mt-3 mx-3">My form</h4> 
             <div class="form-info-card-green">
-              <h6 style="color:$darkgray;" class="mb-3">Check the Form Information</h6>
+              <h6 style="color:$darkgray;" class="mb-2">Check the Form Information</h6>
               <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: false%>
               <%= f.input :name, label: false %>
               <%= f.input :speaker, label: false %>
@@ -29,7 +29,7 @@
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item' %>
                 <%= g.input :question_type, as: :radio_buttons, label: 'Add the question type', 
-                  collection: ["Open Question"], #, "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
+                  collection: ["Open Question", "Star Rating"], #, "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
                   collection_wrapper_tag: 'div',
                   collection_wrapper_class: 'category-wrapper',
                   item_wrapper_class: 'category-item',

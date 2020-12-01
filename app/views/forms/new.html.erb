@@ -11,7 +11,7 @@
             <div class="card-questions-focus">
               <h5>Step 1 - Add some information</h5>
               <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Choose the dates" %>
-              <%= f.input :name, label: "Title" %>
+              <%= f.input :name, label: "Choose a Form Title" %>
               <%= f.input :speaker, label: "Speaker Name" %>
             </div>
             <div class="card-questions-focus">
@@ -19,7 +19,7 @@
               <%= simple_fields_for(@question) do |g| %>
                 <%= g.input :question_content, as: :text, label: false, placeholder: 'What would you like to know from your audience?' %>
               <% end %>
-            <%= f.submit 'Continue', class: 'btn btn-click mt-4 mb-2' %>
+            <%= f.submit 'Continue', class: 'btn btn-click mt-3 mb-2' %>
           <% end %>
             </div>
         </div>
