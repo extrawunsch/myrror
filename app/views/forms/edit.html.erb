@@ -41,22 +41,6 @@
         </div>
 
         <div class="item-b">
-          <div class="card-questions" style="color:darkgray;">
-            <h5 class="ml-3 mt-4 mb-3">Step 3 - Choose a question topic</h5>
-            <div class="topic-card">
-              <h4 class="question_topic_tag">General</h4>
-              <p>Ask the Audience for overall feedback.</p>
-              <h4 class="question_topic_tag">Content</h4>
-              <p>Ask the audience if the message was clear.</p>
-              <h4 class="question_topic_tag">Body Language.</h4>
-              <p>Ask how the audience liked your body language.</p>
-              <h4 class="question_topic_tag">Speaking Style</h4>
-              <p>Ask how the audience liked your speaking style</p>
-              <h4 class="question_topic_tag">Organization</h4>
-              <p>Ask the audience if the talk was well organized.</p>
-            </div>
-          </div> 
-
           <h5 class="mb-3 mx-3 mt-5" style="color:$darkgray;">Predefined questions</h5>
           <div class="card-questions-scroll">
             <%= form_tag edit_form_path(@form, remote: true), method: :get do %>
@@ -71,9 +55,7 @@
               </div>
             <% end %>
           </div>
-        </div> 
-
-
+        </div>
 
       </div>
     </div>
