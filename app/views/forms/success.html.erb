@@ -26,7 +26,9 @@
 
             <div class="code-part-above-right">
               <h4>Please find here the code that gives acces to your form.</h4>
-              <h5>Copy your code and paste it into your presentation.</h5>
+              <h5>Copy your code and share it with your audience. They can acces the form via this link: 
+              <%= link_to 'myrror.org/feedback', feedback_path, class: 'link-success' %></h5>
+              
             </div>
           </div>
 
@@ -42,9 +44,12 @@
             
             
             <div class="qr-code-part-bellow-right">
-              <h4>Or you can also use this QR to give acces to your form.</h4>
-              <h5>Copy your code and paste it into your presentation.</h5>
-              <%= link_to 'myrror.org/feedback', feedback_path, class: 'mb-4 btn btn-outline' %>
+              <h4>Or you can also use this QR code to give acces to your form.</h4>
+              <h5>Copy the QR code and share it with your audience. They will arrive directly to your form.</h5>
+              
+              <div>
+                <button class='btn btn-clipboard' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
+              </div>
             </div>
 
           </div>

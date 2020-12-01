@@ -20,14 +20,14 @@
 .inner-card {
   display: inline-block;
   color: $darkgray;
-  padding: 0px 50px;
-  margin: 28px;
-  width: 850px;
+  padding: 0px 35px;
+  margin-top: 20px;
+  width: 800px;
   // box-shadow: 0px 4px 24px 8px rgba(0, 0, 0, 0.25);
   // border-radius: 24px;
 
   h5 {
-    font-size: 28px; 
+    font-size: 26px; 
     font-weight: 500;
     margin-bottom: 30px;
   }
@@ -38,11 +38,11 @@
 
 .code-part-above {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .code-part-above-left {
-  width: 300px;
+  width: 250px;
 }
 
 .code-part-above-right {
@@ -51,13 +51,13 @@
   width: 450px;
   
   h4 {
-    font-size: 20px; 
+    font-size: 18px; 
     font-weight: 600;
   }
 
   h5 {
-    font-size: 18px;
-    margin-top: 60px;
+    font-size: 16px;
+    margin-top: 45px;
     margin-bottom: 0;
   }
 }
@@ -114,6 +114,15 @@ outline: 0;
   background-color: transparent;
 }
 
+.link-success {
+  color: #34CBB0;
+}
+
+.link-success:hover {
+  color: #34CBB0;
+  
+}
+
 // HR TAG 
 
 .hr-tag-success-page {
@@ -125,13 +134,13 @@ outline: 0;
 // QR CODE PART 
 
 .qr-code-part-bellow {
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
 }
 
 .qr-code-part-bellow-left {
   display: inline-block;
-  width: 300px;
+  width: 250px;
   align-items: center;
 }
 
@@ -146,14 +155,19 @@ outline: 0;
   width: 450px;
 
   h4 {
-    font-size: 20px; 
+    font-size: 18px; 
     font-weight: 600;
   }
 
   h5 {
-    font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 0;
+    font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .btn-clipboard {
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 
@@ -210,7 +224,7 @@ h1{
   overflow: hidden;
   display: block;
   line-height: 2;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: bold;
 }
 
