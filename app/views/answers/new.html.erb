@@ -57,6 +57,7 @@
                         collection_wrapper_tag: 'div',
                         collection_wrapper_class: 'star-wrapper',
                         input_html: {class: 'fas fa-star'} %>
+                        <%= f.hidden_field :question_id, value: question.id %>
                         <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"%>
                     <% end %>
                     <%# <% Rating Bootstrap %>
