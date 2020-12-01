@@ -34,10 +34,14 @@
 }
 
 .card-codes {
-  background-color: $middlemyrror;
+  // background-color: $middlemyrror;
   color: $darkgray;
-  border-radius: 20px;
-  padding: 8px 36px;
+  border-radius: 54px;
+  padding: 20px 100px;;
+  border: 3px solid #C4C4C4;
+  box-sizing: border-box;
+  width: 290px;
+  height: 85px;
 }
 
 table {
@@ -132,20 +136,19 @@ h1{
   100% {transform: translateX(200%)}
 }
 
-.textarea-green {
+.textarea-code {
   resize: none;
   overflow: hidden;
   cursor: default;
-  background-color: $middlemyrror;
   border: none;
-  width: 80px;
-  height: 32px;
+  // width: 80px;
+  // height: 32px;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 36px;
   text-align: center;
 }
 
-.textarea-green:focus, input:focus {
+.textarea-code:focus, input:focus {
 outline: 0;
 }
 
