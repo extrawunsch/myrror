@@ -8,6 +8,7 @@
         <div class="item-a">
           <%= simple_form_for(@form) do |f| %>
           <h4 style="color:$darkgray;" class="mb-2 mt-3 mx-3">My form</h4> 
+          <div class="scrollbar">
             <div class="form-info-card-green">
               <h6 style="color:$darkgray;" class="mb-2">Check the Form Information</h6>
               <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: false%>
@@ -35,9 +36,10 @@
                   item_wrapper_class: 'category-item',
                   input_html: {class: 'category-selector'} %>
               <% end %>
-              <%= f.submit 'Continue', class: 'btn btn-click' %>
+              <%= f.submit 'Add question', class: 'btn btn-click mb-2 mt-3' %>
             <% end %>
             </div>
+          </div>
         </div>
 
         <div class="item-b">
@@ -47,13 +49,15 @@
               <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-2", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
             <% end %>
             <%= render "components/modal"%>
-          
-            <% @questions.each do |question| %>
-              <div class="question-card mt-3">
-                <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
-                <button class='btn btn-plus'>+</button>
-              </div>
-            <% end %>
+
+            <div class="scrollbar">
+              <% @questions.each do |question| %>
+                <div class="question-card mt-3">
+                  <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
+                  <button class='button btn btn-plus'>+</button>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
 
