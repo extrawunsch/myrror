@@ -13,40 +13,16 @@
               <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Choose the dates" %>
               <%= f.input :name, label: "Choose a Form Title" %>
               <%= f.input :speaker, label: "Speaker Name" %>
+              <%= f.hidden_field :answer_content, value: "0" %>
+              <%= f.hidden_field :question_content, value: "Overall impression of the Talk" %>
             </div>
             <div class="card-questions-focus">
-              <h5 class="mb-3">Step 2: Add your first question </h5>
-              <%= simple_fields_for(@question) do |g| %>
-                <%= g.input :question_content, as: :text, label: false, placeholder: 'What would you like to know from your audience?' %>
+              <%= f.submit 'Continue', class: 'btn btn-click mt-3 mb-2' %>
               <% end %>
-            <%= f.submit 'Continue', class: 'btn btn-click mt-3 mb-2' %>
-          <% end %>
             </div>
         </div>
 
-        <div class="item-b">
-        <h5 class="mb-1 mx-3 mt-3">Don't know where to start?</h5>
-        <h6 class="mb-3 mx-3">Select a predefined question</h6>
-          <div class="card-questions-scroll">
-            <%= form_tag new_form_path(@form, remote: true), method: :get do %>
-              <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-2", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
-            <% end %>
-            <%= render "components/modal"%>
-
-            <div class="scrollbar">
-              <% @questions.each do |question| %>
-                <div class="question-card">
-                  <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
-                  <button class='button btn btn-plus'>+</i></button>
-                </div>
-              <% end %>
-            </div>
-          </div> 
-        </div>    
-
-
-
-
+     
       </div>
     </div>
   </div>

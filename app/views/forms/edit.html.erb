@@ -7,8 +7,10 @@
 
         <div class="item-a">
           <%= simple_form_for(@form) do |f| %>
-          <h4 style="color:$darkgray;" class="mb-2 mt-3 mx-3">My form</h4> 
-          <div class="scrollbar">
+          <div class="d-flex justify-content-between">
+            <h3 style="color:$darkgray;" class="mb-2 mt-3 mx-3">My form</h4> 
+            <%= link_to 'Finish Form', success_form_path(@form), class: 'btn btn-outline mt-3 mx-3' %>
+          </div>
             <div class="form-info-card-green">
               <h6 style="color:$darkgray;" class="mb-2">Check the Form Information</h6>
               <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: false%>
@@ -19,8 +21,14 @@
             <div class="card-questions-focus">
               <div class="form-group">
                 <% @form.questions.each do |form_question| %>
-                  <label for="text"><%= form_question.question_content %></label>
-                  <textarea disabled="yes" class="form-control textarea-questions mb-3" type="text"></textarea>
+                  <% case form_question.question_type %>
+                    <% when "Open Question" %>
+                      <label for="text"><%= form_question.question_content %></label>
+                      <textarea disabled="yes" class="form-control textarea-questions mb-3" type="text"></textarea>
+                    <% else %>
+                      <label for="text"><%= form_question.question_content %></label>
+                      <input disabled="yes" class="mb-3" type="text" value="⭐⭐⭐⭐⭐">
+                    <% end %>
                 <% end %>
               </div>
               <%= simple_fields_for(@question) do |g| %>
@@ -39,7 +47,6 @@
               <%= f.submit 'Add question', class: 'btn btn-click mb-2 mt-3' %>
             <% end %>
             </div>
-          </div>
         </div>
 
         <div class="item-b">
