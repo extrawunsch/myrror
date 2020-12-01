@@ -1,9 +1,35 @@
+$baseheight: 70vh;
+$basewidth: 70vw;
+$banner-width: 20vw;
+$border: 24px;
+
+
+// CODE FOR THE ANSWERING FORM WITH CAROUSEL
 
 .question-form {
-  width: 70vw;
-  height: 90vh;
+  width: $basewidth;
+  height: $baseheight;
+  display: flex;
+  background: $myrror-grey;
+  border-radius:$border;
+  box-shadow: 0px 8px 16px 4px rgba(0,0,0,0.1);
 }
 
+.symbol-field {
+  width: $banner-width;
+  height: $baseheight;
+}
+
+.carousel-inner {
+  width: 50vw;
+  background-color: white;
+  border-radius:$border;
+  box-shadow: inset 2px 4px 4px 0px rgba(0,0,0,0.45);
+  // padding: 120px;
+  align-items: center;
+  display: flex;
+  height: $baseheight;
+}
 
 // CODE FOR THE RADIO BUTTON STAR INPUT
 
