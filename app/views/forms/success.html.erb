@@ -25,7 +25,7 @@
             </div>
 
             <div class="code-part-above-right">
-              <h4>The code to acces your form.</h4>
+              <h4>Please find here the code that gives acces to your form.</h4>
               <h5>Copy your code and paste it into your presentation.</h5>
             </div>
           </div>
@@ -34,19 +34,21 @@
           <hr>
           </div>
           
-          <div class="center">
-            <%= raw @qr.as_html %>
-          </div>
-          
-          <h5>Or share Presentation Key</h5>
-          
-          <div class="center">
+          <div class="qr-code-part-bellow">
+
+            <div class="qr-code-part-bellow-left">
+              <div class="qr-code"><%= raw @qr.as_html %></div>
+            </div>
             
             
-            <h6 class="mb-2 mt-4">Your audience can input the key via</h6>
-            <%= link_to 'myrror.org/feedback', feedback_path, class: 'mb-4 btn btn-outline' %>
+            <div class="qr-code-part-bellow-right">
+              <h4>Or you can also use this QR to give acces to your form.</h4>
+              <h5>Copy your code and paste it into your presentation.</h5>
+              <%= link_to 'myrror.org/feedback', feedback_path, class: 'mb-4 btn btn-outline' %>
+            </div>
+
           </div>
-          
+
         </div>
       </div>
     </div>
