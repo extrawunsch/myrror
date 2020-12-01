@@ -42,7 +42,7 @@
 }
 
 .code-part-above-left {
-  width: 250px;
+  width: 270px;
 }
 
 .code-part-above-right {
@@ -140,13 +140,18 @@ outline: 0;
 
 .qr-code-part-bellow-left {
   display: inline-block;
-  width: 250px;
+  width: 270px;
   align-items: center;
 }
 
 .qr-code {
   border: 3px solid black;
   border-radius: 54px;
+  padding: 27px;
+
+  table {
+    width: 200px;
+  }
 }
 
 .qr-code-part-bellow-right {
