@@ -36,21 +36,30 @@
                   <%end%>
                 <% when "Multiple-Choice" %>
                   <%= simple_form_for [@form, @answer] do |f| %>
-                    <% question.answers.each  do |answer| %>
-                      <%= f.input :answer_content, as: :boolean, checked_value: true, unchecked_value: false , collection: [answer.answer_content], label: answer.answer_content,  required: false %>
-                    <%end%>
+                    <%# <% question.answers.each  do |answer| %> 
+                      <%= f.association :answer, as: :boolean, label: answer.answer_content, required: false %>
+                      <%# <%= f.collection_check_boxes  :answer_content , collection: [answer.answer_content], label: answer.answer_content,  required: false %>
+                    <%# <%end%>
                     <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"%>
                   <%end%>
                 <% when "Single-Choice" %>
                     <%= simple_form_for [@form, @answer] do |f| %>
                       <% question.answers.each  do |answer| %>
                         <%= f.input :answer_content, as: :radio_buttons, collection: [answer.answer_content], label: "", required: false %>
+                        <%= f.hidden_field :question_id, value: question.id %>
                       <%end%>
                     <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"%>
                     <%end%>
                 <% when "Star Rating" %>
-                  <%# <% Rating Bootstrap %> 
-                  <h2>Nothing</h2>
+                   <%= simple_form_for [@form, @answer] do |f| %>
+                     <%= f.input :answer_content, as: :radio_buttons, label: 'Add a rating from 1 to 5', 
+                       collection: ["1","2","3","4","5"], #, "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
+                       collection_wrapper_tag: 'div',
+                       collection_wrapper_class: 'category-wrapper',
+                       input_html: {class: 'fas fa-star'} %>
+                      <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"%>
+                   <% end %>
+                  <%# <% Rating Bootstrap %>
                 <% else "Text Slider" %>
                   <%# <% Simple Form Slider %> 
                   <h2>Nothing</h2>
