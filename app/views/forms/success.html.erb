@@ -1,30 +1,41 @@
 <div class="background">
   <%= render "components/vertical_navbar", active: ""%>
   <div class="main-container">
-      <div class="form-display"> 
+    <div class="form-display"> 
       <div class="title-animation">
         <h1 class="home-title">
           <span> ✔ Congratulations, your form has been created !</span>
         </h1>
       </div>
-        <div class="card-success">
-          <div class="inner-card">
-            <h5>Share QR code in your presentation</h5>
-            <div class="center">
-              <%= raw @qr.as_html %>
-            </div>
-            <h5>Or share Presentation Key</h5>
-            <div class="center">
-              <div data-controller="clipboard">
-                <div class="card-codes center"><textarea class="textarea-green" style="margin:0;" data-target="clipboard.source"><%= @form.presentation_key %></textarea></div>
-                <button class='btn btn-clipboard' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
-              </div>
-              <h6 class="mb-2 mt-4">Your audience can input the key via</h6>
-              <%= link_to 'myrror.org/feedback', feedback_path, class: 'mb-4 btn btn-outline' %>
-            </div>
+      
+      <div class="card-success">
+        <div class="inner-card">
+          <h5>Share one of the following in your presentation: </h5>
+          
+          <div data-controller="clipboard">
+            <div class="card-codes center"><textarea class="textarea-green" style="margin:0;" data-target="clipboard.source"><%= @form.presentation_key %></textarea></div>
           </div>
+          
+          <div>
+            <button class='btn btn-clipboard' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
+          </div>
+          
+          <div class="center">
+            <%= raw @qr.as_html %>
+          </div>
+          
+          <h5>Or share Presentation Key</h5>
+          
+          <div class="center">
+            
+            
+            <h6 class="mb-2 mt-4">Your audience can input the key via</h6>
+            <%= link_to 'myrror.org/feedback', feedback_path, class: 'mb-4 btn btn-outline' %>
+          </div>
+          
         </div>
       </div>
     </div>
   </div>
 </div>
+
