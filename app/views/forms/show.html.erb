@@ -18,13 +18,17 @@
                 <%= question.question_content %>
                 </div>
                 <% if question.question_type == "Open Question" %>
-                <% sum = 0 %>
                 <%= link_to "See all #{pluralize question.answers.size, "Answer"}", form_question_answers_path(@form, question), class:"btn-above-page-show" %>
                 <% elsif question.question_type == "Star Rating" %>
-                <% answers_integer = question.answer.answer_content.to_i %>
-                <% sum += answers_integer %>
-                <% result = sum / answers_integer %>
-                <%= result * url(star-green.png)  %>
+                <% sum = 0 %>
+                <% result = 0 %>
+                <% question.answers.each do |answer| %>
+                <% sum += answer.answer_content.to_i %>
+                <% result = sum / question.answers.length %>
+                <% end %>
+                <% result.times do %>
+                <%= image_tag "star-green.png" %>
+                <% end %>
                 <% end %>
               </li>
             <% end %>

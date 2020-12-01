@@ -116,31 +116,31 @@ puts 'User done, Questions seed started'
       question_topic: "Content",
       question_type: "Open Question"
     )
-  
+
     content_question3 = Question.create(
       question_content: "Was the message of the speaker clear?",
       question_topic: "Content",
       question_type: "Star Rating"
     )
-  
+
     content_question4 = Question.create(
       question_content: "What was the most important concept/idea you took away today?",
       question_topic: "Content",
       question_type: "Open Question"
     )
-  
+
     content_question5 = Question.create(
       question_content: "What could the speaker have left out? What could she have added?",
       question_topic: "Content",
       question_type: "Open Question"
     )
-  
+
     content_question6 = Question.create(
       question_content: "What did you find least useful about the speech?",
       question_topic: "Content",
       question_type: "Open Question"
     )
-  
+
   form1 = Form.create(name: "Ted Talk: What do top students do differently?", presented_on: "05.01.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: niklas.id, speaker: "Niklas Koch")
   form2 = Form.create(name: "Webinar: I finished my Coding bootcamp - Insights and Learnings", presented_on: "07.12.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: niklas.id, speaker: "Niklas Koch")
   form3 = Form.create(name: "Webinar: How to find a job in tech after Coding bootcamp", presented_on: "08.01.2020", presentation_key: SecureRandom.alphanumeric(5), user_id: niklas.id, speaker: "Niklas Koch")
@@ -172,11 +172,11 @@ puts 'User done, Questions seed started'
   Answer.create(question_id: general_question1.id, answer_content: "You look cute, add me on insta - cbone96")
   Answer.create(question_id: general_question1.id, answer_content: "Very catchy talk")
 
-  Answer.create(question_id: content_question3.id, answer_content: "Well, I know that it was about being a better student")
-  Answer.create(question_id: content_question3.id, answer_content: "I loved his personal stories and he structured the talk very well")
-  Answer.create(question_id: content_question3.id, answer_content: "I don't know")
-  Answer.create(question_id: content_question3.id, answer_content: "The message of the talk was pretty clear to me")
-  Answer.create(question_id: content_question3.id, answer_content: "Yes")
+  Answer.create(question_id: content_question3.id, answer_content: "3")
+  Answer.create(question_id: content_question3.id, answer_content: "4")
+  Answer.create(question_id: content_question3.id, answer_content: "2")
+  Answer.create(question_id: content_question3.id, answer_content: "5")
+  Answer.create(question_id: content_question3.id, answer_content: "4")
 
   Answer.create(question_id: content_question4.id, answer_content: "Shutting off my phone to not be distracted when studying")
   Answer.create(question_id: content_question4.id, answer_content: "I have to watch less youtube and study more")
