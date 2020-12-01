@@ -1,13 +1,7 @@
-.question-container {
-  width: 70vw;
-}
 
-.display-image{
-  width: 20%;
-  background: @myrror-grey;
-}
 .question-form {
-  width: 80%;
+  width: 70vw;
+  height: 90vh;
 }
 
 
@@ -17,17 +11,21 @@ input[type="radio"] {
   display:none;
 }
 
-.carousel {
+.star-wrapper {
+  display: flex;
+}
+
+.carousel-inner {
   .collection_radio_buttons {
   background-image: url("stern-empty.png");
   background-size: auto;
   background-position: center;
   padding:10px;
-  margin-top:10px;
   display:block;
   position:relative;
   width: 50px;
   height: 50px;
+  margin: 0 !important;
   color: rgba(0, 0, 0, 0);
   text-align: center;
   } 

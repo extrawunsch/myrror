@@ -2,82 +2,83 @@
 <%# <% Iteration to create every Form for the questions %>
 
 <div class="question-container">
-  <div class="row justify-content-center">
+  <div class="overfield d-flex justify-content-center">
     <div class="question-form">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel('pause')">
-        
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <% n = 0 %>
-          <% @form.questions.each do |question| %>
-            <li data-target="#carouselExampleIndicators" data-slide-to=><%= n += 1 %></li>
-          <% end %>
-        </ol>
+      <div class="answer-fields">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel('pause')">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <% n = 0 %>
+            <% @form.questions.each do |question| %>
+              <li data-target="#carouselExampleIndicators" data-slide-to=><%= n += 1 %></li>
+            <% end %>
+          </ol>
 
-        <div class="carousel-inner">
-          
-          <div class="carousel-item active" data-interval="1000000">
-             <div class="d-block w-100" id="answer-form">
-              <h1>Start the quiz!</h1>
-            </div>
-          </div>
-
-          <%@form.questions.each do |question| %>
-            <div class="carousel-item" data-interval="1000000">
-              <h1><%=question.question_content%></h1>
-              
+          <div class="carousel-inner">
+            
+            <div class="carousel-item active" data-interval="1000000">
               <div class="d-block w-100" id="answer-form">
-              <% case question.question_type%>
-                <% when "Open Question" %>
-                  <%= simple_form_for [@form, @answer] do |f| %>
-                    <%= f.input :answer_content, label: "Answer" %>
-                    <%= f.hidden_field :question_id, value: question.id %>
-                    <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"%>
-                  <%end%>
-                <% when "Multiple-Choice" %>
-                  <%= simple_form_for [@form, @answer] do |f| %>
-                    <%# <% question.answers.each  do |answer| %> 
-                      <%= f.association :answer, as: :boolean, label: answer.answer_content, required: false %>
-                      <%# <%= f.collection_check_boxes  :answer_content , collection: [answer.answer_content], label: answer.answer_content,  required: false %>
-                    <%# <%end%>
-                    <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"%>
-                  <%end%>
-                <% when "Single-Choice" %>
-                    <%= simple_form_for [@form, @answer] do |f| %>
-                      <% question.answers.each  do |answer| %>
-                        <%= f.input :answer_content, as: :radio_buttons, collection: [answer.answer_content], label: "", required: false %>
-                        <%= f.hidden_field :question_id, value: question.id %>
-                      <%end%>
-                    <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"%>
-                    <%end%>
-                <% when "Star Rating" %>
-                   <%= simple_form_for [@form, @answer] do |f| %>
-                     <%= f.input :answer_content, as: :radio_buttons, label: 'Add a rating from 1 to 5', 
-                       collection: ["1","2","3","4","5"], #, "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
-                       collection_wrapper_tag: 'div',
-                       collection_wrapper_class: 'star-wrapper',
-                       input_html: {class: 'fas fa-star'} %>
-                      <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"%>
-                   <% end %>
-                  <%# <% Rating Bootstrap %>
-                <% else "Text Slider" %>
-                  <%# <% Simple Form Slider %> 
-                  <h2>Nothing</h2>
-                <% end %>
+                <h1>Start the quiz!</h1>
               </div>
             </div>
-          <% end %>
 
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
+            <%@form.questions.each do |question| %>
+              <div class="carousel-item" data-interval="1000000">
+                <h1><%=question.question_content%></h1>
+                
+                <div class="d-block w-100" id="answer-form">
+                <% case question.question_type%>
+                  <% when "Open Question" %>
+                    <%= simple_form_for [@form, @answer] do |f| %>
+                      <%= f.input :answer_content, label: "Answer" %>
+                      <%= f.hidden_field :question_id, value: question.id %>
+                      <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"%>
+                    <%end%>
+                  <% when "Multiple-Choice" %>
+                    <%= simple_form_for [@form, @answer] do |f| %>
+                      <%# <% question.answers.each  do |answer| %> 
+                        <%= f.association :answer, as: :boolean, label: answer.answer_content, required: false %>
+                        <%# <%= f.collection_check_boxes  :answer_content , collection: [answer.answer_content], label: answer.answer_content,  required: false %>
+                      <%# <%end%>
+                      <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"%>
+                    <%end%>
+                  <% when "Single-Choice" %>
+                      <%= simple_form_for [@form, @answer] do |f| %>
+                        <% question.answers.each  do |answer| %>
+                          <%= f.input :answer_content, as: :radio_buttons, collection: [answer.answer_content], label: "", required: false %>
+                          <%= f.hidden_field :question_id, value: question.id %>
+                        <%end%>
+                      <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"%>
+                      <%end%>
+                  <% when "Star Rating" %>
+                    <%= simple_form_for [@form, @answer] do |f| %>
+                      <%= f.input :answer_content, as: :radio_buttons, label: 'Add a rating from 1 to 5', 
+                        collection: ["1","2","3","4","5"], #, "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
+                        collection_wrapper_tag: 'div',
+                        collection_wrapper_class: 'star-wrapper',
+                        input_html: {class: 'fas fa-star'} %>
+                        <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"%>
+                    <% end %>
+                    <%# <% Rating Bootstrap %>
+                  <% else "Text Slider" %>
+                    <%# <% Simple Form Slider %> 
+                    <h2>Nothing</h2>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
 
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-          
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            
+        </div>
       </div>
     </div>
   </div>
