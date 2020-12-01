@@ -17,6 +17,8 @@
   display: inline-block;
 }
 
+// CARD
+
 .inner-card {
   display: inline-block;
   color: $darkgray;
@@ -33,14 +35,42 @@
   }
 }
 
+// CODE PART
+
+// -->LEFT PART CODE
+
+.code-part-above {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.code-part-above-left {
+  width: 290px;
+}
+
+.code-part-above-right {
+  width: 290px;
+  padding: 10px 20px;
+  
+  h4 {
+    font-size: 20px; 
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: 18px;
+    margin-top: 47px;
+    margin-bottom: 0;
+  }
+}
+
 .card-codes {
   // background-color: $middlemyrror;
   color: $darkgray;
   border-radius: 54px;
-  padding: 20px 0px;;
+  padding: 15px 0px;;
   border: 3px solid #C4C4C4;
   box-sizing: border-box;
-  width: 290px;
   height: 85px;
 }
 
@@ -67,14 +97,16 @@ outline: 0;
   text-decoration: none;
   background-color: $myrror;
   color: white;
+  width: 100%;
   padding: 8px 0px;
   font-weight: lighter;
   transition: 0.4s ease;
   display: inline-block;
   align-items: center;
   margin-bottom: 16px;
-  width: 290px;
   border-radius: 54px;
+  box-shadow: 0px 8px 24px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
 }
 
 .btn-clipboard:hover {
@@ -83,7 +115,8 @@ outline: 0;
   border: 3px solid #34CBB0;
   background-color: transparent;
 }
- 
+
+// -->RIGHT PART CODE
 
 
 
@@ -119,6 +152,7 @@ h1{
 
 .title-animation {
   width: 50vw;
+
   h1{
     font-size: 1.5em;
     font-weight: 400;

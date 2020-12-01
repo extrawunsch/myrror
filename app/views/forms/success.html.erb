@@ -9,16 +9,27 @@
       </div>
       
       <div class="card-success">
+        
         <div class="inner-card">
           <h5>Share one of the following in your presentation: </h5>
           
-          <div data-controller="clipboard">
-            <div class="card-codes center"><textarea class="textarea-code" data-target="clipboard.source"><%= @form.presentation_key %></textarea></div>
+          <div class="code-part-above">
+            <div class="code-part-above-left">
+              <div data-controller="clipboard">
+                <div class="card-codes center"><textarea class="textarea-code" data-target="clipboard.source"><%= @form.presentation_key %></textarea></div>
+              </div>
+              
+              <div>
+                <button class='btn btn-clipboard' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
+              </div>
+            </div>
+
+            <div class="code-part-above-right">
+              <h4>The code to acces your form.</h4>
+              <h5>Copy your code and paste it into your presentation.</h5>
+            </div>
           </div>
-          
-          <div>
-            <button class='btn btn-clipboard' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
-          </div>
+
           
           <div class="center">
             <%= raw @qr.as_html %>
