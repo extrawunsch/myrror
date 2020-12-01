@@ -120,7 +120,7 @@ puts 'User done, Questions seed started'
     content_question3 = Question.create(
       question_content: "Was the message of the speaker clear?",
       question_topic: "Content",
-      question_type: "Open Question"
+      question_type: "Star Rating"
     )
   
     content_question4 = Question.create(

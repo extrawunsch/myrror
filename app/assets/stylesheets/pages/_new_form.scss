@@ -62,20 +62,8 @@
   border: transparent;
   padding: 28px 0;
   margin-bottom: 28px;
-  height: 450px;
-  width: 500px;
-}
-
-.card-questions-scroll {
-  color: $gray;
-  background-color: white;
-  border-radius: 20px;
-  padding: 8px 20px;
-  border: transparent;
-  margin-bottom: 16px;
-  height: 700px;
-  width: 500px;
-  overflow-y: scroll;
+  height: 100vh;
+  width: 460px;
 }
 
 .card-questions-focus {
@@ -83,7 +71,7 @@
   color: $darkgray;
   background-color: white;
   border-radius: 20px;
-  padding: 28px 32px;
+  padding: 20px 24px;
   border: 1px solid $gray;
   margin-bottom: 28px;
   margin-top: 28px;
@@ -112,6 +100,12 @@
 
 .item-a {
   justify-self: center;
+}
+
+.item-a-scroll {
+  justify-self: center;
+  height: 600px;
+  overflow-y: scroll;
 }
 
 .item-b {
