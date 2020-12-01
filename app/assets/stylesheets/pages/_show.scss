@@ -34,10 +34,10 @@
 .fa-qrcode:before {
   color: $myrror;
   font-size: 50px;
+
 }
 
-.fa-qrcode:before:toggle {
-  color: #343434;
+.fa-qrcode:hover {
   text-decoration: none;
 }
 
