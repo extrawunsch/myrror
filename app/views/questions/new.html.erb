@@ -46,7 +46,7 @@
 
           <h5 class="mb-3 mx-3 mt-5" style="color:$darkgray;">Predefined questions</h5>
           <div class="card-questions-scroll">
-            <%= form_tag edit_form_path(@form, remote: true), method: :get do %>
+            <%= form_tag new_form_question_path(@form, remote: true), method: :get do %>
               <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-4", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
             <% end %>
           
