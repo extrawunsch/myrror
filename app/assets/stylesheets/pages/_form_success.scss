@@ -1,3 +1,17 @@
+
+.form-display-success-page {
+  padding: 20px 0px 48px 96px;
+  width: calc(100vw - 200px);
+  box-shadow: inset 2px 4px 4px 0px rgba(0,0,0,0.45);
+  
+  background: white;
+  border-radius: 24px 0 0 24px;
+  margin: 12px 0px 12px 12px;
+  overflow-y: scroll;
+}
+
+
+
 :root{
   --bg-color: white;
 }
@@ -166,8 +180,8 @@ outline: 0;
 
   h5 {
     font-size: 16px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
   }
 
   .btn-clipboard {

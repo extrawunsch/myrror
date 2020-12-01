@@ -1,7 +1,7 @@
 <div class="background">
   <%= render "components/vertical_navbar", active: ""%>
   <div class="main-container">
-    <div class="form-display"> 
+    <div class="form-display-success-page"> 
       <div class="title-animation">
         <h1 class="home-title">
           <span> ✔ Congratulations, your form has been created !</span>
@@ -10,17 +10,17 @@
       
       <div class="card-success">
         
-        <div class="inner-card">
+        <div class="inner-card" data-controller="clipboard">
           <h5>Share one of the following in your presentation: </h5>
           
-          <div class="code-part-above">
+          <div class="code-part-above" >
             <div class="code-part-above-left">
-              <div data-controller="clipboard">
+              <div>
                 <div class="card-codes center"><textarea class="textarea-code" data-target="clipboard.source"><%= @form.presentation_key %></textarea></div>
               </div>
               
               <div>
-                <button class='btn btn-clipboard' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
+                <button class='btn btn-clipboard' data-action="click->clipboard#copy"><i class="far fa-clipboard"></i></button>
               </div>
             </div>
 
@@ -39,7 +39,7 @@
           <div class="qr-code-part-bellow">
 
             <div class="qr-code-part-bellow-left">
-              <div class="qr-code"><%= raw @qr.as_html %></div>
+              <div class="qr-code"><%= raw @qr .as_html %></div>
             </div>
             
             
