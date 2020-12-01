@@ -1,19 +1,21 @@
 <div class="background">
-  <div class="pb-5 main-container">
+  <%= render "components/vertical_navbar", active: "Form Editor"%>
+  <div class="dummy-temporary" style="width: 200px;"></div>
+  <div class="main-container">
     <div class="inside-container">
       <div class="grid-container">
 
-        <div class="item-a pt-5">
+        <div class="item-a">
           <%= simple_form_for(@form) do |f| %>
-            <div class="card-questions-focus">
-              <h4 style="color:darkgray;" class="mb-3">Your Form</h4>
-              <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Choose the dates" %>
-              <%= f.input :name, label: "Title" %>
-              <%= f.input :speaker, label: "Speaker Name" %>
+          <h4 style="color:$darkgray;" class="mb-2 mt-3 mx-3">My form</h4> 
+            <div class="form-info-card-green">
+              <h6 style="color:$darkgray;" class="mb-2">Check the Form Information</h6>
+              <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: false%>
+              <%= f.input :name, label: false %>
+              <%= f.input :speaker, label: false %>
             </div>
 
             <div class="card-questions-focus">
-              <h5 class="mb-3">Try it by adding another question</h5>
               <div class="form-group">
                 <% @form.questions.each do |form_question| %>
                   <label for="text"><%= form_question.question_content %></label>
@@ -27,51 +29,33 @@
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item' %>
                 <%= g.input :question_type, as: :radio_buttons, label: 'Add the question type', 
-                  collection: ["Open Question"], #, "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
+                  collection: ["Open Question", "Star Rating"], #, "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
                   collection_wrapper_tag: 'div',
                   collection_wrapper_class: 'category-wrapper',
                   item_wrapper_class: 'category-item',
                   input_html: {class: 'category-selector'} %>
               <% end %>
-            </div>
               <%= f.submit 'Continue', class: 'btn btn-click' %>
             <% end %>
+            </div>
         </div>
 
-        <div class="item-b mt-5">
-          <div class="card-questions" style="color:darkgray;">
-            <h5 class="mx-3 mt-3 mb-4">Step 3 - Choose one of the following topics</h5>
-            <div class="topic-card">
-              <h4 class="question_topic_tag">General</h4>
-              <p>Ask the Audience for overall feedback.</p>
-              <h4 class="question_topic_tag">Content</h4>
-              <p>Ask the audience if the content and message were clear.</p>
-              <h4 class="question_topic_tag">Body Language.</h4>
-              <p>Ask how the audience liked your body language.</p>
-              <h4 class="question_topic_tag">Speaking Style</h4>
-              <p>Ask how the audience liked your speaking style</p>
-              <h4 class="question_topic_tag">Organization</h4>
-              <p>Ask the audience if the talk was well organized.</p>
-            </div>
-          </div> 
-
-          <div class="card-questions">
-            <h5 class="mb-3 mt-3">What is your question about?</h5>
+        <div class="item-b">
+          <h4 class="mb-4 mx-3 mt-3" style="color:$darkgray;">Predefined questions</h4>
+          <div class="card-questions-scroll">
             <%= form_tag edit_form_path(@form, remote: true), method: :get do %>
-              <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-4", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
+              <%= select_tag 'query', options_for_select(['General', 'Content','Body Language', 'Speaking Style', 'Organization']), class: "form-control mb-2", prompt: 'Choose a question topic', onchange:"this.form.submit();", selected: params[:query] %>
             <% end %>
-            
-            <h5 class="mb-3 mt-3">Select your question</h5>
+            <%= render "components/modal"%>
+          
             <% @questions.each do |question| %>
-              <div class="question-card">
+              <div class="question-card mt-3">
                 <textarea class="textarea" id="copyhere" readonly><%= question.question_content %></textarea>
-                <button class='btn btn-rouge'>+</i></button>
+                <button class='btn btn-plus'>+</button>
               </div>
             <% end %>
           </div>
-        </div> 
-
-
+        </div>
 
       </div>
     </div>
