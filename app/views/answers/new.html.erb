@@ -64,8 +64,7 @@
                       <%end%>
                   <% when "Star Rating" %>
                     <%= simple_form_for [@form, @answer] do |f| %>
-                      <%= f.input :answer_content, as: :radio_buttons, label: 'Add a rating from 1 to 5',
-                        collection: ["1","2","3","4","5"], #, "Multiple-Choice", "Single-Choice", "Star Rating", "Text Slider"],
+                      <%= f.input :answer_content, collection: (1..5).to_a, label: "Rate your experience",
                         collection_wrapper_tag: 'div',
                         collection_wrapper_class: 'star-wrapper',
                         input_html: {class: 'fas fa-star'} %>
