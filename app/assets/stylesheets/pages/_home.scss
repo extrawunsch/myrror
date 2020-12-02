@@ -19,8 +19,9 @@
     backdrop-filter: blur(4px);
     text-align: center;
     margin: 0 auto;
+    padding: 0 5%;
     a {
-      font-size: 20px;
+      font-size: 1.1rem;
     }
   }
 
@@ -34,7 +35,6 @@
 
   .home-black {
     color: $myrror;
-    margin-left: 70px;
   }
 
   .home-black:hover {
@@ -52,20 +52,17 @@
   .btn-above-page-navbar {
     text-decoration: none;
     color: white;
-    background: $myrror;
-    border: 1px solid $myrror;
-    padding: 8px 24px;
-    border-radius: 50px;
-    font-weight: 400;
+    padding: 6px 16px;
+    font-weight: lighter;
     transition: 0.4s ease;
+    background: #5dcfba;
+    border-radius: 50px;
   }
 
   .btn-above-page-navbar:hover {
-    // text-decoration: none;
     box-shadow: 0 8px 30px rgb(0, 0, 0);
     color: white;
-    background: $myrror-hover;
-    border: 1px solid $myrror-hover;
+    background: $myrror;
   }
 
 // BANNER
@@ -129,7 +126,7 @@
     color: white;
     background: $myrror;
     border: 1px solid $myrror;
-    padding: 16px 20px;
+    padding: 12px 20px;
     border-radius: 50px;
     font-weight: 400;
     transition: 0.4s ease;
