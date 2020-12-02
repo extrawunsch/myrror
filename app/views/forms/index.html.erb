@@ -55,16 +55,15 @@
       <hr id="divider">
       <div class="card-grid" id="slick-show">
         <% @forms.each do |form| %>
-          <div class="card-index">
-                <div class="delete-form"><%= link_to "", form_path(form), data: {:confirm => 'Are you sure you want to delete your form?'}, :method => :delete, class:"fas fa-trash"  %></div>
+          <div class="card-index-page">
+            <div class="delete-form"><%= link_to "", form_path(form), data: {:confirm => 'Are you sure you want to delete your form?'}, :method => :delete, class:"fas fa-trash"  %></div>
+            <div class="stars-form"> <i id="icon-dashboard" class="fas fa-star"></i> <%=   "#{@forms.count}" %> </div>
             <div class="card-content">
-              <%=link_to "#{form.name}",  form_path(form), class:"card-link"%>
-              <p><%=form.presented_on%></p>
+              <%=link_to "#{form.name}",  form_path(form), class:"card-link-index"%>
+              <p><strong><%=form.presented_on.strftime('%A, %b %d')%></strong></p>
               <hr>
-              <div class="card-content">
-                  <div class="inside-card"><%= "my:questions: #{form.questions.count} " %></div>
-                  <div class="inside-card"><%= "my:answers: #{Answer.joins(question:  {form_questions: :form} ).where(forms: {id: form.id}).count}" %></div>
-              </div>
+              <div class="inside-card"><%= "my:questions: #{form.questions.count} " %></div>
+              <div class="inside-card"><%= "my:answers: #{Answer.joins(question:  {form_questions: :form} ).where(forms: {id: form.id}).count}" %></div>
             </div>
           </div>
         <% end %>

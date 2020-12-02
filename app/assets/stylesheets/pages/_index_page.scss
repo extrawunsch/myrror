@@ -1,7 +1,8 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 16px;
+  padding: 8px;
+  width: 100%;
 }
 
 .tab-bar-index {
@@ -31,19 +32,20 @@
   background-color: #343434;
   border-radius: 12px;
   justify-content: space-around;
-  padding: 50px;
+  padding: 20px;
+  width: 80vw;
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 500px) and (max-width: 900px) {
+@media (min-width: 500px) and (max-width: 750px) {
   .dashboard {
     grid-template-columns: 1fr;
   }
 }
 
-@media (min-width: 900px) and (max-width: 1200px) {
+@media (min-width: 750px) and (max-width: 1200px) {
   .dashboard {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -59,7 +61,6 @@
 
 .dashboard-items {
   display: inline-block;
-  width: 300px;
   margin: 10px;
   text-align: center;
   line-height: 75px;
@@ -85,16 +86,30 @@
 
 .delete-form {
   width: 100%;
-  align: right;
   font-size: 15px;
-  text-align: right;
+  position: absolute;
+  bottom: 3px;
+  right: -40%;
+
+
+  .fa-trash:before {
+    color: $myrror;
+    font-size: 26px;
+  }
 }
 
-.fa-trash:before {
-  color: $myrror;
-  font-size: 18px;
-}
+.stars-form {
+  position: absolute;
+  bottom: 3px;
+  left: 18px;
 
+
+
+  .fa-star:before {
+    color: $myrror;
+    font-size: 26px;
+  }
+}
 
 .inside-card {
   display: space-between;
@@ -103,6 +118,7 @@
 
 .card-grid .slick-initialized .slick-slide {
   margin-top: 30px;
+  width: 78vw;
 }
 
 
@@ -150,3 +166,40 @@
   font-size: 16px;
   color: #343434;
 }
+
+.card-index-page {
+  display: flex;
+  height: 300px;
+  width: 200px;
+  background: white;
+  border-radius: 18px;
+  padding: 16px;
+  margin: 16px;
+  align-items: center;
+  text-align: center;
+  border: 1px solid $myrror-grey;
+  // -webkit-box-shadow: 0px 4px 4px 8px rgba(0, 0, 0, 0.25);
+  // -moz-box-shadow: 0px 4px 4px 8px rgba(0, 0, 0, 0.25);
+  // box-shadow:  0px 4px 4px 8px rgba(0, 0, 0, 0.25);
+  transition: 0.3s ease;
+  position: relative;
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+.card-link-index {
+  width: 260px;
+  height: 180px;
+  font-size: 24px;
+  font-weight: 700;
+  color: $myrror;
+  transition: 0.3s ease-out;
+}
+
+.card-link-index:hover {
+  text-decoration: none;
+  color: #343434;
+}
+
