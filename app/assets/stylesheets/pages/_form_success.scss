@@ -56,7 +56,7 @@
 }
 
 .code-part-above-left {
-  width: 270px;
+  width: 290px;
 }
 
 .code-part-above-right {
@@ -119,6 +119,7 @@ outline: 0;
   border-radius: 54px;
   box-shadow: 0px 8px 24px 4px rgba(0, 0, 0, 0.25);
   margin-top: 20px;
+  height: 50px;
 }
 
 .btn-clipboard:hover {
@@ -126,6 +127,16 @@ outline: 0;
   color: #34CBB0;
   border: 3px solid #34CBB0;
   background-color: transparent;
+}
+
+#far-success {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+#far-success:hover {
+  color:  #34CBB0;
 }
 
 .link-success {
@@ -161,11 +172,8 @@ outline: 0;
 .qr-code {
   border: 3px solid black;
   border-radius: 54px;
-  padding: 27px;
-
-  table {
-    width: 200px;
-  }
+  padding: 15px;
+  width: 290px;
 }
 
 .qr-code-part-bellow-right {
@@ -176,12 +184,13 @@ outline: 0;
   h4 {
     font-size: 18px; 
     font-weight: 600;
+    margin-top: 30px;
   }
 
   h5 {
     font-size: 16px;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: 40px;
+  
   }
 
   .btn-clipboard {
@@ -229,7 +238,7 @@ h1{
 }
 
 .title-animation {
-  width: 50vw;
+  width: 100vw;
 
   h1{
     font-size: 1.5em;

@@ -20,7 +20,7 @@
               </div>
               
               <div>
-                <button class='btn btn-clipboard' data-action="click->clipboard#copy"><i class="far fa-clipboard"></i></button>
+                <button class='btn btn-clipboard' data-action="click->clipboard#copy"><i id="far-success" class="far fa-clipboard"></i></button>
               </div>
             </div>
 
@@ -39,17 +39,15 @@
           <div class="qr-code-part-bellow">
 
             <div class="qr-code-part-bellow-left">
-              <div class="qr-code"><%= raw @qr .as_html %></div>
+              <div class="qr-code"><%= image_tag @png.to_data_url %></div>
             </div>
             
             
             <div class="qr-code-part-bellow-right">
               <h4>Or you can also use this QR code to give acces to your form.</h4>
-              <h5>Copy the QR code and share it with your audience. They will arrive directly to your form.</h5>
+              <h5>Save this QR code as an image by right-clicking. And then you can paste this QR code image into your presentation, or even print it out. 
+              Your audience will arrive directly to your form.</h5>
               
-              <div>
-                <button class='btn btn-clipboard' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
-              </div>
             </div>
 
           </div>
