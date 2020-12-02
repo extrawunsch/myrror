@@ -1,12 +1,12 @@
 class FormPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
 
   def show?
-    true
+    record.user == user
   end
 
   def answers?
@@ -14,16 +14,11 @@ class FormPolicy < ApplicationPolicy
   end
 
   def success?
-    true
+    record.user == user
   end
 
   def destroy?
     record.user == user
-  end
-
-
-  def show?
-    true
   end
 
   def create?
