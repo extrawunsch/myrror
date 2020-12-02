@@ -7,6 +7,26 @@
   width: 100%;
 }
 
+
+.btn-outline-show {
+  text-decoration: none;
+  color: $myrror;
+  border: 1px solid $myrror;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: 0.4s ease;
+  align-items: center;
+  height: 42px;
+}
+ 
+.btn-outline-show:hover {
+  text-decoration: none;
+  background: $myrror;
+  color: white;
+}
+
+
 .main-container-show {
   display: flex;
   min-height:100% ;
