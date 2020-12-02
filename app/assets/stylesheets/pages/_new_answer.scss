@@ -32,6 +32,10 @@ $starsize: 5vw;
   }
 }
 
+li {
+  background-color: royalblue !important;
+}
+
 .carousel-inner {
   width: 48vw;
   background-color: white;
@@ -73,7 +77,7 @@ $starsize: 5vw;
 .br-theme-css-stars .br-widget a {
   height: 40px !important;
   width: 40px !important;
-  font-size: calc(22px + (48 - 22) * ((100vw - 320px) / (1080 - 320))) !important;
+  font-size: calc(38px + (48 - 38) * ((100vw - 320px) / (1080 - 320))) !important;
   margin-right: calc(0px + (6 - 0) * ((100vw - 320px) / (1080 - 320))) !important;
 }
 .br-theme-css-stars .br-widget a:after {
@@ -149,9 +153,14 @@ input[type="radio"]:checked + label {
     position: relative;
     //margin-top: calc(82vh - 62vh);
     .carousel-item {
-
+      
       #answer-form {
         height: 400px !important;
+        
+        .br-wrapper {
+          width: 40vw;
+          margin: 0 auto;
+        }
       }
       .form-control {
         width: 90%;

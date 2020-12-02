@@ -24,7 +24,7 @@
           <div class="carousel-inner">
             
             <div class="carousel-item active" data-interval="1000000">
-              <div class="first-block d-block w-100" id="answer-form">
+              <div class="first-block d-block" id="answer-form">
                 <div class="form-title">
                   <h4>Start giving feedback!</h4>
                 </div>
@@ -37,7 +37,7 @@
                 <div class="form-title">
                   <h4><%=question.question_content%></h4>
                 </div>
-                <div class="d-block w-100" id="answer-form">
+                <div class="d-block" id="answer-form">
                 <% case question.question_type%>
                   <% when "Open Question" %>
                     <%= simple_form_for [@form, @answer] do |f| %>
@@ -63,7 +63,7 @@
                       <%end%>
                   <% when "Star Rating" %>
                     <%= simple_form_for [@form, @answer] do |f| %>
-                      <%= f.input :answer_content, collection: (1..5).to_a, label: "Rate your experience",
+                      <%= f.input :answer_content, collection: (1..5).to_a, label: '&nbsp;'.html_safe , required: false,
                         collection_wrapper_tag: 'div',
                         collection_wrapper_class: 'star-wrapper',
                         input_html: {class: 'fas fa-star'} %>
