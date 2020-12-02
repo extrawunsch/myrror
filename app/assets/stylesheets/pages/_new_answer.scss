@@ -75,7 +75,7 @@ input[type="radio"] {
 
 .carousel-inner {
   .collection_radio_buttons {
-  background-image: url("stern-empty.png");
+  background-image: url("https://myrror.herokuapp.com/images/stern-empty.png");
   background-size: contain;
   background-position: center;
   padding:10px;
@@ -90,14 +90,14 @@ input[type="radio"] {
 
   .collection_radio_buttons:hover {
     cursor:pointer;
-    background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url("stern-full.png");
+    background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url("https://myrror.herokuapp.com/images/stern-full.png");
   }
 }
 
 
 
 input[type="radio"]:checked + label {
-  background-image: url("stern-full.png");
+  background-image: url("https://myrror.herokuapp.com/images/stern-full.png");
 }
 
 // MEDIA QUERY RULES TO SWITCH STYLING
