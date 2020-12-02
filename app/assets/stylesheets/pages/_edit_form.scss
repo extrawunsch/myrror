@@ -59,12 +59,14 @@
 
 .form-info-card-green {
   color: $myrror-grey;
-  background-color: $lightmyrror;
+  // background-color: $lightmyrror;
+  border: 1px solid #C4C4C4;
   border-radius: 20px;
   padding: 16px 24px;
   margin-bottom: 28px;
-  margin-top: 20px;
+  margin-top: 32px;
   width: 500px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
 }
 
 .btn-create:hover { 

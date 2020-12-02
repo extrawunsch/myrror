@@ -1,24 +1,67 @@
 <div class="background">
 <%= render "components/vertical_navbar", active: ""%>
   <div class="main-container">
+
     <div class="form-display">
-    <div class="tab-bar-show">
+      <h4 class="headline">Discover everyone's viewpoint:</h4>
+      <div class="tab-bar-show">
         <%=link_to 'Back to my form', form_path(@form), class:"btn btn-outline mr-5"%>
-    </div>
-    <div>
-    <hr id="divider">
-    <div class="headline"><h1>Discover everyone's viewpoint:</h1></div>
-        <!-- <div class="show-content"><h1><span><%= @form.name %></span></h1></div> -->
-        <div class="show-content"><h2><span>Question: <%= @question.question_content  %></span></h2></div>
-        <ul style="list-style-type:none; border-left:1px solid #000;height:50vh;">
-        <li>
-          <% @answers.each do |answer| %>
-          <div class="show-content"><%= answer.answer_content %></div>
-        </li>
-        <% end %>
-        </ul>
       </div>
-    </div>
+    <div>
+        <h5 class="show-headline mb-5 ml-3">Question: <%= @question.question_content  %></h5>
+          <ul style="list-style-type:none; border-left:1px solid #000;height:60vh; width: 80%" class="scrollbar-show">
+            <li class="align-items-center">
+              <% if @question.question_type == "Open Question" %>
+                <% @answers.each do |answer| %>
+                  <div class="show-content"><%= answer.answer_content %></div>
+                <% end %>
+              <% elsif @question.question_type == "Star Rating" %>
+                <div class="show-content-stars">
+                  <% 5.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <p class="counter-stars"> <%= "x #{@question.answers.where(answer_content:"5").size}" %></p>
+                </div>
+                <div class="show-content-stars">
+                  <% 4.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% 1.times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                  <p class="counter-stars"> <%= "x #{@question.answers.where(answer_content:"4").size}" %></p>
+                </div>
+                <div class="show-content-stars">
+                  <% 3.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% 2.times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                    <p class="counter-stars"> <%= "x #{@question.answers.where(answer_content:"3").size}" %></p>
+                </div>
+                <div class="show-content-stars">
+                  <% 2.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% 3.times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                    <p class="counter-stars"> <%= "x #{@question.answers.where(answer_content:"2").size}" %></p>
+                </div>
+                <div class="show-content-stars">
+                  <% 1.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% 4.times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                    <p class="counter-stars"> <%= "x #{@question.answers.where(answer_content:"1").size}" %></p>
+                </div>
+              <% end %>
+            </li>
+          </ul>
+        </div>
     </div>
     </div>
   </div>

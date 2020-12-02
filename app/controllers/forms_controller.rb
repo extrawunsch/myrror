@@ -21,12 +21,6 @@ class FormsController < ApplicationController
   end
 
   def new
-    if params[:query].present?
-      sql_query = "(question_topic ILIKE :query OR question_content ILIKE :query) AND predefined = true"
-      @questions = Question.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @questions = Question.where(predefined: true)
-    end
     @form = Form.new
     authorize @form
     @question = Question.new
@@ -38,12 +32,15 @@ class FormsController < ApplicationController
     @form.user = current_user
     @form.presentation_key = SecureRandom.alphanumeric(5)
     authorize @form
-    @question = Question.new(question_params)
+    @question = Question.new(question_content: params[:form][:question_content])
     @question.predefined = false
     @question.question_topic = 'General'
-    @question.question_type = 'Open Question'
+    @question.question_type = 'Star Rating'
+    @answer = Answer.new(answer_content: params[:form][:answer_content])
     if @form.save && @question.save
       if @question.save
+        @answer.question_id = @question.id
+        @answer.save
         formquestion = FormQuestion.new
         formquestion.form_id = @form.id
         formquestion.question_id = @question.id
@@ -95,22 +92,7 @@ class FormsController < ApplicationController
   def success
     @form = Form.find(params[:id])
     authorize @form
-    @qr = RQRCode::QRCode.new( 'http://myrror.org/feedback' )
-    
-    @png = @qr.as_png(
-      bit_depth: 1,
-      border_modules: 4,
-      color_mode: ChunkyPNG::COLOR_GRAYSCALE,
-      color: 'black',
-      file: nil,
-      fill: 'white',
-      module_px_size: 6,
-      resize_exactly_to: false,
-      resize_gte_to: false,
-      size: 120
-    )
-
-    @png = IO.binwrite("/tmp/github-qrcode.png", @png.to_s)
+    @qr = RQRCode::QRCode.new("http://www.myrror.org/forms/#{@form.id}/answers/new", :size => 5, :level => :h )
   end
 
   private
