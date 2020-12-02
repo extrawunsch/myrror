@@ -124,19 +124,19 @@ outline: 0;
 
 .btn-clipboard:hover {
   text-decoration: none;
-  color: #34CBB0;
+  color: #34CBB0 !important;
   border: 3px solid #34CBB0;
   background-color: transparent;
+}
+
+.btn-clipboard:hover #far-success {
+  color: #34CBB0 !important;
 }
 
 #far-success {
   font-size: 30px;
   color: white;
   margin-bottom: 20px;
-}
-
-#far-success:hover {
-  color:  #34CBB0;
 }
 
 .link-success {
