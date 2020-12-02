@@ -2,6 +2,7 @@ $baseheight: 68vh;
 $basewidth: 68vw;
 $banner-width: 20vw;
 $border: 24px;
+$starsize: 5vw;
 
 // CODE FOR THE INFOS AND HEADER
 .presentation-info {
@@ -26,7 +27,7 @@ $border: 24px;
   align-items: center;
   justify-content: center;
 
-  .illustration {
+  .illustration-new {
     width: 18vw;
   }
 }
@@ -41,12 +42,23 @@ $border: 24px;
   // display: flex;
   height: $baseheight;
   
+  .illustration-search {
+    width: 32vw;
+  }
   .carousel-item {
+    .first-block {
+      margin: 0 !important;
+      display: flex;
+      text-align: center;
+    }
     h4 {
-      margin: 16px 24px;
+      margin: 36px 24px;
     }
     #answer-form {
       margin: 16px 24px;
+    }
+    .form-control {
+      width: 42vw;
     }
   }
 }
@@ -64,13 +76,13 @@ input[type="radio"] {
 .carousel-inner {
   .collection_radio_buttons {
   background-image: url("stern-empty.png");
-  background-size: auto;
+  background-size: contain;
   background-position: center;
   padding:10px;
   display:block;
   position:relative;
-  width: 50px;
-  height: 50px;
+  width: $starsize;
+  height: $starsize;
   margin: 0 !important;
   color: rgba(0, 0, 0, 0);
   text-align: center;

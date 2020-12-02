@@ -3,15 +3,18 @@
 
 <div class="question-container">
   <div class="presentation-info mb-4">
-    <h2 style="font-weight: 700;"><%=@form.name %></h2>
+    <h2 class="mt-3" style="font-weight: 700;"><%=@form.name %></h2>
     <h3 style="color: grey;">by <%=@form.speaker %></h3>
     <h4 style="color: grey;"><%=@form.presented_on %></h4>
   </div>
+  
   <div class="overfield d-flex justify-content-center">
     <div class="question-form">
+      
       <div class="symbol-field">
-        <%= image_tag("illustration_new.png", class: "illustration", alt: "Edit Entry") %>
+        <%= image_tag("illustration_new.png", class: "illustration-new", alt: "Edit Entry") %>
       </div>
+      
       <div class="answer-fields">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel('pause')">
           <ol class="carousel-indicators">
@@ -25,8 +28,9 @@
           <div class="carousel-inner">
             
             <div class="carousel-item active" data-interval="1000000">
-              <div class="d-block w-100" id="answer-form">
-                <h1>Start the quiz!</h1>
+              <div class="first-block d-block w-100" id="answer-form">
+                <h3 class="mt-3">Start giving feedback!</h3>
+                <%= image_tag("illustration_search.png", class: "illustration-search", alt: "Edit Entry") %>
               </div>
             </div>
 
