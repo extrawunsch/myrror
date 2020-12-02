@@ -1,25 +1,47 @@
 <div class="background">
 <%= render "components/vertical_navbar", active: ""%>
   <div class="main-container">
-  
+
     <div class="form-display">
       <div class="tab-bar-show">
           <%=link_to "Back to all my Forms", forms_path, class:"btn btn-outline mr-5"%>
       </div>
         <div>
-          <hr id="divider">
-          <h4 class="show-content mb-3 ml-3"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %> </h4>
-          <ul style="list-style-type:none; border-left:1px solid #000;height:50vh">
-            <% @form.questions.each do |question|  %>
-              <li class="d-flex align-items-center">
-                <div class="show-content">
-                <%= question.question_content %>
-                </div>
-                <%= link_to "See all #{question.answers.count} Answers", form_question_answers_path(@form, question), class:"btn-above-page-show" %>
-              </li>
-            <% end %>
-            <div class="mt-5"><%= link_to "Add a new question", new_form_question_path(@form), class:"btn-outline-show"  %></div>
-          </ul>
+          <div class="show-parent">
+          <h5 class="show-headline mb-5 ml-3"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %></h5>
+          <div class="qr-div"><%= link_to "", success_form_path(@form), class:"fas fa-qrcode"  %></div>
+            <ul style="list-style-type:none; border-left:1px solid #000;height:60vh; width:80%;" class="scrollbar-show">
+              <% @form.questions.each do |question|  %>
+                <li class="d-flex align-items-center">
+                  <div class="show-content">
+                  <%= question.question_content %>
+                  </div>
+                  <% if question.question_type == "Open Question" %>
+                  <div class="answer-link">
+                    <%= link_to "", form_question_answers_path(@form, question), class:"fas fa-comment btn-above-page-show" %>
+                    <p><%= "#{ pluralize question.answers.size, "Answer"}" %></p>
+                  </div>
+                  <% elsif question.question_type == "Star Rating" %>
+                    <% sum = 0 %>
+                    <% result = 0 %>
+                    <% question.answers.each do |answer| %>
+                      <% sum += answer.answer_content.to_i %>
+                      <% result = sum / question.answers.length %>
+                    <% end %>
+                    <%= link_to form_question_answers_path(@form, question) do  %>
+                      <% result.times do %>
+                        <i class="fas fa-star"></i>
+                      <% end %>
+                      <% (5 - result).times do %>
+                        <i class="far fa-star"></i>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                </li>
+              <% end %>
+              </div>
+            </ul>
+                <%= link_to "Add a new question", new_form_question_path(@form), class:" btn btn-outline mt-5"  %>
         </div>
       </div>
     </div>
