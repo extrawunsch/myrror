@@ -25,5 +25,8 @@
 	  <%= link_to "Analytics", forms_analytics_path %>
 	<% end %>
 
+	<% if params[:controller]=="forms" && params[:action]=="show" %>
+	  <%= link_to "Presentation key", success_form_path(@form), class:"" %>
+	<% end %>
 
 </div>
