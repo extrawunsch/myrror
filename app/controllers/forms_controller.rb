@@ -11,7 +11,14 @@ class FormsController < ApplicationController
 
   def index
     @forms = policy_scope(Form).order(created_at: :desc)
-    @questions = Question.where(form_id: @form)
+    query_ryan = "SELECT answer_content FROM answers JOIN questions ON answers.question_id = questions.id JOIN form_questions ON questions.id = form_questions.question_id JOIN forms ON form_questions.form_id = forms.id JOIN users ON forms.user_id = users.id WHERE questions.question_content = 'Overall impression of the Talk' AND users.id = #{current_user.id}"
+    answers = ActiveRecord::Base.connection.execute(query_ryan)
+    valid_answers = answers.values.flatten.reject{|number| number == "0"}.map(&:to_f)
+    if valid_answers.length != 0
+      @average_rating.round = valid_answers.sum / valid_answers.length
+    else
+      @average_rating = "-"
+    end
   end
 
   def show

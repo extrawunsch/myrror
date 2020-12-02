@@ -44,12 +44,7 @@
                 </li>
                 <li class="dashboard-items">
                   <p>my:rating</p>
-                    <% rating = nil %>
-                    <% @forms.each do |form| %>
-                    <% raise %>
-                    <% rating = form.questions.first.answers.map { |answer| answer.answer_content.to_i }.drop(1).sum / (form.questions.first.answers.count - 1) %>
-                    <% end %>
-                  <%=   "#{rating.round(2)}" %> <i id="icon-dashboard" class="fas fa-star"></i>
+                  <%=   "#{@average_rating}" %> <i id="icon-dashboard" class="fas fa-star"></i>
                 </li>
               </ul>
     </div>
