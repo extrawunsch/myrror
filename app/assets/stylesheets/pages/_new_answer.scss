@@ -142,5 +142,11 @@ input[type="radio"]:checked + label {
 
   .carousel-inner {
     width: 90vw;
+    .carousel-item {
+      h4 {
+        margin: 0;
+        background: $myrror-grey;
+      } 
+    }
   }
 }
