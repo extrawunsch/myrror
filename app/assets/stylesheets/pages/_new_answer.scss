@@ -66,8 +66,6 @@ $starsize: 5vw;
 
 #simple-form {
   margin-top: 24px;
-  position: absolute;
-  bottom: -20vh;
 }
 
 // STAR RATING CODE 
@@ -127,6 +125,10 @@ input[type="radio"]:checked + label {
 // MEDIA QUERY RULES TO SWITCH STYLING
 
 @media only screen and (max-width: 600px) {
+  .presentation-info {
+    font-size: 4vw;
+  }
+
   .question-form {
     width: 90vw;
     height: 72vh;
@@ -139,14 +141,37 @@ input[type="radio"]:checked + label {
   .illustration-new {
     display: none;
   }
-
+ 
   .carousel-inner {
     width: 90vw;
+    height: 62vh;
+    margin-top: 12vh;
+    position: relative;
+    //margin-top: calc(82vh - 62vh);
     .carousel-item {
-      h4 {
+
+      #answer-form {
+        height: 400px !important;
+      }
+      .form-control {
+        width: 90%;
+      }
+      #simple-form {
+        width: 90%;
         margin: 0;
-        background: $myrror-grey;
-      } 
+        position: absolute;
+        bottom: 48px;
+      }
+      .form-title {
+        background-color: rgba(0, 0, 0, 0);
+        height: 12vh;
+        width: 90vw;
+        top: -10vh;
+        h4 {
+          color: black;
+          margin: 16px 24px;
+        } 
+      }
     }
   }
 }

@@ -1,20 +1,16 @@
 
 <%# <% Iteration to create every Form for the questions %>
-
+   <div class="presentation-info mb-4">
+        <h2 class="mt-3"><%=@form.name %></h2>
+        <h3 style="color: grey;">by <%=@form.speaker %></h3>
+        <h4 style="color: grey;"><%=@form.presented_on %></h4>
+      </div>
 <div class="question-container">
-  <div class="presentation-info mb-4">
-    <h2 class="mt-3" style="font-weight: 700;"><%=@form.name %></h2>
-    <h3 style="color: grey;">by <%=@form.speaker %></h3>
-    <h4 style="color: grey;"><%=@form.presented_on %></h4>
-  </div>
-  
   <div class="overfield d-flex justify-content-center">
     <div class="question-form">
-      
       <div class="symbol-field">
         <%= image_tag("illustration_new.png", class: "illustration-new", alt: "Edit Entry") %>
       </div>
-      
       <div class="answer-fields">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel('pause')">
           <ol class="carousel-indicators">
@@ -38,15 +34,16 @@
 
             <%@form.questions.each do |question| %>
               <div class="carousel-item" data-interval="1000000">
-                <h4><%=question.question_content%></h4>
-                
+                <div class="form-title">
+                  <h4><%=question.question_content%></h4>
+                </div>
                 <div class="d-block w-100" id="answer-form">
                 <% case question.question_type%>
                   <% when "Open Question" %>
                     <%= simple_form_for [@form, @answer] do |f| %>
                       <%= f.input :answer_content, label: "Answer" %>
                       <%= f.hidden_field :question_id, value: question.id %>
-                      <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form", style:"width: 42vw;" %>
+                      <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form" %>
                     <%end%>
                   <% when "Multiple-Choice" %>
                     <%= simple_form_for [@form, @answer] do |f| %>
