@@ -59,10 +59,34 @@ $starsize: 5vw;
     }
     .form-control {
       width: 42vw;
+      position: relative;
     }
   }
 }
 
+#simple-form {
+  margin-top: 24px;
+  position: absolute;
+  bottom: -20vh;
+}
+
+// STAR RATING CODE 
+
+.br-theme-css-stars .br-widget a {
+  height: 40px !important;
+  width: 40px !important;
+  font-size: calc(22px + (48 - 22) * ((100vw - 320px) / (1080 - 320))) !important;
+  margin-right: calc(0px + (6 - 0) * ((100vw - 320px) / (1080 - 320))) !important;
+}
+.br-theme-css-stars .br-widget a:after {
+  color: #d2d2d2;
+}
+.br-theme-css-stars .br-widget a.br-active:after {
+  color: $myrror !important;
+}
+.br-theme-css-stars .br-widget a.br-selected:after {
+  color: $myrror  !important;
+}
 // CODE FOR THE RADIO BUTTON STAR INPUT
 
 input[type="radio"] {
@@ -109,10 +133,14 @@ input[type="radio"]:checked + label {
     display: flex;
   }
   .symbol-field {
+    display: none;
+  }
+
+  .illustration-new {
+    display: none;
+  }
+
+  .carousel-inner {
     width: 90vw;
-    height: 20vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
