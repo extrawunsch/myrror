@@ -44,7 +44,12 @@
                 </li>
                 <li class="dashboard-items">
                   <p>my:rating</p>
-                  <%=   "#{@forms.count}" %> <i id="icon-dashboard" class="fas fa-star"></i>
+                    <% rating = nil %>
+                    <% @forms.each do |form| %>
+                    <% raise %>
+                    <% rating = form.questions.first.answers.map { |answer| answer.answer_content.to_i }.drop(1).sum / (form.questions.first.answers.count - 1) %>
+                    <% end %>
+                  <%=   "#{rating.round(2)}" %> <i id="icon-dashboard" class="fas fa-star"></i>
                 </li>
               </ul>
     </div>
@@ -60,7 +65,8 @@
             <% if form.questions.first != nil %>
             <% result = form.questions.first.answers.count - 1 %>
             <%  sum = form.questions.first.answers.map { |answer| answer.answer_content.to_i }.drop(1).sum %>
-                <div class="stars-form"> <i id="icon-dashboard" class="fas fa-star"></i> <%= "#{sum / result}" %> </div>
+            <% rating = sum.to_f / result.to_f %>
+                <div class="stars-form"> <i id="icon-dashboard" class="fas fa-star"></i> <%= "#{rating.round(2)}" %> </div>
               <% end %>
             <div class="card-content">
               <%=link_to "#{form.name}",  form_path(form), class:"card-link-index"%>

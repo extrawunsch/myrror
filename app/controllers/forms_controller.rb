@@ -6,11 +6,12 @@ class FormsController < ApplicationController
 
   def analytics
     @forms = policy_scope(Form).order(created_at: :desc)
-    # @forms = Form.all 
+    # @forms = Form.all
   end
 
   def index
     @forms = policy_scope(Form).order(created_at: :desc)
+    @questions = Question.where(form_id: @form)
   end
 
   def show
@@ -106,7 +107,7 @@ class FormsController < ApplicationController
       resize_gte_to: false,
       size: 250
     )
-    
+
   end
 
   private
