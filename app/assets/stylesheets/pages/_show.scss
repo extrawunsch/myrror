@@ -25,12 +25,6 @@
   width: 100%
 }
 
-.qr-div {
-  position: absolute;
-  top: 12px;
-  right: 48px;
-}
-
 .fa-qrcode:before {
   color: #343434;
   font-size: 50px;
@@ -165,7 +159,7 @@
 
 .answer-link {
   display: flex;
-  margin-left: 4px;
+  margin-left: 15px;
 
   p {
     margin: auto 0;
