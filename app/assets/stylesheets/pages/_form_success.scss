@@ -1,3 +1,17 @@
+
+.form-display-success-page {
+  padding: 20px 0px 48px 96px;
+  width: calc(100vw - 200px);
+  box-shadow: inset 2px 4px 4px 0px rgba(0,0,0,0.45);
+  
+  background: white;
+  border-radius: 24px 0 0 24px;
+  margin: 12px 0px 12px 12px;
+  overflow-y: scroll;
+}
+
+
+
 :root{
   --bg-color: white;
 }
@@ -13,27 +27,185 @@
   box-shadow: 2px 2px 2px 2px rgba(40, 40, 40, 0.1);
 }
 
-.center {
-  display: inline-block;
-}
+
+
+// CARD
 
 .inner-card {
   display: inline-block;
-  text-align: center;
-  background-color: $lightmyrror;
   color: $darkgray;
-  border-radius: 10px;
-  padding: 28px 32px;
-  margin: 28px;
-  box-shadow: 2px 2px 2px 2px rgba(40, 40, 40, 0.1);
+  padding: 0px 35px;
+  margin-top: 20px;
+  width: 800px;
+  // box-shadow: 0px 4px 24px 8px rgba(0, 0, 0, 0.25);
+  // border-radius: 24px;
+
+  h5 {
+    font-size: 26px; 
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+}
+
+// CODE PART
+
+
+.code-part-above {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.code-part-above-left {
+  width: 290px;
+}
+
+.code-part-above-right {
+  padding: 10px;
+  padding-left: 80px;
+  width: 450px;
+  
+  h4 {
+    font-size: 18px; 
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: 16px;
+    margin-top: 45px;
+    margin-bottom: 0;
+  }
 }
 
 .card-codes {
-  background-color: $middlemyrror;
+  // background-color: $middlemyrror;
   color: $darkgray;
-  border-radius: 20px;
-  padding: 8px 36px;
+  border-radius: 54px;
+  padding: 15px 0px;;
+  border: 3px solid #C4C4C4;
+  box-sizing: border-box;
+  height: 85px;
 }
+
+
+.textarea-code {
+  resize: none;
+  overflow: hidden;
+  cursor: default;
+  border: none;
+  width: 100%;
+  height: 45px;
+  font-weight: bold;
+  font-size: 30px;
+  box-sizing: border-box;
+  background-color: transparent;
+  text-align: center;
+}
+
+.textarea-code:focus, input:focus {
+outline: 0;
+}
+
+.btn-clipboard {
+  text-decoration: none;
+  background-color: $myrror;
+  color: white;
+  width: 100%;
+  padding: 8px 0px;
+  font-weight: lighter;
+  transition: 0.4s ease;
+  display: inline-block;
+  align-items: center;
+  margin-bottom: 16px;
+  border-radius: 54px;
+  box-shadow: 0px 8px 24px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+  height: 50px;
+}
+
+.btn-clipboard:hover {
+  text-decoration: none;
+  color: #34CBB0;
+  border: 3px solid #34CBB0;
+  background-color: transparent;
+}
+
+#far-success {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+#far-success:hover {
+  color:  #34CBB0;
+}
+
+.link-success {
+  color: #34CBB0;
+}
+
+.link-success:hover {
+  color: #34CBB0;
+  
+}
+
+// HR TAG 
+
+.hr-tag-success-page {
+  width: 100%;
+  margin: 0 auto;
+  height: 10px;
+}
+
+// QR CODE PART 
+
+.qr-code-part-bellow {
+  margin-top: 20px;
+  display: flex;
+}
+
+.qr-code-part-bellow-left {
+  display: inline-block;
+  width: 270px;
+  align-items: center;
+}
+
+.qr-code {
+  border: 3px solid black;
+  border-radius: 54px;
+  padding: 15px;
+  width: 290px;
+}
+
+.qr-code-part-bellow-right {
+  padding: 10px;
+  padding-left: 80px;
+  width: 450px;
+
+  h4 {
+    font-size: 18px; 
+    font-weight: 600;
+    margin-top: 30px;
+  }
+
+  h5 {
+    font-size: 16px;
+    margin-top: 40px;
+  
+  }
+
+  .btn-clipboard {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+
+
+
+
+
+
+
 
 table {
   border-width: 0;
@@ -66,7 +238,8 @@ h1{
 }
 
 .title-animation {
-  width: 50vw;
+  width: 100vw;
+
   h1{
     font-size: 1.5em;
     font-weight: 400;
@@ -78,7 +251,9 @@ h1{
   position: relative;
   overflow: hidden;
   display: block;
-  line-height: 1.2;
+  line-height: 2;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .home-title span::after{
@@ -125,38 +300,3 @@ h1{
   100% {transform: translateX(200%)}
 }
 
-.textarea-green {
-  resize: none;
-  overflow: hidden;
-  cursor: default;
-  background-color: $middlemyrror;
-  border: none;
-  width: 80px;
-  height: 32px;
-  font-weight: bold;
-  font-size: 24px;
-  text-align: center;
-}
-
-.textarea-green:focus, input:focus {
-outline: 0;
-}
-
-.btn-clipboard {
-  text-decoration: none;
-  color: #34CBB0;
-  border: 1px solid #34CBB0;
-  padding: 8px 16px;
-  border-radius: 10px;
-  font-weight: lighter;
-  transition: 0.4s ease;
-  display: inline-block;
-  align-items: center;
-  margin-bottom: 16px;
-}
- 
-.btn-clipboard:hover {
-  text-decoration: none;
-  background: $myrror;
-  color: white;
-}

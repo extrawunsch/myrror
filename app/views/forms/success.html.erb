@@ -1,30 +1,60 @@
 <div class="background">
   <%= render "components/vertical_navbar", active: ""%>
   <div class="main-container">
-      <div class="form-display"> 
+    <div class="form-display-success-page"> 
       <div class="title-animation">
         <h1 class="home-title">
           <span> ✔ Congratulations, your form has been created !</span>
         </h1>
       </div>
-        <div class="card-success">
-          <div class="inner-card">
-            <h5>Share QR code in your presentation</h5>
-            <div class="center">
-              <%= raw @qr.as_html %>
-            </div>
-            <h5>Or share Presentation Key</h5>
-            <div class="center">
-              <div data-controller="clipboard">
-                <div class="card-codes center"><textarea class="textarea-green" style="margin:0;" data-target="clipboard.source"><%= @form.presentation_key %></textarea></div>
-                <button class='btn btn-clipboard' data-action="clipboard#copy"><i class="far fa-clipboard"></i></button>
+      
+      <div class="card-success">
+        
+        <div class="inner-card" data-controller="clipboard">
+          <h5>Share one of the following in your presentation: </h5>
+          
+          <div class="code-part-above" >
+            <div class="code-part-above-left">
+              <div>
+                <div class="card-codes center"><textarea class="textarea-code" data-target="clipboard.source"><%= @form.presentation_key %></textarea></div>
               </div>
-              <h6 class="mb-2 mt-4">Your audience can input the key via</h6>
-              <%= link_to 'myrror.org/feedback', feedback_path, class: 'mb-4 btn btn-outline' %>
+              
+              <div>
+                <button class='btn btn-clipboard' data-action="click->clipboard#copy"><i id="far-success" class="far fa-clipboard"></i></button>
+              </div>
+            </div>
+
+            <div class="code-part-above-right">
+              <h4>Please find here the code that gives acces to your form.</h4>
+              <h5>Copy your code and share it with your audience. They can acces the form via this link: 
+              <%= link_to 'myrror.org/feedback', feedback_path, class: 'link-success' %></h5>
+              
             </div>
           </div>
+
+          <div class="hr-tag-success-page">
+          <hr>
+          </div>
+          
+          <div class="qr-code-part-bellow">
+
+            <div class="qr-code-part-bellow-left">
+              <div class="qr-code"><%= image_tag @png.to_data_url %></div>
+            </div>
+            
+            
+            <div class="qr-code-part-bellow-right">
+              <h4>Or you can also use this QR code to give acces to your form.</h4>
+              <h5>Save this QR code as an image by right-clicking. And then you can paste this QR code image into your presentation, or even print it out. 
+              Your audience will arrive directly to your form.</h5>
+              
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 </div>
+
