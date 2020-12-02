@@ -10,7 +10,7 @@
     // position: absolute;
     top: 30px;
     height: 40px;
-    width: 75%;
+    width: 75vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,7 +26,7 @@
   }
 
   .container-home {
-    width: 75%;
+    width: 75vw;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -130,7 +130,7 @@
     border-radius: 50px;
     font-weight: 400;
     transition: 0.4s ease;
-    font-size: 18px;
+    font-size: 1.1rem;
   }
 
   .btn-above-page-banner:hover {
@@ -145,14 +145,17 @@
   // BLOCK WHY
 
   .container-why {
-    width: 75%;
+    width: 75vw;
     margin-bottom: 3%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .why {
     color: $myrror;
     text-align: center;
     padding: 5% 0 2% 0;
+    font-size: 2.3rem;
   }
 
   .why-block{
@@ -190,7 +193,8 @@
 
   .quote-container {
     background-color: $myrror;
-    padding-top: 40px;
+    padding-top: 3%;
+    height: 16vh;
   }
 
   .quote {
@@ -198,7 +202,9 @@
     font-size: 1.3rem;
     text-align: center;
     font-style: italic;
-    // font-weight: 200;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .bill-gates {
@@ -209,7 +215,9 @@
     // font-weight: 200;
     padding-right: 15%;
     font-size: 1rem;
+
   }
+
 
 
   // BLOCK HOW
@@ -217,19 +225,16 @@
   .how {
     color: $myrror;
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 48px;
   }
 
   .card-homepage {
-    height: 500px;
-    width: 1000px;
+    width: 70vw;
     background-color: rgba(196, 196, 196, 0.12);
     margin: 0 auto;
     align-items: center;
     border-radius: 28px;
-    margin-top: 30px;
+    margin-top: 3%;
+    padding: 3% 0 3%;
   }
 
   .container-with-3-points{
@@ -239,52 +244,45 @@
   .key-points{
     display: flex;
     align-items: center;
-    color: black;
+    color: $myrror-grey;
+    padding: 1.5% 0;
 
     p {
-      font-size: 24px;
-      margin: 0;
+      font-size: 1.1rem;
     }
   }
 
   .fas {
     font-size: 2.3rem;
     color: $myrror;
-    margin-bottom: 15%;
   }
 
 
   .far {
-    font-size: 2.3rem;
+    font-size: 2.6rem;
     color: $myrror;
     margin-bottom: 15%;
+    margin-left: 15%;
   }
 
   .bottom-icons {
-    margin: 20px;
-    color: rgba(0, 0, 0, 0.73);
-    font-size: 65px;
-    margin: 30px;
-    margin-left: 64px;
-  }
-
-  .fa-qrcode {
-    height: 65px;
-    width: 65px;
+    color: $myrror-grey;
+    margin: 1% 5% 3% 5%;
   }
 
   .iphone {
     display: flex;
-    margin: 20px;
+    margin: 3%;
 
     img {
-      height: 350px;
+      height: 30vh;
     }
   }
 
   .container-wrapper {
     display: flex;
     align-items: center;
+    margin: 3% 5% 0 8%;
   }
 
 
@@ -296,10 +294,9 @@
   }
 
   .ready-to-start-journey-text {
-    font-size: 32px;
     // font-weight: bold;
-    color: black;
-    margin-top: 50px;
+    color: $myrror-grey;
+    margin: 3%;
   }
 
   .btn-above-page-ready {
@@ -307,11 +304,12 @@
     color: white;
     background: $myrror;
     border: 1px solid $myrror;
-    padding: 8px 24px;
+    padding: 12px 20px;
     border-radius: 50px;
     font-weight: 400;
     transition: 0.4s ease;
-
+    font-size: 1.1rem;
+    margin-bottom: 5%;
   }
 
   .btn-above-page-ready:hover {
@@ -391,10 +389,6 @@
     margin: 0 auto;
     height: 10px;
     border-bottom: 1px solid $myrror;
-  }
-
-  .CTA-buttom-page {
-    font-size: 20px;
   }
 
   .footer-down {
