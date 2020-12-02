@@ -3,27 +3,21 @@
   <div class="dummy-temporary" style="width: 200px;"></div>
   <div class="main-container">
     <div class="inside-container">
-      <div class="grid-container">
-
-        <div class="item-a">
-          <h4 style="color:$darkgray;" class="mt-2 mx-3">My form</h4> 
+       
+        <div class="d-flex justify-content-center mt-5">
           <%= simple_form_for(@form) do |f| %>
             <div class="card-questions-focus">
-              <h5>Step 1 - Add some information</h5>
+              <h5 class="mb-4">My Form - Add some information</h5>
               <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: "Choose the dates" %>
               <%= f.input :name, label: "Choose a Form Title" %>
               <%= f.input :speaker, label: "Speaker Name" %>
               <%= f.hidden_field :answer_content, value: "0" %>
               <%= f.hidden_field :question_content, value: "Overall impression of the Talk" %>
-            </div>
-            <div class="card-questions-focus">
               <%= f.submit 'Continue', class: 'btn btn-click mt-3 mb-2' %>
               <% end %>
             </div>
         </div>
-
-     
-      </div>
+      
     </div>
   </div>
 </div>
