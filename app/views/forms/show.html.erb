@@ -4,7 +4,7 @@
 
     <div class="form-display">
       <div class="tab-bar-show">
-          <%=link_to "Back to all my Forms", forms_path, class:"btn btn-outline mr-5"%>
+          <%=link_to "Back to all my Forms", forms_path, class:"btn btn-outline-show mr-5"%>
       </div>
         <div>
           <div class="show-parent">
@@ -25,7 +25,7 @@
                     <% result = 0 %>
                     <% question.answers.each do |answer| %>
                       <% sum += answer.answer_content.to_i %>
-                      <% result = sum / question.answers.length %>
+                      <% result = sum / (question.answers.length - 1) %>
                     <% end %>
                     <%= link_to form_question_answers_path(@form, question) do  %>
                       <% result.times do %>

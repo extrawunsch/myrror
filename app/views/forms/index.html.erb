@@ -57,15 +57,10 @@
         <% @forms.each do |form| %>
           <div class="card-index-page">
             <div class="delete-form"><%= link_to "", form_path(form), data: {:confirm => 'Are you sure you want to delete your form?'}, :method => :delete, class:"fas fa-trash"  %></div>
-            <% sum = 0 %>
-            <% result = 0 %>
             <% if form.questions.first != nil %>
-            <% raise %>
-              <% form.questions.first.answers.each do |answer| %>
-                <% sum += answer.answer_content.to_i %>
-                <% result = sum / answer.length %>
-                <div class="stars-form"> <i id="icon-dashboard" class="fas fa-star"></i> <%= "#{sum / answer.answer_content.length}" %> </div>
-                <% end %>
+            <% result = form.questions.first.answers.count - 1 %>
+            <%  sum = form.questions.first.answers.map { |answer| answer.answer_content.to_i }.drop(1).sum %>
+                <div class="stars-form"> <i id="icon-dashboard" class="fas fa-star"></i> <%= "#{sum / result}" %> </div>
               <% end %>
             <div class="card-content">
               <%=link_to "#{form.name}",  form_path(form), class:"card-link-index"%>
