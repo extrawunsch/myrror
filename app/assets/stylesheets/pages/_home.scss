@@ -144,15 +144,18 @@
 
   // BLOCK WHY
 
+  .container-why {
+    width: 75%;
+    margin-bottom: 3%;
+  }
+
   .why {
     color: $myrror;
     text-align: center;
-    padding-top: 40px;
-    font-size: 48px;
+    padding: 5% 0 2% 0;
   }
 
   .why-block{
-    background-color: $light-gray;
     justify-content: center;
   }
 
@@ -160,29 +163,27 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    padding-right: 150px;
-    padding-left: 150px;
   }
 
   .tripple-card {
-    width: 30%;
+    width: 48%;
     background-color: white;
-    margin: 50px;
-    margin-top: 30px;
-    padding: 20px;
+    margin: 2%;
+    padding: 5%;
     // filter: blur(4px);
     border-radius: 8px;
-    // box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3), 0 0px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2), 0 0px 0px rgba(0, 0, 0, 0.2);
+    text-align: center;
   }
 
   .title-card {
-    font-size: 26px;
-    color: #000000;
+    font-size: 1.3rem;
+    color: $myrror-grey;
   }
 
   .tripple-wrapper-content {
-    font-size: 18px;
-    color: black;
+    font-size: 1rem;
+    color: $myrror-grey;
   }
 
   // QUOTE
@@ -190,12 +191,11 @@
   .quote-container {
     background-color: $myrror;
     padding-top: 40px;
-    height: 150px;
   }
 
   .quote {
     color: white;
-    font-size: 24px;
+    font-size: 1.3rem;
     text-align: center;
     font-style: italic;
     // font-weight: 200;
@@ -208,7 +208,7 @@
     float: right;
     // font-weight: 200;
     padding-right: 15%;
-    font-size: 22px;
+    font-size: 1rem;
   }
 
 
@@ -248,16 +248,16 @@
   }
 
   .fas {
-    font-size: 34px;
+    font-size: 2.3rem;
     color: $myrror;
-    margin-bottom: 20px;
+    margin-bottom: 15%;
   }
 
 
   .far {
-    font-size: 34px;
+    font-size: 2.3rem;
     color: $myrror;
-    margin-bottom: 20px;
+    margin-bottom: 15%;
   }
 
   .bottom-icons {
