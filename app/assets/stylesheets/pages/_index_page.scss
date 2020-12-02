@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 16px;
+  width: 100%;
 }
 
 .tab-bar-index {
@@ -41,9 +42,9 @@
   }
 }
 
-@media (min-width: 900px) and (max-width: 1200px) {
+@media (min-width: 750px) and (max-width: 1200px) {
   .dashboard {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -194,5 +195,10 @@
   font-weight: 700;
   color: $myrror;
   transition: 0.3s ease-out;
+}
+
+.card-link-index:hover {
+  text-decoration: none;
+  color: #343434;
 }
 
