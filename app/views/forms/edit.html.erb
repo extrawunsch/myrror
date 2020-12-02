@@ -12,8 +12,8 @@
             <%= link_to 'Finish Form', success_form_path(@form), class: 'btn btn-outline mt-3 mx-3' %>
           </div>
             <div class="form-info-card-green">
-              <h6 style="color:$darkgray;" class="mb-2">Check the Form Information</h6>
-              <%= f.input :presented_on, as: :string, input_html: {class: "datepicker"}, label: false%>
+              <h6 style="color:$darkgray;" class="mb-3">Check the Form Information</h6>
+              <%= f.input :presented_on, as: :string, label: false %>
               <%= f.input :name, label: false %>
               <%= f.input :speaker, label: false %>
             </div>
