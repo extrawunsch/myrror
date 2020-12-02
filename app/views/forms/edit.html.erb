@@ -34,7 +34,7 @@
               <%= simple_fields_for(@question) do |g| %>
                 <%= g.input :question_content, placeholder: "What else do you want to know from the audience?", label: "Add another question" %>
                 <%= g.input :question_topic, as: :radio_buttons, label: 'Add the topic',
-                  collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
+                  collection: ["General", "Content", "Body Language", "Speaking Style", "Organization"], 
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item' %>
                 <div class="question-types">
