@@ -1,0 +1,39 @@
+.login-container {
+  
+}
+
+.form-login {
+    background: $lightmyrror;
+    color: $myrror-grey;
+    padding: 24px 36px;
+    margin-top: 50px;
+    border-radius: 30px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+    h2 {
+      font-size: 25px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .btn-login {
+      width: 100%;
+      margin-bottom: 20px;
+      color: white;
+      background-color: $myrror;
+    }
+    .btn-login:hover {
+        color: $myrror;
+        background-color: white;
+        border: 1px solid $myrror;
+      }
+    .btn-outline-login {
+        text-decoration: none;
+        color: $myrror;
+        font-weight: lighter;
+        transition: 0.4s ease;
+        align-items: center;
+    }
+       
+    .btn-outline-login:hover {
+        text-decoration: underline;
+    }
+  }
