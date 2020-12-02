@@ -13,20 +13,20 @@
           <div class="card-questions-focus">
               <%= simple_form_for([@form, @question], remote: true) do |f| %>
                 <div class="form-group">
-                  <% @form.questions.each do |form_question| %>
+                  <% @form.questions.order(:created_at).each do |form_question| %>
                     <% case form_question.question_type %>
                       <% when "Open Question" %>
                         <label for="text"><%= form_question.question_content %></label>
                         <textarea disabled="yes" class="form-control textarea-questions mb-3" type="text"></textarea>
                       <% else %>
                         <label for="text"><%= form_question.question_content %></label>
-                        <input disabled="yes" class="mb-3 w-100 text-align-center" type="text" value="⭐⭐⭐⭐⭐">
+                        <input disabled="yes" style="background:white;cursor:default;border:none;" class="mb-3 w-100 text-align-center" type="text" value="⭐⭐⭐⭐⭐">
                     <% end %>
                   <% end %>
                 </div>
                 <%= f.input :question_content, placeholder: "What else do you want to know from the audience?", label: "Add another question" %>
                 <%= f.input :question_topic, as: :radio_buttons, label: 'Add the topic',
-                  collection: ["Body Language", "Speaking Style", "Content", "General", "Organization"], 
+                  collection: ["General", "Content", "Body Language", "Speaking Style", "Organization"], 
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item' %>
                 <div class="question-types">

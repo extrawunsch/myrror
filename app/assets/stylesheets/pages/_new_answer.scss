@@ -1,9 +1,67 @@
+$baseheight: 68vh;
+$basewidth: 68vw;
+$banner-width: 20vw;
+$border: 24px;
+$starsize: 5vw;
+
+// CODE FOR THE INFOS AND HEADER
+.presentation-info {
+  text-align: center;
+}
+// CODE FOR THE ANSWERING FORM WITH CAROUSEL
 
 .question-form {
-  width: 70vw;
-  height: 90vh;
+  // margin-top: 24vh;
+  width: $basewidth;
+  height: $baseheight;
+  display: flex;
+  background: $myrror-grey;
+  border-radius:$border;
+  box-shadow: 0px 8px 16px 4px rgba(0,0,0,0.1);
 }
 
+.symbol-field {
+  width: $banner-width;
+  height: $baseheight;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .illustration-new {
+    width: 18vw;
+  }
+}
+
+.carousel-inner {
+  width: 48vw;
+  background-color: white;
+  border-radius:$border;
+  box-shadow: inset 2px 4px 4px 0px rgba(0,0,0,0.45);
+  // padding: 120px;
+  // align-items: center;
+  // display: flex;
+  height: $baseheight;
+  
+  .illustration-search {
+    width: 32vw;
+  }
+  .carousel-item {
+    .first-block {
+      margin: 0 !important;
+      display: flex;
+      text-align: center;
+    }
+    h4 {
+      margin: 36px 24px;
+    }
+    #answer-form {
+      margin: 16px 24px;
+    }
+    .form-control {
+      width: 42vw;
+    }
+  }
+}
 
 // CODE FOR THE RADIO BUTTON STAR INPUT
 
@@ -18,13 +76,13 @@ input[type="radio"] {
 .carousel-inner {
   .collection_radio_buttons {
   background-image: url("stern-empty.png");
-  background-size: auto;
+  background-size: contain;
   background-position: center;
   padding:10px;
   display:block;
   position:relative;
-  width: 50px;
-  height: 50px;
+  width: $starsize;
+  height: $starsize;
   margin: 0 !important;
   color: rgba(0, 0, 0, 0);
   text-align: center;
@@ -47,5 +105,14 @@ input[type="radio"]:checked + label {
 @media only screen and (max-width: 600px) {
   .question-form {
     width: 90vw;
+    height: 72vh;
+    display: flex;
+  }
+  .symbol-field {
+    width: 90vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

@@ -106,13 +106,25 @@
 }
 
 
-.show-content-show {
-  color: black;
+.show-content-stars {
+  display: flex;
+  color: $myrror;
   border-radius: 24px;
   margin: 12px;
-  padding: 12px;
+  padding: 9px;
   background: white;
   width: fit-content;
+  margin: auto 0;
+
+  p {
+    margin: auto 0;
+    margin-left: 12px;
+    padding-top: inherit;
+  }
+}
+
+.counter-stars {
+  font-size: 32px;
 }
 
 .btn-above-page-show {
@@ -132,4 +144,9 @@
   color: white;
   text-decoration: none;
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.show-content-number {
+  font-size: 16px;
+  color: #343434;
 }
