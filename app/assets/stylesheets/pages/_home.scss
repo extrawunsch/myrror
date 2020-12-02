@@ -10,7 +10,7 @@
     // position: absolute;
     top: 30px;
     height: 40px;
-    width: 74%;
+    width: 75%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,6 +22,14 @@
     a {
       font-size: 20px;
     }
+  }
+
+  .container-home {
+    width: 75%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .home-black {
@@ -65,7 +73,7 @@
   .banner {
     background-size: cover;
     background-position: center;
-    padding: 100px 0;
+    padding: 5% 0 10% 0px;
   }
 
   .banner h1 {
@@ -83,7 +91,7 @@
 
   .banner-title {
     position: relative;
-    margin-top: 100px;
+    margin-top: 8%;
   }
 
   .color-backdrop {
@@ -92,29 +100,28 @@
     left: 16px;
     background-color: rgba(52, 203, 176, 0.4);
     width: 185px;
-    height: 35px;
+    height: 24px;
   }
 
   .color-backdrop-2 {
     position: absolute;
-    top: 120px;
+    top: 105px;
     left: 18px;
     background-color: rgba(52, 203, 176, 0.4);
-    width: 965px;
-    height: 35px;
+    width: 842px;
+    height: 24px;
   }
 
   h1 {
     position: relative;
     z-index: 1;
-    font-size: 68px;
     left: -2px;
   }
 
   .CTA-button {
     display: flex;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 8%;
   }
 
   .btn-above-page-banner {
@@ -122,12 +129,11 @@
     color: white;
     background: $myrror;
     border: 1px solid $myrror;
-    padding: 8px 24px;
+    padding: 16px 20px;
     border-radius: 50px;
     font-weight: 400;
     transition: 0.4s ease;
-    width: 275px;
-    font-size: 25px;
+    font-size: 18px;
   }
 
   .btn-above-page-banner:hover {
