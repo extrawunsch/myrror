@@ -8,15 +8,21 @@
       </div>
         <div>
           <div class="show-parent">
+<<<<<<< HEAD
           <h5 class="show-headline"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %></h5>
           
             <ul style="list-style-type:none;height:60vh" class="scrollbar-show">
+=======
+          <h5 class="show-headline mb-5"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %></h5>
+
+            <ul style="list-style-type:none;height:60vh; width:80%;" class="scrollbar-show">
+>>>>>>> master
 
 
               <% @form.questions.each do |question|  %>
-                
+
                 <li class="d-flex align-items-center">
-                  
+
                   <div class="show-page-questions">
                   <%= question.question_content %>
                   </div>
@@ -30,11 +36,14 @@
                   <% elsif question.question_type == "Star Rating" %>
                     <% sum = 0 %>
                     <% result = 0 %>
-                    <% question.answers.each do |answer| %>
+                    <% question.answers.reject{|number| number.answer_content == "0"}.each do |answer| %>
                       <% sum += answer.answer_content.to_i %>
-                      <% result = sum / question.answers.length %>
                     <% end %>
-
+                      <% if question.answers.length == 1 %>
+                        <% result = 0 %>
+                      <% else %>
+                        <% result = sum / (question.answers.length - 1) %>
+                      <% end %>
                     <%= link_to form_question_answers_path(@form, question), class:'ml-3 star-hover' do  %>
                       <% result.times do %>
                         <i class="fas fa-star"></i>
@@ -43,9 +52,9 @@
                           <i class="far fa-star"></i>
                         <% end %>
                     <% end %>
-                  
+
                   <% end %>
-                
+
                 </li>
               <% end %>
               </div>
