@@ -39,12 +39,12 @@
   font-weight: lighter;
   transition: 0.4s ease;
   align-items: center;
+  padding: 0;
 }
  
 .btn-outline-edit:hover {
   text-decoration: none;
-  background: $myrror;
-  color: white;
+  color: $myrror-grey;
 }
 
 .form-info-card {
