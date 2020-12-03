@@ -18,7 +18,7 @@ class FormsController < ApplicationController
       @average_rating = @valid_answers.sum / @valid_answers.length
       @average_rating = @average_rating.round(2)
     else
-      return "-"
+      @average_rating = "0"
     end
   end
 
