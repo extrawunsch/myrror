@@ -33,8 +33,11 @@
                     <% question.answers.reject{|number| number.answer_content == "0"}.each do |answer| %>
                       <% sum += answer.answer_content.to_i %>
                     <% end %>
-                      <% result = sum / (question.answers.length - 1) %>
-
+                      <% if question.answers.length == 1 %>
+                        <% result = 0 %>
+                      <% else %>
+                        <% result = sum / (question.answers.length - 1) %>
+                      <% end %>
                     <%= link_to form_question_answers_path(@form, question), class:'ml-3 star-hover' do  %>
                       <% result.times do %>
                         <i class="fas fa-star"></i>
