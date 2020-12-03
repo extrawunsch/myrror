@@ -15,7 +15,7 @@
               <% if @question.question_type == "Open Question" %>
                 <% @answers.each do |answer| %>
                   <div class="show-content">
-                    <span class="quotation-mark">"</span><%= answer.answer_content %>
+                    <span class="quotation-mark">"</span><%= answer.answer_content %><span class="quotation-mark">"</span>
                   </div>
                 <% end %>
               <% elsif @question.question_type == "Star Rating" %>
