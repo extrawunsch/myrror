@@ -68,7 +68,7 @@
               <% end %>
             <div class="card-content">
               <%=link_to "#{form.name}",  form_path(form), class:"card-link-index"%>
-              <p><strong><%=form.presented_on.strftime('%A, %b %d')%></strong></p>
+              <p><strong><%= "#{form.presented_on.strftime('%b %d, %Y')}" %></strong></p>
               <hr>
                 <% form.questions.each do |question| %>
                   <% valid_answers = question.answers.reject{|number| number.answer_content == "0"} %>
