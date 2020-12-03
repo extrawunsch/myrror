@@ -1,3 +1,4 @@
+<%= provide(:turbolinks_cache, 'no-cache') %>
 <head>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"/>
@@ -90,7 +91,7 @@
                 <% end %>
               <div class="card-content">
                 <%=link_to "#{form.name}",  form_path(form), class:"card-link-index"%>
-                <p><strong class="card-date"><%=form.presented_on.strftime('%A, %b %d')%></strong></p>
+                <p><strong><%= "#{form.presented_on.strftime('%b %d, %Y')}" %></strong></p>
                 <hr style="margin-top:1.8rem;">
                   <% form.questions.each do |question| %>
                     <% valid_answers = question.answers.reject{|number| number.answer_content == "0"} %>

@@ -30,11 +30,16 @@ import "bootstrap";
 
 import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initCopyQuestion } from '../components/copy_question';
+import { initStarRating } from '../plugins/init_star_rating';
+import { initNextSlide } from '../components/carousel_next';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initFlatpickr();
   initCopyQuestion();
+  initStarRating();
+  initNextSlide();
 });
 
 import "controllers"
