@@ -69,7 +69,6 @@ $starsize: 5vw;
   }
   .carousel-control-prev {
     // width: 10% !important;
-    position: relative;
     span {
       position: absolute;
       // margin-top: 20%;
@@ -183,6 +182,57 @@ input[type="radio"]:checked + label {
 }
 
 // MEDIA QUERY RULES TO SWITCH STYLING
+
+@media only screen and (max-width: 600px) {
+  .question-form {
+    width: 90vw;
+    height: 72vh;
+    display: flex;
+    margin-top: 24px;
+  }
+
+  .symbol-field {
+    display: none;
+  }
+
+  .illustration-new {
+    display: none;
+  }
+  .answer-fields {
+    width: 100%;
+    height: 70%;
+    position: relative;
+    //margin-top: calc(82vh - 62vh);
+  }
+  .carousel-inner {
+    margin-top: 74px;
+    width: 100%;
+    position: relative;
+    height: calc(72vh - 74px);
+    //margin-top: calc(82vh - 62vh);
+  }
+  .carousel-indicators {
+    top: -48px;
+    bottom: unset;
+  }
+
+  #simple-form {
+    left: 28% !important;
+    width: max-content !important;
+    bottom: 18% !important;
+  }
+  .carousel-control-prev span {
+    bottom: 10% !important;
+    right: 6% !important;
+    top: unset !important;
+  }
+  .carousel-control-next span {
+    bottom: 10% !important;
+    left: 6% !important;
+    top: unset !important;
+  }
+
+}
 
 // @media only screen and (max-width: 600px) {
 //   .presentation-info {
