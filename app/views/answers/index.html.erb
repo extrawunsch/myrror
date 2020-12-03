@@ -3,8 +3,9 @@
   <div class="main-container">
 
     <div class="form-display">
+      
+      <div class="tab-bar-index-answers">
       <h4 class="headline-index-answers">Discover everyone's viewpoint</h4>
-      <div class="tab-bar-show">
         <%=link_to 'Back to my form', form_path(@form), class:"btn btn-outline mr-5"%>
       </div>
     <div>
@@ -13,7 +14,9 @@
             <li class="align-items-center">
               <% if @question.question_type == "Open Question" %>
                 <% @answers.each do |answer| %>
-                  <div class="show-content"><%= answer.answer_content %></div>
+                  <div class="show-content">
+                    <span class="quotation-mark">"</span><%= answer.answer_content %><span class="quotation-mark">"</span>
+                  </div>
                 <% end %>
               <% elsif @question.question_type == "Star Rating" %>
                 <div class="show-content-stars">
