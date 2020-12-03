@@ -1,9 +1,32 @@
-<button type="button" disabled class="btn btn-default" data-toggle="tooltip" data-placement="top" title="We include this as a first qestion in all forms. With an overall rating you can see at a glance which talks didn't go so well. Dive deeper into those form answers to see improvements over time.">
-  Why we include this question?
-</button>
+        <!-- Trigger the modal with a button -->
+        <button type="button" id="myBtnstars" class="btn btn-outline-edit mb-3" data-toggle="modal" data-target="#myModalstars">Why do I see this as my first question?</button>
 
-<script>
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
-</script>
+        <!-- Modal -->
+        <div id="myModalstars" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Why we include this question?</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                
+              </div>
+              <div class="modal-body">
+                <p style="color:$myrror-grey">Overall star ratings show you at a glance which talks didn't go so well compared to others. Dive deeper into those form answers and see improvements over time.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <script>
+          $(document).ready(function(){
+            $("#myBtnstars").click(function(){
+              $("#myModalstars").modal({backdrop: true});
+            });
+          });
+        </script>
