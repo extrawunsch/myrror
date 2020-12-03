@@ -27,8 +27,8 @@
 }
 
 .indexline {
-  border-right: 1px solid $gray;
-  margin: 0 20%;
+  border-right: 1px solid $light-gray;
+  margin: 0 12%;
 }
 
 // Large devices (desktops, 992px and up)
@@ -62,7 +62,7 @@
   font-size: 3.6rem;
   font-weight: bold;
   color: $myrror-grey;
-  line-height: 0;
+  line-height: 1;
 }
 
 #icon-index {

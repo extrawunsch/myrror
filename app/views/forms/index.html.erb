@@ -64,11 +64,7 @@
       <li class="dashboard-items inline-label">
         <div class="indexline">
           <div class="number-item">
-            <% if @average_rating == "" %> 
-              <%= "0" %>
-            <% else %>
-              <%= "#{@average_rating}" %>
-            <% end %>
+            <%= "#{@average_rating}" %>
             <i id="icon-index"  class="fas fa-star"></i>
           </div>
           <div class="index-label">
