@@ -127,7 +127,7 @@
 }
 
 .card-grid .slick-initialized .slick-slide {
-  margin-top: 30px;
+  margin-top: 60px;
 }
 
 
@@ -181,7 +181,7 @@
   background: white;
   border-radius: 18px;
   box-shadow: 0 0px 12px rgba(0, 0, 0, 0.2);
-  padding: 16px;
+  padding: 0.5%;
   margin: 16px;
   align-items: center;
   text-align: center;
@@ -197,7 +197,7 @@
 }
 
 .card-link-index {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: #34CBB0;
   transition: 0.3s ease-out;
@@ -208,4 +208,9 @@
   color: #343434;
 }
 
+.card-date {
+  color: $gray;
+  font-weight: lighter;
+  margin: 10% 0;
+}
 
