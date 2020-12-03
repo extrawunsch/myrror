@@ -40,10 +40,14 @@
 
 .show-content {
   color: black;
-  border-radius: 24px;
   margin: 12px;
-  padding: 12px;
+  padding: 12px 0;
   font-style: italic;
+  border-bottom: 2px solid #E2E2E2;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  width: 90%;
+  
 }
 
 .form-display {
