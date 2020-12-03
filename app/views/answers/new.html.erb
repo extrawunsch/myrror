@@ -85,7 +85,13 @@
                 <div class="form-title">
                   <h4>Thank you for your feedback!</h4>
                 </div>
-                <%= image_tag("illustration_search.png", class: "illustration-search", alt: "Edit Entry") %>
+                <div class="circle-loader">
+                  <div class="checkmark draw"></div>
+                </div>
+
+                <p><button id="toggle" type="button" class="btn btn-outline">Submit Form</button></p>
+                <%= link_to "Check out our homepage", root_path, class:"link-feedback" %>
+                <%# <%= image_tag("illustration_search.png", class: "illustration-search", alt: "Edit Entry") %>
               </div>
             </div>
 
