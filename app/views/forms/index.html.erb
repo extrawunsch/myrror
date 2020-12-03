@@ -91,7 +91,7 @@
                 <% end %>
               <div class="card-content">
                 <%=link_to "#{form.name}",  form_path(form), class:"card-link-index"%>
-                <p><strong><%= "#{form.presented_on.strftime('%b %d, %Y')}" %></strong></p>
+                <p class="card-date"><%= "#{form.presented_on.strftime('%b %d, %Y')}" %></p>
                 <hr style="margin-top:1.8rem;">
                   <% form.questions.each do |question| %>
                     <% valid_answers = question.answers.reject{|number| number.answer_content == "0"} %>
