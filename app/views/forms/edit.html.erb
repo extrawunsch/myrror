@@ -21,6 +21,7 @@
             <div class="card-questions-focus">
               <div class="form-group">
                 <% @form.questions.order(:created_at).each do |form_question| %>
+                  <%= render "components/tooltip"%>
                   <% case form_question.question_type %>
                     <% when "Open Question" %>
                       <label for="text"><%= form_question.question_content %></label>

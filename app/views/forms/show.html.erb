@@ -8,8 +8,7 @@
       </div>
         <div>
           <div class="show-parent">
-          <h5 class="show-headline mb-5 ml-3"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %></h5>
-          
+          <h5 class="show-headline mb-5 ml-3"> <%= @form.name %> | <%= @form.presented_on.strftime('%b %d, %Y') %></h5>
             <ul style="list-style-type:none; border-left:1px solid #000;height:60vh; width:80%;" class="scrollbar-show">
               <% @form.questions.each do |question|  %>
                 <li class="d-flex align-items-center">
@@ -26,7 +25,11 @@
                     <% result = 0 %>
                     <% question.answers.each do |answer| %>
                       <% sum += answer.answer_content.to_i %>
-                      <% result = sum / question.answers.length %>
+                      <% if answer.answer_content == "0" %>
+                        <% result = 0 %>
+                      <% else %>
+                      <% result = sum / (question.answers.length - 1) %>
+                      <% end %>
                     <% end %>
                     <%= link_to form_question_answers_path(@form, question) do  %>
                       <% result.times do %>
