@@ -15,6 +15,7 @@
         <%=link_to "Create New Form", new_form_path, class:"btn-above-page mr-5"%>
     </div>
 
+<<<<<<< HEAD
     
     <ul class="dashboard">
       <li class="dashboard-items">
@@ -49,8 +50,9 @@
             <% sum = 0 %>
             <% @forms.each do |form| %>
               <% form.questions.each do |question| %>
-                <% sum += question.answers.count %>
-              <% end %>
+                <% valid_answers = question.answers.reject{|number| number.answer_content == "0"} %>
+                <% sum = valid_answers.count %>
+               <% end %>
             <% end %>
             <%= "#{sum}" %>
             <i id="icon-index" class="fas fa-comment-dots"></i>
@@ -64,7 +66,7 @@
       <li class="dashboard-items inline-label">
         <div class="indexline">
           <div class="number-item">
-            <%= "#{@forms.count}" %>
+            <%= "#{@average_rating}" %>
             <i id="icon-index"  class="fas fa-star"></i>
           </div>
           <div class="index-label">
@@ -79,13 +81,24 @@
         <% @forms.each do |form| %>
           <div class="card-index-page">
             <div class="delete-form"><%= link_to "", form_path(form), data: {:confirm => 'Are you sure you want to delete your form?'}, :method => :delete, class:"fas fa-trash"  %></div>
-            <div class="stars-form"> <i id="icon-dashboard" class="fas fa-star"></i> <%=   "#{@forms.count}" %> </div>
+              <% result = form.questions.first.answers.count - 1 %>
+              <%  sum = form.questions.first.answers.map { |answer| answer.answer_content.to_i }.drop(1).sum %>
+              <% rating = sum.to_f / result.to_f %>
+              <% if result < 2 %>
+                <div class="stars-form"> <i id="icon-dashboard" class="fas fa-star"></i> <%= "#{sum}" %> </div>
+              <% else %>
+                <div class="stars-form"> <i id="icon-dashboard" class="fas fa-star"></i> <%= "#{rating.round(2)}" %> </div>
+              <% end %>
             <div class="card-content">
               <%=link_to "#{form.name}",  form_path(form), class:"card-link-index"%>
               <p><strong><%=form.presented_on.strftime('%A, %b %d')%></strong></p>
               <hr>
+                <% form.questions.each do |question| %>
+                  <% valid_answers = question.answers.reject{|number| number.answer_content == "0"} %>
+                  <% sum = valid_answers.count %>
+                <% end %>
               <div class="inside-card"><%= "my:questions: #{form.questions.count} " %></div>
-              <div class="inside-card"><%= "my:answers: #{Answer.joins(question:  {form_questions: :form} ).where(forms: {id: form.id}).count}" %></div>
+              <div class="inside-card"><%= "my:answers: #{sum}" %></div>
             </div>
           </div>
         <% end %>
@@ -104,12 +117,11 @@
 <script>
   document.addEventListener("turbolinks:load", function() {
     $(document).ready(function(){
-  $('.card-grid').slick({
+    $('.card-grid').slick({
     slidesToShow: 3,
     slidesToScroll: 3,
     arrows: true
   });
 });
 })
-
 </script>
