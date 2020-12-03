@@ -34,14 +34,12 @@
 .inner-card {
   display: inline-block;
   color: $darkgray;
-  padding: 0px 35px;
   margin-top: 20px;
-  width: 800px;
   // box-shadow: 0px 4px 24px 8px rgba(0, 0, 0, 0.25);
   // border-radius: 24px;
 
   h5 {
-    font-size: 24px; 
+    font-size: 1.3rem; 
     font-weight: 500;
     margin-bottom: 30px;
   }
@@ -135,7 +133,7 @@ outline: 0;
 #far-success {
   font-size: 30px;
   color: white;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .link-success {
@@ -169,7 +167,7 @@ outline: 0;
 }
 
 .qr-code {
-  border: 3px solid black;
+  border: 3px solid $myrror-grey;
   border-radius: 54px;
   padding: 15px;
   width: 290px;
@@ -240,7 +238,7 @@ h1{
   // width: 100vw;
 
   h1{
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 400;
     color: black;
   }
@@ -253,6 +251,7 @@ h1{
   line-height: 2;
   font-size: 30px;
   font-weight: bold;
+  color: $myrror;
 }
 
 .home-title span::after{
