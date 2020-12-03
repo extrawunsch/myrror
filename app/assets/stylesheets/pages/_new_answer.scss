@@ -10,15 +10,15 @@ $starsize: 5vw;
   width: 68vw;
   margin: 0 auto;
   h2 {
-    font-size: 1.5rem !important;
+    font-size: calc(22px + (28 - 22) * ((100vw - 320px) / (1920 - 320))) !important;
   }
 
   h3 {
-    font-size: 1.25rem !important;
+    font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320))) !important;
   }
 
   h4 {
-    font-size: 1rem !important;
+    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320))) !important;
   }
 }
 // CODE FOR THE ANSWERING FORM WITH CAROUSEL
@@ -63,33 +63,44 @@ $starsize: 5vw;
     .br-wrapper {
       .br-widget {
         margin: 0 auto;
-        width: 40vw;
+        width: max-content;
       }
     }
   }
   .carousel-control-prev {
     // width: 10% !important;
+    position: relative;
     span {
-      margin-top: 48vh;
+      position: absolute;
+      // margin-top: 20%;
       font-size: 28px;
+      top: 56vh;
     }
   }
   .carousel-control-next {
     // width: 10% !important;
     span {
-      margin-top: 48vh;
+      position: absolute;
+      //margin-top: 48vh;
       font-size: 28px;
+      top: 56vh;
     }
   }
   
   .illustration-search {
-    width: 32vw;
+    width: 300px;
+    margin-top: -48px;
+  }
+  .form-title {
+    background-color: rgba(0, 0, 0, 0);
+    height: 16vh;
+    text-align: center;
   }
   .carousel-item {
     #simple-form {
       width: 70%;
       position: absolute;
-      bottom: 0;
+      bottom: 60px;
       left: 7vw;
     }
     .first-block {
@@ -98,7 +109,8 @@ $starsize: 5vw;
       text-align: center;
     }
     h4 {
-      margin: 36px 24px;
+      margin: 24px 24px;
+      font-size: 24px;
     }
     #answer-form {
       margin: 16px 24px;
@@ -106,8 +118,9 @@ $starsize: 5vw;
     .form-control {
       width:100%;
       position: relative;
-      height: 28vh;
+      height: 120px;
     }
+    
   }
 }
 
@@ -171,82 +184,84 @@ input[type="radio"]:checked + label {
 
 // MEDIA QUERY RULES TO SWITCH STYLING
 
-@media only screen and (max-width: 600px) {
-  .presentation-info {
-    padding: 8px 36px;
-    h2 {
-      font-size: 1.5rem !important;
-    }
+// @media only screen and (max-width: 600px) {
+//   .presentation-info {
+//     padding: 8px 36px;
+//     h2 {
+//       font-size: 1.5rem !important;
+//     }
 
-    h3 {
-      font-size: 1.25rem !important;
-    }
+//     h3 {
+//       font-size: 1.25rem !important;
+//     }
 
-    h4 {
-      font-size: 1rem !important;
-    }
-  }
+//     h4 {
+//       font-size: 1rem !important;
+//     }
+//   }
 
-  .question-form {
-    width: 90vw;
-    height: 72vh;
-    display: flex;
-  }
-  .symbol-field {
-    display: none;
-  }
+//   .question-form {
+//     width: 90vw;
+//     height: 72vh;
+//     display: flex;
+//     margin-top: 24px;
+//   }
+//   .symbol-field {
+//     display: none;
+//   }
 
-  .illustration-new {
-    display: none;
-  }
+//   .illustration-new {
+//     display: none;
+//   }
  
-  .carousel-inner {
-    width: 90vw;
-    height: 62vh;
-    margin-top: 12vh;
-    position: relative;
-    //margin-top: calc(82vh - 62vh);
-    .carousel-control-prev span {
-      margin-top: 48vh;
-    }
-    .carousel-control-next span {
-      margin-top: 48vh;
-    }
-    .carousel-item {
+//   .carousel-inner {
+//     width: 90vw;
+//     height: 62vh;
+//     margin-top: 12vh;
+//     position: relative;
+//     //margin-top: calc(82vh - 62vh);
+//     .carousel-control-prev span {
+//       margin-top: 0;
+//     }
+//     .carousel-control-next span {
+//       margin-top: 0;
+//       bottom: 24px;
+//     }
+//     .carousel-item {
       
-      #answer-form {
-        height: 40vh !important;
-        #new_answer {
-          height: 100%;
-        }
-        .br-wrapper {
-          .br-widget {
-            margin: 0 auto;
-            width: 40vw;
-          }
-        }
-      }
-      .form-control {
-        width: 100%;
-        height: 28vh;
-      }
-      #simple-form {
-        width: 70%;
-        position: absolute;
-        bottom: 0;
-        left: 13vw;
-      }
-      .form-title {
-        background-color: rgba(0, 0, 0, 0);
-        height: 12vh;
-        width: 90vw;
-        top: -10vh;
-        text-align: center;
-        h4 {
-          color: black;
-          margin: 16px 24px;
-        } 
-      }
-    }
-  }
-}
+//       #answer-form {
+//         height: 40vh !important;
+//         #new_answer {
+//           height: 100%;
+//         }
+//         .br-wrapper {
+//           .br-widget {
+//             margin: 0 auto;
+//             width: 40vw;
+//           }
+//         }
+//       }
+//       .form-control {
+//         width: 100%;
+//         height: 28vh;
+//       }
+//       #simple-form {
+//         width: 70%;
+//         position: absolute;
+//         bottom: 0;
+//         left: 13vw;
+//       }
+//       .form-title {
+//         background-color: rgba(0, 0, 0, 0);
+//         height: 12vh;
+//         width: 90vw;
+//         top: -10vh;
+//         text-align: center;
+//         h4 {
+//           color: black;
+//           margin: 16px 24px;
+//         } 
+//       }
+//     }
+//   }
+// }
