@@ -8,11 +8,9 @@
       </div>
         <div>
           <div class="show-parent">
-          <h5 class="show-headline mb-5"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %></h5>
-
-            <ul style="list-style-type:none;height:60vh; width:80%;" class="scrollbar-show">
-
-
+          <h5 class="show-headline"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %></h5>
+          
+            <ul style="list-style-type:none;height:60vh" class="scrollbar-show">
               <% @form.questions.each do |question|  %>
 
                 <li class="d-flex align-items-center">
