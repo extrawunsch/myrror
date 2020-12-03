@@ -32,6 +32,7 @@ import { initFlatpickr } from '../plugins/init_flatpickr';
 import { initCopyQuestion } from '../components/copy_question';
 import { initStarRating } from '../plugins/init_star_rating';
 import { initNextSlide } from '../components/carousel_next';
+import { initSubmit } from '../components/submit';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -40,6 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   initCopyQuestion();
   initStarRating();
   initNextSlide();
+  initSubmit();
 });
 
 import "controllers"
