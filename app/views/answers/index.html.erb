@@ -8,9 +8,9 @@
       <h4 class="headline-index-answers">Discover everyone's viewpoint</h4>
         <%=link_to 'Back to my form', form_path(@form), class:"btn btn-outline-show mr-5"%>
       </div>
-    <div>
+    <div style="width: 80%">
         <h5 class="question-title-index-answers">Question: <%= @question.question_content  %></h5>
-          <ul style="list-style-type:none; height:60vh; width: 80%" class="scrollbar-show">
+          <ul style="list-style-type:none; height:60vh" class="scrollbar-show">
             <li class="align-items-center">
               <% if @question.question_type == "Open Question" %>
                 <% @answers.each do |answer| %>
