@@ -18,8 +18,8 @@
     
     <ul class="dashboard">
       <li class="dashboard-items">
-        <div class="number-item inline-label">
-          <div class="indexline">
+        <div class="indexline">
+          <div class="number-item inline-label">
             <%= "#{@forms.count}" %>
             <i id="icon-index"  class="fas fa-pen"></i>
           </div>
@@ -29,8 +29,8 @@
         </div>
       </li>
       <li class="dashboard-items">
-        <div class="number-item inline-label">
-          <div class="indexline">
+        <div class="indexline">
+          <div class="number-item inline-label">
             <% sum = 0 %>
             <% @forms.each do |form| %>
               <% sum += form.questions.count %>
@@ -62,8 +62,8 @@
       </li>
 
       <li class="dashboard-items inline-label">
-        <div class="number-item">
-          <div class="indexline">
+        <div class="indexline">
+          <div class="number-item">
             <%= "#{@forms.count}" %>
             <i id="icon-index"  class="fas fa-star"></i>
           </div>
