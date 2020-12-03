@@ -20,10 +20,15 @@
 
 .dashboard {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: left;
   padding: 0;
   margin: 5% 0;
+}
+
+.indexline {
+  border-right: 1px solid $gray;
+  margin: 0 20%;
 }
 
 // Large devices (desktops, 992px and up)
@@ -54,7 +59,7 @@
 }
 
 .number-item {
-  font-size: 4rem;
+  font-size: 3.6rem;
   font-weight: bold;
   color: $myrror-grey;
 }
