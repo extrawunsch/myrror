@@ -7,89 +7,103 @@
   <%= render "components/vertical_navbar", active: "My Forms"%>
   <div class="main-container">
     <div class="form-display">
-    <div class="tab-bar-index">
-      <ul id="menu">
-        <li style="color: black; font-weight: 500">My forms</li>
-        <li></li>
-        <li></li>
-      </ul>
-      <div class="interactive my-3">
-        <%=link_to "Create New Form", new_form_path, class:"btn-above-page mr-5"%>
+      <div class="tab-bar-index">
+        <ul id="menu">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+          <%=link_to "Create New Form", new_form_path, class:"btn-above-page mr-5"%>
       </div>
-    </div>
 
-    <div class="grid-container">
-              <ul class="dashboard">
-                <li class="dashboard-items">
-                  <p>my:forms</p>
-                 <div><%= "#{@forms.count}" %> <i id="icon-dashboard" class="fas fa-pen"></i></div>
-                </li>
-                <li class="dashboard-items">
-                  <p>my:questions</p>
-                  <% sum = 0 %>
-                  <% @forms.each do |form| %>
-                  <% sum += form.questions.count %>
-                  <% end %>
-                  <div><%= "#{sum}" %> <i id="icon-dashboard" class="fas fa-question-circle"></i></div>
-                </li>
-                <li class="dashboard-items">
-                  <p>my:answers</p>
-                  <% sum = 0 %>
-                  <% @forms.each do |form| %>
-                    <% form.questions.each do |question| %>
-                     <% valid_answers = question.answers.reject{|number| number.answer_content == "0"} %>
-                     <% sum = valid_answers.count %>
-                    <% end %>
-                  <% end %>
-                  <%= "#{sum}" %> <i id="icon-dashboard" class="fas fa-comment-dots"></i>
-
-                </li>
-                <li class="dashboard-items">
-                  <p>my:rating</p>
-                  <%=   "#{@average_rating}" %> <i id="icon-dashboard" class="fas fa-star"></i>
-                </li>
-              </ul>
-    </div>
-
-
-
-
-      <hr id="divider">
-      <div class="card-grid" id="slick-show">
-        <% @forms.each do |form| %>
-          <div class="card-index-page">
-            <div class="delete-form"><%= link_to "", form_path(form), data: {:confirm => 'Are you sure you want to delete your form?'}, :method => :delete, class:"fas fa-trash"  %></div>
-              <% if form.questions.first != nil %>
-                <% result = form.questions.first.answers.count - 1 %>
-                <%  sum = form.questions.first.answers.map { |answer| answer.answer_content.to_i }.drop(1).sum %>
-                <% rating = sum.to_f / result.to_f %>
-              <% else %>
-                <% sum = 0 %>
-                <% rating = 0 %>
+      <ul class="dashboard">
+        <li class="dashboard-items">
+          <div class="indexline">
+            <div class="number-item inline-label">
+              <%= "#{@forms.count}" %>
+              <i id="icon-index"  class="fas fa-pen"></i>
+            </div>
+            <div class="index-label">
+              <p>FORMS</p>
+            </div>
+          </div>
+        </li>
+        <li class="dashboard-items">
+          <div class="indexline">
+            <div class="number-item inline-label">
+              <% sum = 0 %>
+              <% @forms.each do |form| %>
+                <% sum += form.questions.count %>
               <% end %>
-
-              <% if result = nil %>
-                <div class="stars-form"> <i id="icon-dashboard" class="fas fa-star"></i> <%= "0" %> </div>
-              <% else %>
-                <div class="stars-form"> <i id="icon-dashboard" class="fas fa-star"></i> <%= "#{rating.round(2)}" %> </div>
-              <% end %>
-            <div class="card-content">
-              <%=link_to "#{form.name}",  form_path(form), class:"card-link-index"%>
-              <p><strong><%= "#{form.presented_on.strftime('%b %d, %Y')}" %></strong></p>
-              <hr>
+              <%= "#{sum}" %> 
+              <i id="icon-index"  class="fas fa-question-circle"></i>
+            </div>
+            <div class="index-label">
+              <p>QUESTIONS</p>
+            </div>
+          </div>
+        </li>
+        <li class="dashboard-items">
+          <div class="indexline">
+            <div class="number-item inline-label">
+              <% sum = 0 %>
+              <% @forms.each do |form| %>
                 <% form.questions.each do |question| %>
                   <% valid_answers = question.answers.reject{|number| number.answer_content == "0"} %>
                   <% sum = valid_answers.count %>
                 <% end %>
-              <div class="inside-card"><%= "my:questions: #{form.questions.count} " %></div>
-              <div class="inside-card"><%= "my:answers: #{sum}" %></div>
+              <% end %>
+              <%= "#{sum}" %>
+              <i id="icon-index" class="fas fa-comment-dots"></i>
+            </div>
+            <div class="index-label">
+              <p>ANSWERS</p>
             </div>
           </div>
-        <% end %>
+        </li>
+
+        <li class="dashboard-items inline-label">
+            <div class="number-item">
+              <%= "#{@average_rating}" %>
+              <i id="icon-index"  class="fas fa-star"></i>
+            </div>
+            <div class="index-label">
+              <p>RATING</p>
+            </div>
+        </li>
+      </ul>
+      
+      <div class="divider-index">
+        <h4 class="mx-4">My Forms</h4>
       </div>
-
-
-
+        <div class="cards-container">
+        <div class="card-grid" id="slick-show">
+          <% @forms.each do |form| %>
+            <div class="card-index-page">
+              <div class="delete-form" id="card-icon"><%= link_to "", form_path(form), data: {:confirm => 'Are you sure you want to delete your form?'}, :method => :delete, class:"fas fa-trash"  %></div>
+                <% result = form.questions.first.answers.count - 1 %>
+                <%  sum = form.questions.first.answers.map { |answer| answer.answer_content.to_i }.drop(1).sum %>
+                <% rating = sum.to_f / result.to_f %>
+                <% if result < 2 %>
+                  <div class="stars-form"> <i id="card-icon" class="fas fa-star"></i> <%= "#{sum}" %> </div>
+                <% else %>
+                  <div class="stars-form"> <i id="card-icon" class="fas fa-star"></i> <%= "#{rating.round(2)}" %> </div>
+                <% end %>
+              <div class="card-content">
+                <%=link_to "#{form.name}",  form_path(form), class:"card-link-index"%>
+                <p><strong><%= "#{form.presented_on.strftime('%b %d, %Y')}" %></strong></p>
+                <hr style="margin-top:1.8rem;">
+                  <% form.questions.each do |question| %>
+                    <% valid_answers = question.answers.reject{|number| number.answer_content == "0"} %>
+                    <% sum = valid_answers.count %>
+                  <% end %>
+                <div class="inside-card"><%= "my:questions: #{form.questions.count} " %></div>
+                <div class="inside-card"><%= "my:answers: #{sum}" %></div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
 
     </div>
   </div>
