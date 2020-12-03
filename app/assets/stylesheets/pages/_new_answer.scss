@@ -17,7 +17,7 @@ $starsize: 5vw;
   display: flex;
   background: $myrror-grey;
   border-radius:$border;
-  box-shadow: 0px 8px 16px 4px rgba(0,0,0,0.1);
+  box-shadow: 0px 12px 16px 8px rgba(0,0,0,0.2);
 }
 
 .symbol-field {
@@ -40,7 +40,7 @@ li {
   width: 48vw;
   background-color: white;
   border-radius:$border;
-  box-shadow: inset 2px 4px 4px 0px rgba(0,0,0,0.45);
+  // box-shadow: inset 2px 4px 4px 0px rgba(0,0,0,0.45);
   // padding: 120px;
   // align-items: center;
   // display: flex;
@@ -130,7 +130,18 @@ input[type="radio"]:checked + label {
 
 @media only screen and (max-width: 600px) {
   .presentation-info {
-    font-size: 4vw;
+    padding: 8px 36px;
+    h2 {
+      font-size: 1.5rem !important;
+    }
+
+    h3 {
+      font-size: 1.25rem !important;
+    }
+
+    h4 {
+      font-size: 1rem !important;
+    }
   }
 
   .question-form {
