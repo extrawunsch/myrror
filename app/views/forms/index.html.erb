@@ -8,51 +8,65 @@
     <div class="form-display">
     <div class="tab-bar-index">
       <ul id="menu">
-        <li style="color: black; font-weight: 500">My forms</li>
+        <li></li>
         <li></li>
         <li></li>
       </ul>
-      <div class="interactive my-3">
         <%=link_to "Create New Form", new_form_path, class:"btn-above-page mr-5"%>
-      </div>
     </div>
 
-    <div class="grid-container">
-              <ul class="dashboard">
-                <li class="dashboard-items">
-                  <p>my:forms</p>
-                 <div><%= "#{@forms.count}" %> <i id="icon-dashboard" class="fas fa-pen"></i></div>
-                </li>
-                <li class="dashboard-items">
-                  <p>my:questions</p>
-                  <% sum = 0 %>
-                  <% @forms.each do |form| %>
-                  <% sum += form.questions.count %>
-                  <% end %>
-                  <div><%= "#{sum}" %> <i id="icon-dashboard" class="fas fa-question-circle"></i></div>
-                </li>
-                <li class="dashboard-items">
-                  <p>my:answers</p>
-                  <% sum = 0 %>
-                  <% @forms.each do |form| %>
-                    <% form.questions.each do |question| %>
-                      <% sum += question.answers.count %>
-                    <% end %>
-                  <% end %>
-                  <%= "#{sum}" %> <i id="icon-dashboard" class="fas fa-comment-dots"></i>
+    
+    <ul class="dashboard">
+      <li class="dashboard-items">
+        <div class="number-item inline-label">
+          <%= "#{@forms.count}" %>
+          <i id="icon-index"  class="fas fa-pen"></i>
+        </div>
+        <div class="index-label">
+          <p>my:forms</p>
+        </div>
+      </li>
+      <li class="dashboard-items">
+        <div class="number-item inline-label">
+          <% sum = 0 %>
+          <% @forms.each do |form| %>
+            <% sum += form.questions.count %>
+          <% end %>
+          <%= "#{sum}" %> 
+          <i id="icon-index"  class="fas fa-question-circle"></i>
+        </div>
+        <div class="index-label">
+          <p>my:questions</p>
+        </div>
+      </li>
+      <li class="dashboard-items">
+        <div class="number-item inline-label">
+          <% sum = 0 %>
+          <% @forms.each do |form| %>
+            <% form.questions.each do |question| %>
+              <% sum += question.answers.count %>
+            <% end %>
+          <% end %>
+          <%= "#{sum}" %>
+          <i id="icon-index" class="fas fa-comment-dots"></i>
+        </div>
+        <div class="index-label">
+          <p>my:answers</p>
+        </div>
+      </li>
 
-                </li>
-                <li class="dashboard-items">
-                  <p>my:rating</p>
-                  <%=   "#{@forms.count}" %> <i id="icon-dashboard" class="fas fa-star"></i>
-                </li>
-              </ul>
-    </div>
+      <li class="dashboard-items inline-label">
+        <div class="number-item">
+          <%= "#{@forms.count}" %>
+          <i id="icon-index"  class="fas fa-star"></i>
+        </div>
+        <div class="index-label">
+          <p>my:rating</p>
+        </div>
+      </li>
+    </ul>
 
-
-
-
-      <hr id="divider">
+      <div class="divider-index"><h4>My Forms</h4></div>
       <div class="card-grid" id="slick-show">
         <% @forms.each do |form| %>
           <div class="card-index-page">
