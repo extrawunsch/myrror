@@ -60,7 +60,7 @@
 
 .number-item {
   font-size: 3.6rem;
-  font-weight: bold;
+  font-weight: 600;
   color: $myrror-grey;
   line-height: 1;
 }
@@ -94,26 +94,26 @@
   width: 100%;
   font-size: 15px;
   position: absolute;
-  bottom: 3px;
+  bottom: 5%;
   right: -40%;
 
 
   .fa-trash:before {
     color: $myrror;
-    font-size: 26px;
+    font-size: 1.2rem;
   }
 }
 
 .stars-form {
   position: absolute;
-  bottom: 3px;
+  bottom: 5%;
   left: 18px;
 
 
 
   .fa-star:before {
     color: $myrror;
-    font-size: 26px;
+    font-size: 1.4rem;
   }
 }
 
@@ -194,9 +194,9 @@
 }
 
 .card-link-index {
-  font-size: 24px;
-  font-weight: 700;
-  color: $myrror;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #34CBB0;
   transition: 0.3s ease-out;
 }
 
@@ -204,4 +204,5 @@
   text-decoration: none;
   color: #343434;
 }
+
 
