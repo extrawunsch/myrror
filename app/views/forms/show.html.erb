@@ -25,7 +25,11 @@
                     <% result = 0 %>
                     <% question.answers.each do |answer| %>
                       <% sum += answer.answer_content.to_i %>
+                      <% if answer.answer_content == "0" %>
+                        <% result = 0 %>
+                      <% else %>
                       <% result = sum / (question.answers.length - 1) %>
+                      <% end %>
                     <% end %>
                     <%= link_to form_question_answers_path(@form, question) do  %>
                       <% result.times do %>

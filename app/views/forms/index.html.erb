@@ -36,7 +36,8 @@
                   <% sum = 0 %>
                   <% @forms.each do |form| %>
                     <% form.questions.each do |question| %>
-                      <% sum += question.answers.count %>
+                     <% valid_answers = question.answers.reject{|number| number.answer_content == "0"} %>
+                     <% sum = valid_answers.count %>
                     <% end %>
                   <% end %>
                   <%= "#{sum}" %> <i id="icon-dashboard" class="fas fa-comment-dots"></i>
@@ -69,8 +70,12 @@
               <%=link_to "#{form.name}",  form_path(form), class:"card-link-index"%>
               <p><strong><%=form.presented_on.strftime('%A, %b %d')%></strong></p>
               <hr>
+                <% form.questions.each do |question| %>
+                  <% valid_answers = question.answers.reject{|number| number.answer_content == "0"} %>
+                  <% sum = valid_answers.count %>
+                <% end %>
               <div class="inside-card"><%= "my:questions: #{form.questions.count} " %></div>
-              <div class="inside-card"><%= "my:answers: #{Answer.joins(question:  {form_questions: :form} ).where(forms: {id: form.id}).count}" %></div>
+              <div class="inside-card"><%= "my:answers: #{sum}" %></div>
             </div>
           </div>
         <% end %>
