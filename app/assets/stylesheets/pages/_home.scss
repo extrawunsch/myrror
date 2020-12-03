@@ -11,7 +11,7 @@
     // position: absolute;
     top: 30px;
     height: 40px;
-    width: 74%;
+    width: 75vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,14 +20,22 @@
     backdrop-filter: blur(4px);
     text-align: center;
     margin: 0 auto;
+    padding: 0 5%;
     a {
-      font-size: 20px;
+      font-size: 1.1rem;
     }
+  }
+
+  .container-home {
+    width: 75vw;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .home-black {
     color: $myrror;
-    margin-left: 70px;
   }
 
   .home-black:hover {
@@ -45,20 +53,17 @@
   .btn-above-page-navbar {
     text-decoration: none;
     color: white;
-    background: $myrror;
-    border: 1px solid $myrror;
-    padding: 8px 24px;
-    border-radius: 50px;
-    font-weight: 400;
+    padding: 6px 16px;
+    font-weight: lighter;
     transition: 0.4s ease;
+    background: #5dcfba;
+    border-radius: 50px;
   }
 
   .btn-above-page-navbar:hover {
-    // text-decoration: none;
     box-shadow: 0 8px 30px rgb(0, 0, 0);
     color: white;
-    background: $myrror-hover;
-    border: 1px solid $myrror-hover;
+    background: $myrror;
   }
 
 // BANNER
@@ -66,7 +71,7 @@
   .banner {
     background-size: cover;
     background-position: center;
-    padding: 100px 0;
+    padding: 5% 0 10% 0px;
   }
 
   .banner h1 {
@@ -84,7 +89,7 @@
 
   .banner-title {
     position: relative;
-    margin-top: 100px;
+    margin-top: 8%;
   }
 
   .color-backdrop {
@@ -93,29 +98,28 @@
     left: 16px;
     background-color: rgba(52, 203, 176, 0.4);
     width: 185px;
-    height: 35px;
+    height: 24px;
   }
 
   .color-backdrop-2 {
     position: absolute;
-    top: 120px;
+    top: 105px;
     left: 18px;
     background-color: rgba(52, 203, 176, 0.4);
-    width: 965px;
-    height: 35px;
+    width: 842px;
+    height: 24px;
   }
 
   h1 {
     position: relative;
     z-index: 1;
-    font-size: 68px;
     left: -2px;
   }
 
   .CTA-button {
     display: flex;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 8%;
   }
 
   .btn-above-page-banner {
@@ -123,12 +127,11 @@
     color: white;
     background: $myrror;
     border: 1px solid $myrror;
-    padding: 8px 24px;
+    padding: 12px 20px;
     border-radius: 50px;
     font-weight: 400;
     transition: 0.4s ease;
-    width: 275px;
-    font-size: 25px;
+    font-size: 1.1rem;
   }
 
   .btn-above-page-banner:hover {
@@ -142,15 +145,21 @@
 
   // BLOCK WHY
 
+  .container-why {
+    width: 75vw;
+    margin-bottom: 3%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   .why {
     color: $myrror;
     text-align: center;
-    padding-top: 40px;
-    font-size: 48px;
+    padding: 5% 0 2% 0;
+    font-size: 2.3rem;
   }
 
   .why-block{
-    background-color: $light-gray;
     justify-content: center;
   }
 
@@ -158,45 +167,45 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    padding-right: 150px;
-    padding-left: 150px;
   }
 
   .tripple-card {
-    width: 30%;
+    width: 48%;
     background-color: white;
-    margin: 50px;
-    margin-top: 30px;
-    padding: 20px;
+    margin: 2%;
+    padding: 5%;
     // filter: blur(4px);
     border-radius: 8px;
-    // box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3), 0 0px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.2), 0 0px 0px rgba(0, 0, 0, 0.2);
+    text-align: center;
   }
 
   .title-card {
-    font-size: 26px;
-    color: #000000;
+    font-size: 1.3rem;
+    color: $myrror-grey;
   }
 
   .tripple-wrapper-content {
-    font-size: 18px;
-    color: black;
+    font-size: 1rem;
+    color: $myrror-grey;
   }
 
   // QUOTE
 
   .quote-container {
     background-color: $myrror;
-    padding-top: 40px;
-    height: 150px;
+    padding-top: 3%;
+    height: 16vh;
   }
 
   .quote {
     color: white;
-    font-size: 24px;
+    font-size: 1.3rem;
     text-align: center;
     font-style: italic;
-    // font-weight: 200;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .bill-gates {
@@ -206,8 +215,10 @@
     float: right;
     // font-weight: 200;
     padding-right: 15%;
-    font-size: 22px;
+    font-size: 1rem;
+
   }
+
 
 
   // BLOCK HOW
@@ -215,19 +226,16 @@
   .how {
     color: $myrror;
     text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 48px;
   }
 
   .card-homepage {
-    height: 500px;
-    width: 1000px;
+    width: 70vw;
     background-color: rgba(196, 196, 196, 0.12);
     margin: 0 auto;
     align-items: center;
     border-radius: 28px;
-    margin-top: 30px;
+    margin-top: 3%;
+    padding: 3% 0 3%;
   }
 
   .container-with-3-points{
@@ -237,52 +245,45 @@
   .key-points{
     display: flex;
     align-items: center;
-    color: black;
+    color: $myrror-grey;
+    padding: 1.5% 0;
 
     p {
-      font-size: 24px;
-      margin: 0;
+      font-size: 1.1rem;
     }
   }
 
   .fas {
-    font-size: 34px;
+    font-size: 2.3rem;
     color: $myrror;
-    margin-bottom: 20px;
   }
 
 
   .far {
-    font-size: 34px;
+    font-size: 2.6rem;
     color: $myrror;
-    margin-bottom: 20px;
+    margin-bottom: 15%;
+    margin-left: 15%;
   }
 
   .bottom-icons {
-    margin: 20px;
-    color: rgba(0, 0, 0, 0.73);
-    font-size: 65px;
-    margin: 30px;
-    margin-left: 64px;
-  }
-
-  .fa-qrcode {
-    height: 65px;
-    width: 65px;
+    color: $myrror-grey;
+    margin: 1% 5% 3% 5%;
   }
 
   .iphone {
     display: flex;
-    margin: 20px;
+    margin: 3%;
 
     img {
-      height: 350px;
+      height: 30vh;
     }
   }
 
   .container-wrapper {
     display: flex;
     align-items: center;
+    margin: 3% 5% 0 8%;
   }
 
 
@@ -294,10 +295,9 @@
   }
 
   .ready-to-start-journey-text {
-    font-size: 32px;
     // font-weight: bold;
-    color: black;
-    margin-top: 50px;
+    color: $myrror-grey;
+    margin: 3%;
   }
 
   .btn-above-page-ready {
@@ -305,11 +305,12 @@
     color: white;
     background: $myrror;
     border: 1px solid $myrror;
-    padding: 8px 24px;
+    padding: 12px 20px;
     border-radius: 50px;
     font-weight: 400;
     transition: 0.4s ease;
-
+    font-size: 1.1rem;
+    margin-bottom: 5%;
   }
 
   .btn-above-page-ready:hover {
@@ -389,10 +390,6 @@
     margin: 0 auto;
     height: 10px;
     border-bottom: 1px solid $myrror;
-  }
-
-  .CTA-buttom-page {
-    font-size: 20px;
   }
 
   .footer-down {
