@@ -3,7 +3,7 @@
   <div class="dummy-temporary" style="width: 200px;"></div>
   <div class="main-container">
     <div class="inside-container">
-       
+
         <div class="d-flex justify-content-center mt-5">
           <%= simple_form_for(@form) do |f| %>
             <div class="card-questions-focus">
@@ -12,12 +12,11 @@
               <%= f.input :name, label: "Choose a Form Title" %>
               <%= f.input :speaker, label: "Speaker Name" %>
               <%= f.hidden_field :answer_content, value: "0" %>
-              <%= f.hidden_field :question_content, value: "Overall impression of the Talk" %>
+              <%= f.hidden_field :question_content, value: "What is your overall impression?" %>
               <%= f.submit 'Continue', class: 'btn btn-click mt-3 mb-2' %>
               <% end %>
             </div>
-        </div>        
-      
+        </div>
     </div>
   </div>
 </div>

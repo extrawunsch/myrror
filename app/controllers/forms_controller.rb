@@ -6,11 +6,20 @@ class FormsController < ApplicationController
 
   def analytics
     @forms = policy_scope(Form).order(created_at: :desc)
-    # @forms = Form.all 
+    # @forms = Form.all
   end
 
   def index
     @forms = policy_scope(Form).order(created_at: :desc)
+    query_ryan = "SELECT answer_content FROM answers JOIN questions ON answers.question_id = questions.id JOIN form_questions ON questions.id = form_questions.question_id JOIN forms ON form_questions.form_id = forms.id JOIN users ON forms.user_id = users.id WHERE questions.question_content = 'What is your overall impression?' AND users.id = #{current_user.id}"
+    answers = ActiveRecord::Base.connection.execute(query_ryan)
+    @valid_answers = answers.values.flatten.reject{|number| number == "0"}.map(&:to_f)
+    if @valid_answers.length != 0
+      @average_rating = @valid_answers.sum / @valid_answers.length
+      @average_rating = @average_rating.round(2)
+    else
+      return "-"
+    end
   end
 
   def show
@@ -106,7 +115,7 @@ class FormsController < ApplicationController
       resize_gte_to: false,
       size: 250
     )
-    
+
   end
 
   private
