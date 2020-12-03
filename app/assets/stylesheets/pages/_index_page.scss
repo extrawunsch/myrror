@@ -126,21 +126,22 @@
   display: flex;
   color: $myrror;
   border-radius: 24px;
-  margin: 12px;
-  padding: 9px;
+  // margin: 12px;
+  // padding: 9px;
   background: white;
   width: fit-content;
   margin: auto 0;
+  // margin: 10px;
+  font-size: 16px;
 
   p {
-    margin: auto 0;
-    margin-left: 12px;
-    padding-top: inherit;
+    margin: 10px;
+    font-size: 16px;
   }
 }
 
 .counter-stars {
-  font-size: 32px;
+  color: black;
 }
 
 .btn-above-page-show {

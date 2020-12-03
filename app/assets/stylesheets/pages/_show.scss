@@ -52,14 +52,12 @@
  
   a:hover {
     text-decoration: none;
-    
     }
 }
 
 .fa-qrcode:before {
   color: #343434;
   font-size: 50px;
-
 }
 
 .fa-qrcode:hover {
@@ -217,5 +215,6 @@ ul {
   p {
     margin: auto 0;
     margin-left: 12px;
+    font-size: 15px !important;
   }
 }
