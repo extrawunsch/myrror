@@ -130,12 +130,13 @@ outline: 0;
 
 .btn-clipboard:hover #far-success {
   color: #34CBB0 !important;
+  background-color: $lightmyrror !important;
 }
 
 #far-success {
   font-size: 30px;
   color: white;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .link-success {
@@ -169,7 +170,7 @@ outline: 0;
 }
 
 .qr-code {
-  border: 3px solid black;
+  border: 3px solid $myrror-grey;
   border-radius: 54px;
   padding: 15px;
   width: 290px;
@@ -240,7 +241,7 @@ h1{
   // width: 100vw;
 
   h1{
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 400;
     color: black;
   }
@@ -253,6 +254,7 @@ h1{
   line-height: 2;
   font-size: 30px;
   font-weight: bold;
+  color: $myrror;
 }
 
 .home-title span::after{
