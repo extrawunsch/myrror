@@ -29,4 +29,8 @@
 	  <%= link_to "Presentation Key", success_form_path(@form), class:"" %>
 	<% end %>
 
+	<% if params[:controller]=="forms" && params[:action]=="success" %>
+	  <%= link_to "Presentation Key", success_form_path(@form), class:"active" %>
+	<% end %>
+
 </div>
