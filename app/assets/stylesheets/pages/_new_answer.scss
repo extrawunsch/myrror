@@ -18,7 +18,7 @@ $starsize: 5vw;
   }
 
   h4 {
-    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320))) !important;
+    font-size: calc(12px + (20 - 14) * ((100vw - 320px) / (1920 - 320))) !important;
   }
 }
 
@@ -321,45 +321,54 @@ input[type="radio"]:checked + label {
 
 }
 
-// @media only screen and (max-width: 400px) {
+@media only screen and (max-width: 400px) {
   
-//   .answer-fields {
-//     width: 100%;
-//     height: 70%;
-//     position: relative;
-//     //margin-top: calc(82vh - 62vh);
-//   }
-//   .carousel-inner {
-//     margin-top: 74px;
-//     width: 100%;
-//     position: relative;
-//     height: calc(72vh - 74px);
-//     //margin-top: calc(82vh - 62vh);
-//   }
-//   .carousel-indicators {
-//     top: -48px;
-//     bottom: unset;
-//   }
+  .illustration-search {
+    width: 260px !important;
+    margin-top: -28px;
+  }
+
+  #simple-form {
+    left: 24% !important;
+    width: 172px !important;
+    bottom: 20% !important;
+  }
+  .carousel-control-prev span {
+    bottom: 10% !important;
+    right: 6% !important;
+    top: unset !important;
+  }
+  .carousel-control-next span {
+    bottom: 10% !important;
+    left: 6% !important;
+    top: unset !important;
+  }
+
+}
+
+@media only screen and (max-width: 340px) {
+  h4 {
+    font-size: 18px !important;
+  }
+  .illustration-search {
+    width: 220px !important;
+    margin-top: -28px;
+  }
   
-//   .illustration-search {
-//     width: 260px !important;
-//     margin-top: -28px;
-//   }
+  #simple-form {
+    left: 22% !important;
+    width: 168px !important;
+    bottom: 24% !important;
+  }
+  .carousel-control-prev span {
+    bottom: 10% !important;
+    right: 6% !important;
+    top: unset !important;
+  }
+  .carousel-control-next span {
+    bottom: 10% !important;
+    left: 6% !important;
+    top: unset !important;
+  }
 
-//   #simple-form {
-//     left: 24% !important;
-//     width: 160px !important;
-//     bottom: 20% !important;
-//   }
-//   .carousel-control-prev span {
-//     bottom: 10% !important;
-//     right: 6% !important;
-//     top: unset !important;
-//   }
-//   .carousel-control-next span {
-//     bottom: 10% !important;
-//     left: 6% !important;
-//     top: unset !important;
-//   }
-
-// }
+}
