@@ -9,7 +9,7 @@
         <div>
           <div class="show-parent">
           <h5 class="show-headline"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %></h5>
-          
+
             <ul style="list-style-type:none;height:55vh" class="scrollbar-show">
               <% @form.questions.each do |question|  %>
 
@@ -38,10 +38,10 @@
                       <% end %>
                     <%= link_to form_question_answers_path(@form, question), class:'ml-3 star-hover' do  %>
                       <% result.times do %>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star" style="color: $myrror;"></i>
                       <% end %>
                         <% (5 - result).times do %>
-                          <i class="far fa-star"></i>
+                          <i class="far fa-star" style="color: $myrror;"></i>
                         <% end %>
                     <% end %>
 
