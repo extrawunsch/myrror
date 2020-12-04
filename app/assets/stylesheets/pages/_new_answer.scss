@@ -11,6 +11,7 @@ $starsize: 5vw;
   margin: 0 auto;
   h2 {
     font-size: calc(22px + (28 - 22) * ((100vw - 320px) / (1920 - 320))) !important;
+    color: $myrror;
   }
 
   h3 {
@@ -18,7 +19,7 @@ $starsize: 5vw;
   }
 
   h4 {
-    font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1920 - 320))) !important;
+    font-size: calc(12px + (20 - 14) * ((100vw - 320px) / (1920 - 320))) !important;
   }
 }
 
@@ -321,84 +322,54 @@ input[type="radio"]:checked + label {
 
 }
 
-// @media only screen and (max-width: 600px) {
-//   .presentation-info {
-//     padding: 8px 36px;
-//     h2 {
-//       font-size: 1.5rem !important;
-//     }
+@media only screen and (max-width: 400px) {
+  
+  .illustration-search {
+    width: 260px !important;
+    margin-top: -28px;
+  }
 
-//     h3 {
-//       font-size: 1.25rem !important;
-//     }
+  #simple-form {
+    left: 24% !important;
+    width: 172px !important;
+    bottom: 20% !important;
+  }
+  .carousel-control-prev span {
+    bottom: 10% !important;
+    right: 6% !important;
+    top: unset !important;
+  }
+  .carousel-control-next span {
+    bottom: 10% !important;
+    left: 6% !important;
+    top: unset !important;
+  }
 
-//     h4 {
-//       font-size: 1rem !important;
-//     }
-//   }
+}
 
-//   .question-form {
-//     width: 90vw;
-//     height: 72vh;
-//     display: flex;
-//     margin-top: 24px;
-//   }
-//   .symbol-field {
-//     display: none;
-//   }
+@media only screen and (max-width: 340px) {
+  h4 {
+    font-size: 18px !important;
+  }
+  .illustration-search {
+    width: 220px !important;
+    margin-top: -28px;
+  }
+  
+  #simple-form {
+    left: 22% !important;
+    width: 168px !important;
+    bottom: 24% !important;
+  }
+  .carousel-control-prev span {
+    bottom: 10% !important;
+    right: 6% !important;
+    top: unset !important;
+  }
+  .carousel-control-next span {
+    bottom: 10% !important;
+    left: 6% !important;
+    top: unset !important;
+  }
 
-//   .illustration-new {
-//     display: none;
-//   }
- 
-//   .carousel-inner {
-//     width: 90vw;
-//     height: 62vh;
-//     margin-top: 12vh;
-//     position: relative;
-//     //margin-top: calc(82vh - 62vh);
-//     .carousel-control-prev span {
-//       margin-top: 0;
-//     }
-//     .carousel-control-next span {
-//       margin-top: 0;
-//       bottom: 24px;
-//     }
-//     .carousel-item {
-      
-//       #answer-form {
-//         height: 40vh !important;
-//         #new_answer {
-//           height: 100%;
-//         }
-//         .br-wrapper {
-//           .br-widget {
-//             margin: 0 auto;
-//             width: 40vw;
-//           }
-//         }
-//       }
-//       .form-control {
-//         width: 100%;
-//         height: 28vh;
-//       }
-//       #simple-form {
-//         width: 70%;
-//         position: absolute;
-//         bottom: 0;
-//         left: 13vw;
-//       }
-//       .form-title {
-//         background-color: rgba(0, 0, 0, 0);
-//         height: 12vh;
-//         width: 90vw;
-//         top: -10vh;
-//         text-align: center;
-//         h4 {
-//           color: black;
-//           margin: 16px 24px;
-//         } 
-//       }
-//     }
-//   }
-// }
+}
