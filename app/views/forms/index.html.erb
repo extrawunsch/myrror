@@ -80,14 +80,17 @@
           <% @forms.each do |form| %>
             <div class="card-index-page">
               <div class="delete-form" id="card-icon"><%= link_to "", form_path(form), data: {:confirm => 'Are you sure you want to delete your form?'}, :method => :delete, class:"fas fa-trash"  %></div>
-                <% if form.questions.first  == nil %>
-                  <div class="stars-form"> <i id="card-icon" class="fas fa-star"></i> <%= "-" %> </div>
-                <% else %>
-                  <% result = form.questions.first.answers.count - 1 %>
-                  <%  sum_1 = form.questions.first.answers.map { |answer| answer.answer_content.to_i }.drop(1).sum %>
-                  <% rating = sum_1.to_f / result.to_f %>
-                  <div class="stars-form"> <i id="card-icon" class="fas fa-star"></i> <%= "#{rating.round(2)}" %> </div>
+                <% form.questions.first.answers.each do |answer| %>
+                  <% sum = answer.answer_content.to_i %>
                 <% end %>
+                  <% if sum  == 0 %>
+                    <div class="stars-form"> <i id="card-icon" class="fas fa-star"></i> <%= "-" %> </div>
+                  <% else %>
+                    <% result = form.questions.first.answers.count - 1 %>
+                    <%  sum_1 = form.questions.first.answers.map { |answer| answer.answer_content.to_i }.drop(1).sum %>
+                    <% rating = sum_1.to_f / result.to_f %>
+                    <div class="stars-form"> <i id="card-icon" class="fas fa-star"></i> <%= "#{rating.round(2)}" %> </div>
+                  <% end %>
               <div class="card-content">
                 <%=link_to "#{form.name}",  form_path(form), class:"card-link-index"%>
                 <p class="card-date"><%= "#{form.presented_on.strftime('%b %d, %Y')}" %></p>
