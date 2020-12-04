@@ -43,7 +43,7 @@
                     <%= simple_form_for [@form, @answer] do |f| %>
                       <%= f.input :answer_content, label: "Answer" %>
                       <%= f.hidden_field :question_id, value: question.id %>
-                      <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form"., remote: false %>
+                      <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form", remote: false %>
                     <%end%>
                   <% when "Multiple-Choice" %>
                     <%= simple_form_for [@form, @answer] do |f| %>
