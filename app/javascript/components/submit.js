@@ -5,7 +5,6 @@ const initSubmit = () => {
   const checkmark = document.querySelector('.checkmark');
   // Safety
   if (button) {
-      console.log("Test")
       button.addEventListener("click", () => {
         circle.classList.toggle('load-complete');
         $('.checkmark').toggle();

@@ -63,7 +63,7 @@
                       <%end%>
                   <% when "Star Rating" %>
                     <%= simple_form_for [@form, @answer] do |f| %>
-                      <%= f.input :answer_content, collection: (1..5).to_a, label: '&nbsp;'.html_safe , required: false,
+                      <%= f.input :answer_content, collection: (1..5).to_a, label: '&nbsp;'.html_safe , required: false, remote: false,
                         collection_wrapper_tag: 'div',
                         collection_wrapper_class: 'star-wrapper',
                         input_html: {class: 'fas fa-star'} %>
