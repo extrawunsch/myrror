@@ -10,7 +10,7 @@
           <div class="show-parent">
           <h5 class="show-headline"> <%= @form.name %> | <%= @form.presented_on.strftime('%A, %b %d') %></h5>
           
-            <ul style="list-style-type:none;height:60vh" class="scrollbar-show">
+            <ul style="list-style-type:none;height:55vh" class="scrollbar-show">
               <% @form.questions.each do |question|  %>
 
                 <li class="d-flex align-items-center">
@@ -51,7 +51,7 @@
               <% end %>
               </div>
             </ul>
-                <%= link_to "Add a new question", new_form_question_path(@form), class:" btn btn-outline mt-5"  %>
+                <%= link_to "Add a new question", new_form_question_path(@form), class:" btn btn-outline"  %>
         </div>
       </div>
     </div>
