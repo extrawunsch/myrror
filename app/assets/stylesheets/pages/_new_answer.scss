@@ -321,84 +321,45 @@ input[type="radio"]:checked + label {
 
 }
 
-// @media only screen and (max-width: 600px) {
-//   .presentation-info {
-//     padding: 8px 36px;
-//     h2 {
-//       font-size: 1.5rem !important;
-//     }
-
-//     h3 {
-//       font-size: 1.25rem !important;
-//     }
-
-//     h4 {
-//       font-size: 1rem !important;
-//     }
-//   }
-
-//   .question-form {
-//     width: 90vw;
-//     height: 72vh;
-//     display: flex;
-//     margin-top: 24px;
-//   }
-//   .symbol-field {
-//     display: none;
-//   }
-
-//   .illustration-new {
-//     display: none;
-//   }
- 
-//   .carousel-inner {
-//     width: 90vw;
-//     height: 62vh;
-//     margin-top: 12vh;
+// @media only screen and (max-width: 400px) {
+  
+//   .answer-fields {
+//     width: 100%;
+//     height: 70%;
 //     position: relative;
 //     //margin-top: calc(82vh - 62vh);
-//     .carousel-control-prev span {
-//       margin-top: 0;
-//     }
-//     .carousel-control-next span {
-//       margin-top: 0;
-//       bottom: 24px;
-//     }
-//     .carousel-item {
-      
-//       #answer-form {
-//         height: 40vh !important;
-//         #new_answer {
-//           height: 100%;
-//         }
-//         .br-wrapper {
-//           .br-widget {
-//             margin: 0 auto;
-//             width: 40vw;
-//           }
-//         }
-//       }
-//       .form-control {
-//         width: 100%;
-//         height: 28vh;
-//       }
-//       #simple-form {
-//         width: 70%;
-//         position: absolute;
-//         bottom: 0;
-//         left: 13vw;
-//       }
-//       .form-title {
-//         background-color: rgba(0, 0, 0, 0);
-//         height: 12vh;
-//         width: 90vw;
-//         top: -10vh;
-//         text-align: center;
-//         h4 {
-//           color: black;
-//           margin: 16px 24px;
-//         } 
-//       }
-//     }
 //   }
+//   .carousel-inner {
+//     margin-top: 74px;
+//     width: 100%;
+//     position: relative;
+//     height: calc(72vh - 74px);
+//     //margin-top: calc(82vh - 62vh);
+//   }
+//   .carousel-indicators {
+//     top: -48px;
+//     bottom: unset;
+//   }
+  
+//   .illustration-search {
+//     width: 260px !important;
+//     margin-top: -28px;
+//   }
+
+//   #simple-form {
+//     left: 24% !important;
+//     width: 160px !important;
+//     bottom: 20% !important;
+//   }
+//   .carousel-control-prev span {
+//     bottom: 10% !important;
+//     right: 6% !important;
+//     top: unset !important;
+//   }
+//   .carousel-control-next span {
+//     bottom: 10% !important;
+//     left: 6% !important;
+//     top: unset !important;
+//   }
+
 // }
