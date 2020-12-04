@@ -40,13 +40,13 @@
                 <div class="d-block" id="answer-form">
                 <% case question.question_type%>
                   <% when "Open Question" %>
-                    <%= simple_form_for [@form, @answer] do |f| %>
+                    <%= simple_form_for [@form, @answer], remote: true do |f| %>
                       <%= f.input :answer_content, label: "Answer" %>
                       <%= f.hidden_field :question_id, value: question.id %>
                       <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form", remote: false %>
                     <%end%>
                   <% when "Multiple-Choice" %>
-                    <%= simple_form_for [@form, @answer] do |f| %>
+                    <%= simple_form_for [@form, @answer], remote: true do |f| %>
                       <%# <% question.answers.each  do |answer| %> 
                         <%= f.association :answer, as: :boolean, label: answer.answer_content, required: false %>
                         <%# <%= f.collection_check_boxes  :answer_content , collection: [answer.answer_content], label: answer.answer_content,  required: false %>
@@ -54,7 +54,7 @@
                       <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form" %>
                     <%end%>
                   <% when "Single-Choice" %>
-                      <%= simple_form_for [@form, @answer] do |f| %>
+                      <%= simple_form_for [@form, @answer], remote: true do |f| %>
                         <% question.answers.each  do |answer| %>
                           <%= f.input :answer_content, as: :radio_buttons, collection: [answer.answer_content], label: "", required: false %>
                           <%= f.hidden_field :question_id, value: question.id %>
@@ -62,7 +62,7 @@
                       <%= f.submit "Submit Answer", class: "btn-above-page", id: "simple-form" %> 
                       <%end%>
                   <% when "Star Rating" %>
-                    <%= simple_form_for [@form, @answer] do |f| %>
+                    <%= simple_form_for [@form, @answer], remote: true do |f| %>
                       <%= f.input :answer_content, collection: (1..5).to_a, label: '&nbsp;'.html_safe , required: false, 
                         collection_wrapper_tag: 'div',
                         collection_wrapper_class: 'star-wrapper',

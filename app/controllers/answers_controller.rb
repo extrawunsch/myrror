@@ -9,7 +9,9 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.new(answer_params)
-    @answer.save
+    status = @answer.save
+    
+    render json: { created: status}
   end
 
   def feedback
