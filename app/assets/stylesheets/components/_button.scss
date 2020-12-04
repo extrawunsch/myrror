@@ -34,6 +34,12 @@
   color: white;
 }
 
+.btn-outline:focus {
+  border: 1px solid $myrror !important ;
+  box-shadow: unset;
+}
+
+
 .btn-click {
   background: $myrror;
   text-decoration: none;
